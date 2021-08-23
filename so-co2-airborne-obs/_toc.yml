@@ -4,7 +4,7 @@
 format: jb-article
 root: intro
 sections:
-- file: content
+- file: observations
   sections:
   - file: markdown
   - file: notebooks

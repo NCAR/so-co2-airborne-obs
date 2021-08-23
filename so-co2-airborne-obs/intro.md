@@ -1,6 +1,6 @@
 # Overview
 
-This blah blah blah
+This book contains code to reproduce the analysis of Long et al. (2021).
 
 ## Abstract
 
