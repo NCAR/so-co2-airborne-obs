@@ -20,11 +20,11 @@ dependencies:
 - intake-xarray
 - ipywidgets
 - jupyter_contrib_nbextensions
-- jupyter-book
 - jupyterlab
 - lmfit
 - matplotlib
 - metpy
+- myst-nb
 - nc-time-axis
 - ncar-jobqueue
 - netcdf4
@@ -46,4 +46,5 @@ dependencies:
 - xhistogram
 - zarr
 - pip:
+  - jupyter-book
   - git+https://github.com/matt-long/xpersist.git
