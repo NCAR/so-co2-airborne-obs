@@ -20,6 +20,7 @@ dependencies:
 - intake-xarray
 - ipywidgets
 - jupyter_contrib_nbextensions
+- jupyter-book
 - jupyterlab
 - lmfit
 - matplotlib
@@ -46,5 +47,4 @@ dependencies:
 - xhistogram
 - zarr
 - pip:
-  - jupyter-book
   - git+https://github.com/matt-long/xpersist.git
