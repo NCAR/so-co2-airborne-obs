@@ -34,7 +34,7 @@ dependencies:
 - pip
 - pop-tools
 - pytest
-- python
+- python=3.8
 - scipy
 - seaborn
 - seawater
@@ -45,4 +45,4 @@ dependencies:
 - xhistogram
 - zarr
 - pip:
-  - git+https://github.com/matt-long/xpersist.git  
+  - git+https://github.com/matt-long/xpersist.git
