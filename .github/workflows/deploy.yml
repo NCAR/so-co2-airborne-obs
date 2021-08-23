@@ -10,10 +10,13 @@ on:
 jobs:
   build-and-deploy-book:
     runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash -l {0}
     strategy:
       matrix:
         os: [ubuntu-latest]
-        python-version: [3.8]
+        # python-version: [3.8]
     steps:
     - uses: actions/checkout@v2
 
@@ -25,7 +28,7 @@ jobs:
         mamba-version: '*'
         activate-environment: so-co2
         auto-update-conda: false
-        python-version: 3.8
+        python-version: 3.7
         use-only-tar-bz2: true
 
     - name: Set up conda environment
