@@ -20,6 +20,7 @@ dependencies:
 - intake-xarray
 - ipywidgets
 - jupyter_contrib_nbextensions
+- jupyter-book
 - jupyterlab
 - lmfit
 - matplotlib
