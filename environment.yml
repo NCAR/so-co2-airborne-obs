@@ -34,7 +34,7 @@ dependencies:
 - pip
 - pop-tools
 - pytest
-- python=3.8
+- python=3.7
 - scipy
 - seaborn
 - seawater
