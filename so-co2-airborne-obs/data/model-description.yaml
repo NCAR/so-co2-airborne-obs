@@ -1,0 +1,247 @@
+CT2017:
+  info:
+    group: CT-NOAA
+    transport: TM5
+    label: CT2017
+  obs_data_paths:
+    CO2: data/britt-R-plotting/CT2017
+    CO2_OCN: data/britt-R-plotting/CT2017/OCEAN
+    CO2_LND: data/britt-R-plotting/CT2017/LAND
+    CO2_FFF: data/britt-R-plotting/CT2017/FF
+    CO2_BKG: data/britt-R-plotting/CT2017/BG
+CT2019B:
+  info:
+    group: CT-NOAA
+    transport: TM5
+    label: CT2019B
+  obs_data_paths:
+    CO2: data/britt-R-plotting/CT2019B
+    CO2_OCN: data/britt-R-plotting/CT2019B/OCEAN
+    CO2_LND: data/britt-R-plotting/CT2019B/LAND
+    CO2_FFF: data/britt-R-plotting/CT2019B/FF
+    CO2_BKG: data/britt-R-plotting/CT2019B/BG
+CTE2018:
+  info:
+    group: CTE
+    transport: TM5
+    label: CTE2018
+  obs_data_paths:
+    CO2: data/britt-R-plotting/CTE2018
+    CO2_OCN: data/britt-R-plotting/CTE2018/OCEAN
+    CO2_LND: data/britt-R-plotting/CTE2018/LAND
+    CO2_FFF: data/britt-R-plotting/CTE2018/FF    
+CTE2020:
+  info:
+    group: CTE
+    transport: TM5
+    label: CTE2020
+  obs_data_paths:
+    CO2: data/britt-R-plotting/CTE2020
+    CO2_OCN: data/britt-R-plotting/CTE2020/OCEAN
+    CO2_LND: data/britt-R-plotting/CTE2020/LAND
+    CO2_FFF: data/britt-R-plotting/CTE2020/FF   
+MIROC2019:
+  info:
+    group: MIROC
+    transport: ACTM
+    label: MIROC4-ACTM-2019
+  obs_data_paths:
+    CO2: data/britt-R-plotting/MIROC2019
+MIROC2019-prior:
+  info:
+    group: MIROC
+    transport: ACTM
+    label: MIROC4-ACTM-2019 (prior)
+  obs_data_paths:
+    CO2: data/britt-R-plotting/MIROC2019/PRIOR    
+MIROC-prior:
+  info:
+    group: MIROC
+    transport: ACTM
+    label: MIROC4-ACTM-2020 (prior)
+  obs_data_paths:
+    CO2: data/britt-R-plotting/MIROCPRIORCOMP
+    CO2_OCN: data/britt-R-plotting/MIROC/PRIORCOMP/OCEAN
+    CO2_LND: data/britt-R-plotting/MIROC/PRIORCOMP/BIO
+    CO2_FFF: data/britt-R-plotting/MIROC/PRIORCOMP/FF
+MIROC:
+  info:
+    group: MIROC
+    transport: ACTM
+    label: MIROC4-ACTM-2020
+  obs_data_paths:
+    CO2: data/britt-R-plotting/MIROC
+    CO2_OCN: data/britt-R-plotting/MIROC/OCEAN
+    CO2_LND: data/britt-R-plotting/MIROC/LAND
+    CO2_FFF: data/britt-R-plotting/MIROC/FF
+s99oc_v2020:
+  info:
+    group: CarboScope
+    transport: TM3
+    label: s99oc_v2020
+  obs_data_paths:
+    CO2: data/britt-R-plotting/CarboScope
+    CO2_OCN: data/britt-R-plotting/CarboScope/OCEAN
+    CO2_LND: data/britt-R-plotting/CarboScope/LAND
+    CO2_FFF: data/britt-R-plotting/CarboScope/FF
+s99oc45S_v2020:
+  info:
+    group: CarboScope
+    transport: TM3
+    label: s99oc45S_v2020
+  obs_data_paths:
+    CO2: data/britt-R-plotting/CarboScope
+    CO2_OCN: data/britt-R-plotting/CarboScopeSC45S
+    CO2_LND: data/britt-R-plotting/CarboScope/LAND
+    CO2_FFF: data/britt-R-plotting/CarboScope/FF
+s99oc_ADJocI40S_v2020:
+  info:
+    group: CarboScope
+    transport: TM3
+    label: s99oc_ADJocI40S_v2020
+  obs_data_paths:
+    CO2: data/britt-R-plotting/CarboScopeAdjSO
+    CO2_OCN: data/britt-R-plotting/CarboScopeAdjSO/OCEAN
+    CO2_LND: data/britt-R-plotting/CarboScopeAdjSO/LAND
+    CO2_FFF: data/britt-R-plotting/CarboScopeAdjSO/FF
+s99oc_SOCCOM_v2020:
+  info:
+    group: CarboScope
+    transport: TM3
+    label: s99oc_SOCAT+SOCCOM_v2020
+  obs_data_paths:
+    CO2: data/britt-R-plotting/CarboScopeSC
+    CO2_OCN: data/britt-R-plotting/CarboScopeSC/OCEAN
+    CO2_LND: data/britt-R-plotting/CarboScopeSC/LAND
+    CO2_FFF: data/britt-R-plotting/CarboScopeSC/FF
+sEXTocNEET_SOCCOM_v2020:
+  info:
+    group: CarboScope
+    transport: TM3
+    label: sEXTocNEET_SOCCOM_v2020
+  obs_data_paths:
+    CO2: data/britt-R-plotting/CarboScopeSC_SEXT
+CAMSv18:
+  info:
+    group: CAMS
+    transport: LMDZ
+    label: CAMS(v18)
+  obs_data_paths:
+    CO2: data/britt-R-plotting/CAMSv18
+CAMSv19:
+  info:
+    group: CAMS
+    transport: LMDZ
+    label: CAMS(v19r1)
+  obs_data_paths:
+    CO2: data/britt-R-plotting/CAMSv19r1
+CAMSv20r1:
+  info:
+    group: CAMS
+    transport: LMDZ
+    label: CAMS(v20r1)
+  obs_data_paths:
+    CO2: data/britt-R-plotting/CAMSv20r1
+    CO2_OCN: data/britt-R-plotting/CAMSv20r1/OCEAN
+    CO2_LND: data/britt-R-plotting/CAMSv20r1/LAND
+    CO2_FFF: data/britt-R-plotting/CAMSv20r1/FF
+TM5-Flux-m0p:
+  info:
+    group: TM5
+    transport: TM5
+    label: TM5+SOCAT+SOCCOM (pCO2)
+  obs_data_paths:
+    CO2_OCN: data/britt-R-plotting/TM5pCO2/M0P
+    CO2_LND: data/britt-R-plotting/CT2019B/LAND
+    CO2_FFF: data/britt-R-plotting/CT2019B/FF
+    CO2_BKG: data/britt-R-plotting/CT2019B/BG
+TM5-Flux-mmp:
+  info:
+    group: TM5
+    transport: TM5
+    label: TM5+SOCCOM(only, –4µatm) (pCO2)
+  obs_data_paths:
+    CO2_OCN: data/britt-R-plotting/TM5pCO2/MMP
+    CO2_LND: data/britt-R-plotting/CT2019B/LAND
+    CO2_FFF: data/britt-R-plotting/CT2019B/FF
+    CO2_BKG: data/britt-R-plotting/CT2019B/BG
+TM5-Flux-mrp:
+  info:
+    group: TM5
+    transport: TM5
+    label: TM5+SOCAT (pCO2)
+  obs_data_paths:
+    CO2_OCN: data/britt-R-plotting/TM5pCO2/MRP
+    CO2_LND: data/britt-R-plotting/CT2019B/LAND
+    CO2_FFF: data/britt-R-plotting/CT2019B/FF
+    CO2_BKG: data/britt-R-plotting/CT2019B/BG
+TM5-Flux-mwp:
+  info:
+    group: TM5
+    transport: TM5
+    label: TM5+SOCCOM(only) (pCO2)
+  obs_data_paths:
+    CO2_OCN: data/britt-R-plotting/TM5pCO2/MWP
+    CO2_LND: data/britt-R-plotting/CT2019B/LAND
+    CO2_FFF: data/britt-R-plotting/CT2019B/FF
+    CO2_BKG: data/britt-R-plotting/CT2019B/BG
+TM5-Flux-m0f:
+  info:
+    group: TM5
+    transport: TM5
+    label: TM5+SOCAT+SOCCOM
+  obs_data_paths:
+    CO2_OCN: data/britt-R-plotting/TM5pCO2/M0F
+    CO2_LND: data/britt-R-plotting/CT2019B/LAND
+    CO2_FFF: data/britt-R-plotting/CT2019B/FF
+    CO2_BKG: data/britt-R-plotting/CT2019B/BG
+TM5-Flux-mmf:
+  info:
+    group: TM5
+    transport: TM5
+    label: TM5+SOCCOM(only, –4µatm)
+  obs_data_paths:
+    CO2_OCN: data/britt-R-plotting/TM5pCO2/MMP
+    CO2_LND: data/britt-R-plotting/CT2019B/LAND
+    CO2_FFF: data/britt-R-plotting/CT2019B/FF
+    CO2_BKG: data/britt-R-plotting/CT2019B/BG
+TM5-Flux-mrf:
+  info:
+    group: TM5
+    transport: TM5
+    label: TM5+SOCAT
+  obs_data_paths:
+    CO2_OCN: data/britt-R-plotting/TM5pCO2/MRF
+    CO2_LND: data/britt-R-plotting/CT2019B/LAND
+    CO2_FFF: data/britt-R-plotting/CT2019B/FF
+    CO2_BKG: data/britt-R-plotting/CT2019B/BG
+TM5-Flux-mwf:
+  info:
+    group: TM5
+    transport: TM5
+    label: TM5+SOCCOM(only)
+  obs_data_paths:
+    CO2_OCN: data/britt-R-plotting/TM5pCO2/MWF
+    CO2_LND: data/britt-R-plotting/CT2019B/LAND
+    CO2_FFF: data/britt-R-plotting/CT2019B/FF
+    CO2_BKG: data/britt-R-plotting/CT2019B/BG
+SOM-FFN:
+  info:
+    group: pCO2
+    transport: TM5
+    label: SOCAT    
+  obs_data_paths:
+    CO2_OCN: data/britt-R-plotting/TM5pCO2/MRF
+    CO2_LND: data/britt-R-plotting/CT2019B/LAND
+    CO2_FFF: data/britt-R-plotting/CT2019B/FF
+    CO2_BKG: data/britt-R-plotting/CT2019B/BG
+CESM:
+  info:
+    group: CESM
+    transport: CAM
+    label: CESM
+  obs_data_paths:
+    CO2: data/britt-R-plotting/CESM
+    CO2_OCN: data/britt-R-plotting/CESM/OCN
+    CO2_LND: data/britt-R-plotting/CESM/LND
+    CO2_FFF: data/britt-R-plotting/CESM/FFF

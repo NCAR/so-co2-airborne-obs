@@ -1,0 +1,55 @@
+# color based on:
+# import seaborn as sns
+# current_palette = sns.color_palette('bright', 9)
+# sns.palplot(current_palette)
+# current_palette.as_hex()
+NOAA: 
+  marker: '.'
+  markersize: 8
+  color: '#023eff'
+  markerfacecolor: '#023eff'
+SIO_O2: 
+  marker: 'd'
+  markersize: 8
+  color: '#ff7c00'
+  markerfacecolor: '#ff7c00'
+SIO_CDK: 
+  marker: 's'
+  markersize: 4
+  color: '#1ac938'
+  markerfacecolor: '#1ac938'
+CSIRO: 
+  marker: '^'
+  markersize: 8
+  color: '#e8000b'
+  markerfacecolor: "None"  
+TU/NIPR: 
+  marker: 'v'
+  markersize: 8
+  color: '#8b2be2'
+  markerfacecolor: "None"
+LSCE: 
+  marker: '<'
+  markersize: 8
+  color: '#9f4800'
+  markerfacecolor: '#9f4800'
+SAWS: 
+  marker: '>'
+  markersize: 8
+  color: '#f14cc1'
+  markerfacecolor: '#f14cc1'
+NIWA: 
+  marker: 'p'
+  markersize: 8
+  color: '#ffc400'
+  markerfacecolor: 'None' 
+Multiple:
+  marker: '.'
+  markersize: 8
+  color: '#a3a3a3'
+  markerfacecolor: '#ece133'
+NCAR:
+  marker: 'd'
+  markersize: 8
+  color: '#'
+  markerfacecolor: '#'
