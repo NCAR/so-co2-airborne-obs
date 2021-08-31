@@ -1,0 +1,120 @@
+SPO_NOAA_flask:
+  lat: -89.98
+  lon: -24.8
+  alt: 2810
+  stncode: SPO
+  type: flask
+  institution: NOAA
+  include: 1
+HBA_NOAA_flask:
+  lat: -75.605
+  lon: -26.21
+  alt: 10
+  stncode: HBA
+  type: flask
+  institution: NOAA
+  include: 2
+SYO_NOAA_flask:
+  lat: -69.0125
+  lon: 39.59
+  alt: 14
+  stncode: SYO
+  type: flask
+  institution: NOAA
+  include: 2
+PSA_NOAA_flask:
+  lat: -64.9
+  lon: -64
+  alt: 10
+  stncode: PSA
+  type: flask
+  institution: NOAA
+  include: 2
+DRP_NOAA_flask:
+  lat: -59
+  lon: -64.69
+  alt: 10
+  stncode: DRP
+  type: flask
+  institution: NOAA
+  include: 0
+CRZ_NOAA_flask:
+  lat: -46.4337
+  lon: 51.8478
+  alt: 197
+  stncode: CRZ
+  type: flask
+  institution: NOAA
+  include: 2
+CGO_NOAA_flask:
+  lat: -40.683
+  lon: 144.69
+  alt: 94
+  stncode: CGO
+  type: flask
+  institution: NOAA
+  include: 0
+CPT_NOAA_flask:
+  lat: -34.3523
+  lon: 18.4891
+  alt: 230
+  stncode: CPT
+  type: flask
+  institution: NOAA
+  include: 0
+USH_NOAA_flask:
+  lat: -54.8484
+  lon: -68.3106
+  alt: 12
+  stncode: USH
+  type: flask
+  institution: NOAA
+  include: 0
+BHD_NOAA_flask:
+  lat: -41.4083
+  lon: 174.871
+  alt: 85
+  stncode: BHD
+  type: flask
+  institution: NOAA
+  include: 0
+EIC_NOAA_flask:
+  lat: -27.16
+  lon: -109.43
+  alt: 47
+  stncode: EIC
+  type: flask
+  institution: NOAA
+  include: 0
+NMB_NOAA_flask:
+  lat: -23.58
+  lon: 15.03
+  alt: 456
+  stncode: NMB
+  type: flask
+  institution: NOAA
+  include: 0
+SMO_NOAA_flask:
+  lat: -14.2474
+  lon: -170.5644
+  alt: 42
+  stncode: SMO
+  type: flask
+  institution: NOAA
+  include: 0
+ASC_NOAA_flask:
+  lat: -7.9667
+  lon: -14.4
+  alt: 85
+  stncode: ASC
+  type: flask
+  institution: NOAA
+  include: 0
+SEY_NOAA_flask:
+  lat: -4.6824
+  lon: 55.5325
+  alt: 2
+  stncode: SEY
+  type: flask
+  institution: NOAA
+  include: 0

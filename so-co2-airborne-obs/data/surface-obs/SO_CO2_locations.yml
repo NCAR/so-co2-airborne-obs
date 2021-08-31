@@ -1,0 +1,259 @@
+SPO_Multi_med3:
+  lat: -89.98 
+  lon: -24.8 
+  alt: 2810
+  stncode: SPO
+  type: aggregate
+  institution: Multiple
+  include: 1  
+SPO_Multi_median:
+  lat: -89.98 
+  lon: -24.8 
+  alt: 2810
+  stncode: SPO
+  type: aggregate
+  institution: Multiple
+  include: 1
+SPO_NOAA_insitu:
+  lat: -89.98 
+  lon: -24.8 
+  alt: 2810
+  stncode: SPO
+  type: in situ
+  institution: NOAA
+  include: 1
+SPO_NOAA_flask:
+  lat: -89.98 
+  lon: -24.8
+  alt: 2810
+  stncode: SPO
+  type: flask
+  institution: NOAA
+  include: 0  
+SPO_SIO_O2_flask:
+  lat: -89.98 
+  lon: -24.8
+  alt: 2810
+  type: flask
+  stncode: SPO  
+  institution: SIO_O2    
+  include: 0  
+SPO_SIO_CDK_flask:
+  lat: -89.98 
+  lon: -24.8  
+  alt: 2810
+  stncode: SPO
+  type: flask
+  institution: SIO_CDK
+  include: 0 
+SPO_CSIRO_flask:
+  lat: -89.98  
+  lon: -24.8   
+  alt: 2810
+  stncode: SPO
+  type: flask
+  institution: CSIRO 
+  include: 0  
+HBA_NOAA_flask:
+  lat: -75.605  
+  lon: -26.21    
+  alt: 10
+  stncode: HBA
+  type: flask
+  institution: NOAA 
+  include: 2  
+SYO_NOAA_flask:
+  lat: -69.0125  
+  lon: 39.59    
+  alt: 14
+  stncode: SYO
+  type: flask
+  institution: NOAA  
+  include: 2  
+SYO_TU_insitu:
+  lat: -69.0125  
+  lon: 39.59    
+  alt: 14
+  stncode: SYO
+  type: in situ
+  institution: TU/NIPR
+  include: 2  
+MAA_CSIRO_flask:
+  lat: -67.617  
+  lon: 62.867    
+  alt: 32
+  stncode: MAA
+  type: flask
+  institution: CSIRO  
+  include: 2  
+CYA_CSIRO_flask:
+  lat: -66.283  
+  lon: 110.517    
+  alt: 47
+  stncode: CYA
+  type: flask
+  institution: CSIRO  
+  include: 2  
+PSA_NOAA_flask:
+  lat: -64.9  
+  lon: -64    
+  alt: 10
+  stncode: PSA
+  type: flask
+  institution: NOAA  
+  include: 2  
+PSA_SIO_O2_flask:
+  lat: -64.9  
+  lon: -64    
+  alt: 10
+  stncode: PSA
+  type: flask
+  institution: SIO_O2
+  include: 2  
+DRP_NOAA_flask:
+  lat: -59  
+  lon: -64.69    
+  alt: 10
+  stncode: DRP
+  type: flask
+  institution: NOAA 
+  include: 0
+MQA_CSIRO_flask:
+  lat: -54.483  
+  lon: 158.967    
+  alt: 6
+  stncode: MQA
+  type: flask
+  institution: CSIRO
+  include: 0  
+MQA_CSIRO_insitu:
+  lat: -54.483  
+  lon: 158.967    
+  alt: 6
+  stncode: MQA
+  type: in situ
+  institution: CSIRO
+  include: 0  
+CRZ_NOAA_flask:
+  lat: -46.4337  
+  lon: 51.8478    
+  alt: 197
+  stncode: CRZ
+  type: flask
+  institution: NOAA  
+  include: 2  
+CGO_NOAA_flask:
+  lat: -40.683  
+  lon: 144.69    
+  alt: 94
+  stncode: CGO
+  type: flask
+  institution: NOAA  
+  include: 0  
+CGO_SIO_O2_flask:
+  lat: -40.683  
+  lon: 144.69    
+  alt: 94
+  stncode: CGO
+  type: flask
+  institution: SIO_O2
+  include: 0  
+CGO_CSIRO_flask:
+  lat: -40.683  
+  lon: 144.69    
+  alt: 94
+  stncode: CGO
+  type: flask
+  institution: CSIRO
+  include: 0  
+CGO_CSIRO_insitu:
+  lat: -40.683  
+  lon: 144.69    
+  alt: 94
+  stncode: CGO
+  type: in situ
+  institution: CSIRO
+  include: 0    
+AMS_LSCE_insitu:
+  lat: -37.7983  
+  lon: 77.5378    
+  alt: 55
+  stncode: AMS
+  type: in situ
+  institution: LSCE
+  include: 0  
+CPT_SAWS_insitu:
+  lat: -34.3523  
+  lon: 18.4891    
+  alt: 230
+  stncode: CPT
+  type: in situ
+  institution: SAWS
+  include: 0
+BHD_NIWA_insitu:
+  lat: -41.4083
+  lon: 174.871
+  alt: 85
+  stncode: BHD
+  institution: NIWA
+  include: 0
+LMG65_NOAA_underway: 
+  lat: -65 
+  lon: -63.55 
+  alt: 10
+  stncode: LMG65
+  institution: NOAA
+LMG63_NOAA_underway:
+  lat: -63 
+  lon: -61.7 
+  alt: 10
+  stncode: LMG63  
+  institution: NOAA  
+LMG61_NOAA_underway:
+  lat: -61 
+  lon: -62 
+  alt: 10
+  stncode: LMG61  
+  institution: NOAA  
+LMG59_NOAA_underway:
+  lat: -59 
+  lon: -63.37 
+  alt: 10
+  stncode: LMG59  
+  institution: NOAA  
+LMG57_NOAA_underway:
+  lat: -57 
+  lon: -64.23 
+  alt: 10
+  stncode: LMG57  
+  institution: NOAA  
+LMG65_NCAR_underway:
+  lat: -65 
+  lon: -68.58 
+  alt: 10
+  stncode: LMG65  
+  institution: NCAR  
+LMG63_NCAR_underway:
+  lat: -63 
+  lon: -68.58 
+  alt: 10
+  stncode: LMG63  
+  institution: NCAR  
+LMG61_NCAR_underway:
+  lat: -61 
+  lon: -68.58 
+  alt: 10
+  stncode: LMG61  
+  institution: NCAR  
+LMG59_NCAR_underway:
+  lat: -59 
+  lon: -68.58 
+  alt: 10
+  stncode: LMG59  
+  institution: NCAR  
+LMG57_NCAR_underway:
+  lat: -57 
+  lon: -68.58 
+  alt: 10
+  stncode: LMG57  
+  institution: NCAR  
