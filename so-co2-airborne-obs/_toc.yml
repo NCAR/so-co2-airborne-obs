@@ -6,5 +6,5 @@ root: intro
 sections:
 - file: observations
   sections:
-  - file: Fig1-CO2-observations
+  - file: CO2-observations
   - file: notebooks
