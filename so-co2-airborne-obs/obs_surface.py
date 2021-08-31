@@ -46,6 +46,12 @@ spo_records = [
     'SPO_CSIRO_flask_CO2'
 ]
 
+
+reference_records = dict(
+    CO2=['SPO_NOAA_insitu_CO2',],
+    SF6=['SPO_NOAA_flask_SF6',],    
+)
+
 attrs = dict(
     CO2=dict(
         long_name='CO$_2$', 
@@ -63,10 +69,9 @@ def data_files(c, model=None):
     if model == 'obs':
         assert c in ['CO2', 'SF6']
         if c == 'SF6':
-            file = 'data/britt-R-plotting/SF6/SO_SF6_monthly.txt'
+            file = 'data/surface-obs/SO_SF6_monthly.txt'
         else:
-            #file = 'data/britt-R-plotting/SO_CO2_monthly.txt'
-            file = 'data/so-co2-station-data/SO_CO2_monthly.txt'
+            file = 'data/surface-obs/SO_CO2_monthly.txt'
     else:
         with open('data/model-description.yaml', 'r') as fid:
             model_paths = yaml.safe_load(fid)[model]['obs_data_paths']        
@@ -85,9 +90,9 @@ def data_files(c, model=None):
 
 def get_stn_info(constituent='CO2'):
     if constituent=='CO2':
-        file_info = 'data/so-co2-station-data/SO_CO2_locations.yaml'
+        file_info = 'data/surface-obs/SO_CO2_locations.yml'
     elif constituent=='SF6':
-        file_info = 'data/so-sf6-station-data/SO_SF6_locations.yaml'
+        file_info = 'data/surface-obs/SO_SF6_locations.yml'
     else:
         raise ValueError(f'unknown constituent: {constituent}')
         
@@ -211,7 +216,10 @@ def to_dataset(
 def open_surface_co2_data(model, tracer):
     """return a dataset of station data"""
     
-    # TODO: clean up this mess!
+    if model == 'obs':
+        return open_surface_data_obs(tracer)
+    
+    # TODO: clean up this mess!    
     if 'TM5' in model and tracer == 'CO2':
         tracer = 'CO2_SUM'
     
@@ -242,32 +250,49 @@ def open_surface_co2_data(model, tracer):
         )
         
     # swap MQA_CSIRO_flask_CO2 for MQA_CSIRO_insitu_CO2
-    if model != 'obs':
-        assert 'MQA_CSIRO_flask_CO2' in das_srf.record
-        assert 'MQA_CSIRO_insitu_CO2' not in das_srf.record
-        ndx = np.where(das_srf.record == 'MQA_CSIRO_flask_CO2')[0]
-        record = das_srf.record.copy()
-        record.values[ndx] = 'MQA_CSIRO_insitu_CO2'
-        das_srf['record'] = record
+    assert 'MQA_CSIRO_flask_CO2' in das_srf.record
+    assert 'MQA_CSIRO_insitu_CO2' not in das_srf.record
+    ndx = np.where(das_srf.record == 'MQA_CSIRO_flask_CO2')[0]
+    record = das_srf.record.copy()
+    record.values[ndx] = 'MQA_CSIRO_insitu_CO2'
+    das_srf['record'] = record
 
     return das_srf
-    
 
-def fill_gaps_in_SPO(da_co2):
-    da_co2_out = da_co2.copy()
     
-    idx_record = np.where(da_co2.record == 'SPO_NOAA_insitu_CO2')[0]
-    idx_time = np.append(
-        np.where(da_co2.time == np.datetime64('2001-01-15'))[0],
-        np.where(da_co2.time == np.datetime64('2001-02-14'))[0]
+def open_surface_data_obs(constituent='CO2'):
+    """return a dataset surface-station observations"""
+    constituent = constituent.upper()
+    assert constituent in ['CO2', 'SF6'], f'unknown constituent {constituent}'
+    stninfo = get_stn_info(constituent)
+    df = read_stndata(data_files(constituent))
+    ds = to_dataset(
+        stninfo, df, constituent,
+        plot_coverage=False, 
+        dropna=False, 
+        unique_stn=False,
+        gap_fill=False,
     )
-    idx_time_edges = np.append(
-        idx_time[0]-1,
-        idx_time[-1]+1,
-    )
-    da_co2_out[idx_time[0], idx_record] = da_co2.sel(record='SPO_NOAA_flask_CO2').isel(time=idx_time[0])
-    da_co2_out[idx_time[1], idx_record] = da_co2.sel(record='SPO_SIO_O2_flask_CO2').isel(time=idx_time[1])    
-    return da_co2_out
+    
+    # fill gaps in NOAA in situ SPO record
+    if constituent == 'CO2':
+        idx_record = np.where(ds.record == 'SPO_NOAA_insitu_CO2')[0]
+        idx_time = np.append(
+            np.where(ds.time == np.datetime64('2001-01-15'))[0],
+            np.where(ds.time == np.datetime64('2001-02-14'))[0]
+        )
+        idx_time_edges = np.append(
+            idx_time[0]-1,
+            idx_time[-1]+1,
+        )
+
+        gapfill_values = np.interp(
+            ds.time.isel(time=idx_time),
+            ds.time.isel(time=idx_time_edges),
+            ds.isel(time=idx_time_edges, record=idx_record).squeeze()
+        )
+        ds[idx_time, idx_record] = gapfill_values[:, None]
+    return ds
 
     
 def filter_outliers(da, verbose=False, return_index=False):
