@@ -114,7 +114,7 @@ class Model(object):
             spo_ts_daily=dict(
                 function=self._compute_spo_ts_daily,
                 cache_rootdir=cache_rootdir_local,
-                cache_format='zarr',
+                cache_format='nc',
             ),
             spo_ts_daily_detrend=dict(
                 function=self._compute_spo_ts_daily_detrend,
