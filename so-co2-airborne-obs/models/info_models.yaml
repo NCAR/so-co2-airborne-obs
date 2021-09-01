@@ -1,0 +1,71 @@
+products:
+  CT2017:
+    molefractions:
+      - path: /glade/p/eol/stephens/longcoll/co2-hole-cache/carbontracker/co2/CT2017/molefractions/co2_total
+        glob: CT2017.molefrac_glb3x2_????-??-??.nc          
+      - path: /glade/p/eol/stephens/longcoll/co2-hole-cache/carbontracker/co2/CT2017/molefractions/co2_components
+        glob: CT2017.molefrac_components_glb3x2_????-??-??.nc
+    fluxes:
+      path: /glade/p/eol/stephens/longcoll/co2-hole-cache/carbontracker/co2/CT2017/fluxes/monthly
+      glob: CT2017.flux1x1-monthly.nc
+  CT2019B:
+    molefractions:
+      - path: /glade/p/eol/stephens/longcoll/co2-hole-cache/carbontracker/co2/CT2019B/molefractions/co2_total
+        glob: CT2019B.molefrac_glb3x2_????-??-??.nc      
+      - path: /glade/p/eol/stephens/longcoll/co2-hole-cache/carbontracker/co2/CT2019B/molefractions/co2_components
+        glob: CT2019B.molefrac_components_glb3x2_????-??-??.nc
+    fluxes:
+      path: "{{ dash_data_directory }}/CT2019B/fluxes"
+      glob: CT2019B.flux1x1-monthly.nc
+  s99oc_SOCCOM_v2020:
+    fluxes:
+      path: "{{ dash_data_directory }}/s99oc_SOCCOM_v2020/fluxes"
+      glob: s99oc_SOCCOM_v2020_daily.nc
+  s99oc_v2020:
+    fluxes:
+      path: "{{ dash_data_directory }}/s99oc_v2020/fluxes"
+      glob: s99oc_v2020_daily.nc      
+  s99oc_ADJocI40S_v2020:
+    fluxes:
+      path: "{{ dash_data_directory }}/s99oc_ADJocI40S_v2020/fluxes"
+      glob: s99oc_ADJocI40S_v2020_daily.nc
+  CAMSv20r1:
+    fluxes:
+      path: "{{ dash_data_directory }}/CAMSv20r1/fluxes"
+      glob: cams73_v20r1_co2_flux_surface_mm_??????.nc      
+  CTE2018:
+    fluxes:
+      path: "{{ dash_data_directory }}/CTE2018/fluxes"
+      glob: flux1x1_all_months.nc
+  CTE2020:
+    fluxes:
+      path: "{{ dash_data_directory }}/CTE2020/fluxes"
+      glob: CTE2020_monthly.nc
+  MIROC:
+    fluxes:
+      path: "{{ dash_data_directory }}/MIROC/fluxes"
+      glob: co2.MACTM-r84.JAMSTEC.????.nc
+  TM5-Flux-mrf:
+    fluxes:
+      path: "{{ dash_data_directory }}/TM5-Flux-mrf/fluxes"
+      glob: flux1x1.monthly.nc
+  TM5-Flux-m0f:
+    fluxes:
+      path: "{{ dash_data_directory }}/TM5-Flux-m0f/fluxes"
+      glob: flux1x1.monthly.nc
+  TM5-Flux-mwf:
+    fluxes:
+      path: "{{ dash_data_directory }}/TM5-Flux-mwf/fluxes"
+      glob: flux1x1.monthly.nc
+  TM5-Flux-mmf:
+    fluxes:
+      path: "{{ dash_data_directory }}/TM5-Flux-mmf/fluxes"
+      glob: flux1x1.monthly.nc
+
+ftp-access:
+  CT2017:
+    ftp-site: aftp.cmdl.noaa.gov
+    ftp-data-dir: /products
+  CT2019B:
+    ftp-site: aftp.cmdl.noaa.gov
+    ftp-data-dir: /products
