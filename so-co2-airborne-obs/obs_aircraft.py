@@ -702,15 +702,8 @@ def make_section(df, campaign, vertical_coord='z', multi_sensor=False, common_re
     return dset_section.set_coords(dims+('time', 'month', 'year', 'campaigns', 'ye', 'ze', 'LAT', 'ALT'))
 
 
-def make_profile_ds(model, tracer, profile_spec, file_name_cache,
-                    lat_lo, lat_hi, clobber=False):
+def make_profile_ds(model, tracer, profile_spec, lat_lo, lat_hi):
     """bin data onto regular altitude levels"""
-
-    if os.path.exists(file_name_cache) and clobber:
-        shutil.rmtree(file_name_cache)
-
-    if os.path.exists(file_name_cache):
-        return xr.open_zarr(file_name_cache)
 
     fields = ['co2', 'strat']
 
@@ -847,10 +840,6 @@ def make_profile_ds(model, tracer, profile_spec, file_name_cache,
 
     # compute the day of the year
     dset_profile.doy.data[:] = util.day_of_year_noleap(dset_profile.time.values)
-
-    # write to cache file
-    os.makedirs(os.path.dirname(file_name_cache), exist_ok=True)
-    dset_profile.to_zarr(file_name_cache)
 
     return dset_profile
 

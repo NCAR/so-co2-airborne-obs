@@ -33,39 +33,29 @@ so_lat_slice = slice(-80, -45)
 
 CO2_SF6_emission_ratio = 14.5
 
-# cache_dir = '/glade/p/eol/stephens/longcoll/co2-hole-cache'
-# try:
-#     os.listdir(cache_dir)
-# except:
-#     cache_dir = f"{os.environ['TMPDIR']}/co2-hole-cache"
-# try:
-#     os.listdir(cache_dir)
-# except:
-#     raise ValueError(f'cache_dir: {cache_dir} not accessible')
-    
+# set the cache directory
+USER = os.environ['USER']
+cache_dir_root = f'/glade/work/{USER}'
+try:
+    os.listdir(cache_dir_root)
+except:
+    cache_dir_root = os.environ['TMPDIR']
+try:
+    os.listdir(cache_dir_root)
+except:
+    raise ValueError(f'cache_dir: {cache_dir_root} not accessible')
+
+cache_dir = f'{cache_dir_root}/so-co2-airborne-obs'
+os.makedirs(cache_dir, exist_ok=True)
     
 # with open(f'{path_to_here}/data/named-points.yaml', 'r') as fid:
 #     named_points = yaml.safe_load(fid)
-
     
 season_yearfrac = dict(
     DJF=0.04, MAM=0.287, JJA=0.538, SON=0.790,
 )
-    
-def write_ds_out(dso, file_out):
-    file_out = os.path.realpath(file_out)
 
-    os.makedirs(os.path.dirname(file_out), exist_ok=True)
-    
-    if os.path.exists(file_out):
-        shutil.rmtree(file_out)
-    print('-'*30)
-    print(f'Writing {file_out}')
-    print(dso)
-    print()
-    dso.to_zarr(file_out);        
 
-    
 def savefig(plot_name):
     """Write figure"""
     
