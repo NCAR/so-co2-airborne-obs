@@ -1,0 +1,136 @@
+parameters:
+    ubin:
+      value: 300.
+      long_name: Upper θ-bin
+    lbin:
+       value: 280.
+       long_name: Lower θ-bin center
+    udθ:
+       value: 10.
+       long_name: Upper θ-bin width
+    lbin_as_upper_bound:
+       value: True
+       long_name: Use lower θ-bin value as upper bound
+    ubin_as_lower_bound:
+       value: False
+       long_name: Use upper θ-bin value as lower bound
+    gradient_lat_range:
+       value: [-90., -45.]
+       long_name: Latitude range over which to compute θ gradient
+    flux_lat_range:
+       value: [-90., -45.]
+       long_name: Latitude range over which to compute fluxes
+    flux_memory:
+       value: 90
+       long_name: Time over which to average fluxes (days)
+    fit_groups:
+       value: ['DJF', 'MAMJJASON']
+       long_name: Groups into which to aggregate campaigns for fitting the EC relationship
+
+model_input_lists:
+  total_constraint:
+    model_tracer_list:
+      - [CT2017, CO2]
+      - [CT2019B, CO2]
+      - [s99oc_v2020, CO2]
+      - [s99oc_ADJocI40S_v2020, CO2]
+      - [s99oc_SOCCOM_v2020, CO2]
+      - [CTE2018, CO2]
+      - [CTE2020, CO2]
+      - [MIROC, CO2]
+      - [CAMSv20r1, CO2]
+      - [TM5-Flux-m0f, CO2_SUM]
+      - [TM5-Flux-mmf, CO2_SUM]
+      - [TM5-Flux-mrf, CO2_SUM]
+      - [TM5-Flux-mwf, CO2_SUM]
+    model_list_sfco2_lnd:
+      - CT2017
+      - CT2019B
+      - s99oc_v2020
+      - s99oc_ADJocI40S_v2020
+      - CTE2018
+      - CTE2020
+      - MIROC
+#      - CAMSv18
+#      - CAMSv19
+      - CAMSv20r1
+      - TM5-Flux-m0f
+      - TM5-Flux-mmf
+      - TM5-Flux-mrf
+      - TM5-Flux-mwf
+  ocean_constraint:
+    model_tracer_list:
+      - [CT2017, CO2_OCN]
+      - [CT2019B, CO2_OCN]
+      - [CTE2018, CO2_OCN]
+      - [CTE2020, CO2_OCN]
+      - [MIROC, CO2_OCN]
+      - [CAMSv20r1, CO2_OCN]
+      - [s99oc_v2020, CO2_OCN]
+      - [s99oc_ADJocI40S_v2020, CO2_OCN]
+      - [s99oc_SOCCOM_v2020, CO2_OCN]
+      - [TM5-Flux-m0f, CO2_OCN]
+      - [TM5-Flux-mmf, CO2_OCN]
+      - [TM5-Flux-mrf, CO2_OCN]
+      - [TM5-Flux-mwf, CO2_OCN]
+    model_tracer_ext_list:
+      - [CT2017, CO2_LND+CO2_FFF]
+      - [CT2019B, CO2_LND+CO2_FFF]
+      - [CTE2018, CO2_LND+CO2_FFF]
+      - [CTE2020, CO2_LND+CO2_FFF]
+      - [CAMSv20r1, CO2_LND+CO2_FFF]
+      - [s99oc_v2020, CO2_LND+CO2_FFF]
+      - [s99oc_ADJocI40S_v2020, CO2_LND+CO2_FFF]
+      - [s99oc_SOCCOM_v2020, CO2_LND+CO2_FFF]
+  ocean_constraint_sensitivity:
+    model_tracer_list:
+      - [CT2017, CO2_OCN]
+      - [CT2019B, CO2_OCN]
+      - [CTE2018, CO2_OCN]
+      - [CTE2020, CO2_OCN]
+      - [MIROC, CO2_OCN]
+      - [CAMSv20r1, CO2_OCN]
+      - [s99oc_v2020, CO2_OCN]
+      - [s99oc_ADJocI40S_v2020, CO2_OCN]
+      - [s99oc_SOCCOM_v2020, CO2_OCN]
+      - [TM5-Flux-m0f, CO2_OCN]
+      - [TM5-Flux-mmf, CO2_OCN]
+      - [TM5-Flux-mrf, CO2_OCN]
+      - [TM5-Flux-mwf, CO2_OCN]
+      - [CESM, CO2_OCN]
+    model_tracer_ext_list:
+      - [CT2017, CO2_LND+CO2_FFF]
+      - [CT2019B, CO2_LND+CO2_FFF]
+      - [CTE2018, CO2_LND+CO2_FFF]
+      - [CTE2020, CO2_LND+CO2_FFF]
+      - [CAMSv20r1, CO2_LND+CO2_FFF]
+      - [s99oc_v2020, CO2_LND+CO2_FFF]
+      - [s99oc_ADJocI40S_v2020, CO2_LND+CO2_FFF]
+      - [s99oc_SOCCOM_v2020, CO2_LND+CO2_FFF]      
+  LND_constraint:
+    model_tracer_list:
+      - [CT2017, CO2_LND]
+      - [CT2019B, CO2_LND]
+      - [CTE2018, CO2_LND]
+      - [CTE2020, CO2_LND]
+      - [MIROC-prior, CO2_LND]
+      - [CAMSv20r1, CO2_LND]
+      - [s99oc_v2020, CO2_LND]
+      - [s99oc_ADJocI40S_v2020, CO2_LND]
+      - [s99oc_SOCCOM_v2020, CO2_LND]
+      
+model_families:
+    CT2017: TM5
+    CT2019B: TM5
+    CTE2018: TM5
+    CTE2020: TM5
+    MIROC: ACTM
+    CAMSv20r1: LMDZ
+    s99oc_v2020: TM3
+    s99oc_ADJocI40S_v2020: TM3
+    s99oc_SOCCOM_v2020: TM3
+    TM5-Flux-m0f: TM5
+    TM5-Flux-mmf: TM5
+    TM5-Flux-mrf: TM5
+    TM5-Flux-mwf: TM5
+    CESM: CAM
