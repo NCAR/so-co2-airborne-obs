@@ -154,7 +154,7 @@ def aircraft_profiles(source='obs', tracer='CO2',
     
     lat_lo, lat_hi = -90., -45.
     
-    file_name_cache = f'{cache_dir}/aircraft-profile-{source}-{vertical_coord}.zarr'
+    file_name_cache = f'{cache_dir}/aircraft-profile-{source}-{vertical_coord}-{tracer}.zarr'
     if os.path.exists(file_name_cache) and clobber:
         shutil.rmtree(file_name_cache)
 
@@ -168,7 +168,7 @@ def aircraft_profiles(source='obs', tracer='CO2',
         lat_hi=lat_hi,
     )    
     ds.to_zarr(file_name_cache, consolidated=True)
-    return ds
+    return ds.compute()
 
 
 def aircraft_profiles_seasonal(source='obs', tracer='CO2', 
@@ -188,5 +188,5 @@ def aircraft_profiles_seasonal(source='obs', tracer='CO2',
         ds = ds[['co2_med', 'co2_med_std']]
         
     ds.to_zarr(file_name_cache, consolidated=True)
-    return ds
+    return ds.compute()
     
