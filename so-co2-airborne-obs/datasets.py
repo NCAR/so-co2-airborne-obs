@@ -174,7 +174,7 @@ def aircraft_profiles(source='obs', tracer='CO2',
 def aircraft_profiles_seasonal(source='obs', tracer='CO2', 
                                vertical_coord='theta', clobber=False):
     
-    file_name_cache = f'{cache_dir}/aircraft-profile-seasonal-{source}-{vertical_coord}.zarr'
+    file_name_cache = f'{cache_dir}/aircraft-profile-seasonal-{source}-{vertical_coord}-{tracer}.zarr'
     if os.path.exists(file_name_cache) and clobber:
         shutil.rmtree(file_name_cache)
 
