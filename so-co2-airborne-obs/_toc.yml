@@ -8,6 +8,6 @@ sections:
   sections:
   - file: CO2-observations
   - file: CO2-seasonality
-  - file: emergent-constraint
-  - file: fluxes
+- file: emergent-constraint
+- file: fluxes
   
