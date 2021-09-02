@@ -1,0 +1,66 @@
+# this file contains lon/lat offsets for plotting 
+# station labels next to their markers on a map
+SPO:
+  lon: -24.8
+  lat: 4
+  horizontalalignment: left
+HBA:
+  lon: 0
+  lat: 2
+  horizontalalignment: right
+SYO:
+  lon: 0
+  lat: 3
+  horizontalalignment: left
+MAA:
+  lon: 3
+  lat: 3
+  horizontalalignment: left
+CYA:
+  lon: 0
+  lat: 3
+PSA:
+  lon: -14
+  lat: -3
+  horizontalalignment: right
+DRP:
+  lon: 6
+  lat: 2
+  horizontalalignment: center
+MQA:
+  lon: 0
+  lat: -3
+CRZ:
+  lon: 7
+  lat: -4
+  horizontalalignment: center
+CGO:
+  lon: -2
+  lat: -3
+AMS:
+  lon: 8
+  lat: 0 
+  horizontalalignment: center
+CPT:
+  lon: 1
+  lat: -6
+  horizontalalignment: center
+BHD: 
+  lon: -8
+  lat: 3
+  horizontalalignment: center
+USH:
+  lon: -5
+  lat: -2
+NMB:
+  lon: -5
+  lat: -1
+SEY:
+  lon: -2
+  lat: 0
+EIC:
+  lon: 2
+  lat: 0
+SMO:
+  lon: 4
+  lat: 0

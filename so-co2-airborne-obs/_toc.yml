@@ -7,6 +7,9 @@ sections:
 - file: observations
   sections:
   - file: CO2-observations
+    sections:
+    - file: airborne-observations
+    - file: surface-observations
   - file: CO2-seasonality
 - file: emergent-constraint
 - file: fluxes

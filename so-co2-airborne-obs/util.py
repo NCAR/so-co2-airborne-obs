@@ -467,6 +467,7 @@ def day_of_year(dates):
     day0 = [np.datetime64(f'{y:04}-01-01') - 1 for y in years]
     return ((dates - day0) / np.timedelta64(1, 'D')).astype(int)
 
+
 def daily_climatology(ds):
     """Compute a day-of-year climatology."""
 
