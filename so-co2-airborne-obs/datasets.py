@@ -189,4 +189,35 @@ def aircraft_profiles_seasonal(source='obs', tracer='CO2',
         
     ds.to_zarr(file_name_cache, consolidated=True)
     return ds.compute()
+
+
+def flux_inversions_cumsum_lat(clobber=False):
+    """return a dataset with the cumlative integral of flux with latitude"""
+    ds_cum_cache_file = f'{cache_dir}/sfco2-inversions-cumsum-lat.nc'
     
+    if os.path.exists(ds_cum_cache_file) and not clobber:
+        ds_cum = xr.open_dataset(ds_cum_cache_file)
+
+    else:
+        dsets_cum = {}
+        for model in sfco2_ocn_inversions:
+            mobj = models.Model(model)
+            ds_list = []
+            for lat_range in flux_lat_ranges:
+                ds = mobj.open_derived_dataset(
+                        'flux_ts_monthly', lat_range=lat_range
+                    ).sel(time=slice('1998', '2020'))
+
+                with xr.set_options(keep_attrs=True):                
+                    dss = ds.groupby('time.season').mean('time').compute()
+                ds_list.append(dss)
+
+            dsets_cum[model] = xr.concat(ds_list, 
+                                        dim=xr.DataArray(
+                                            [rng[-1] for rng in flux_lat_ranges], 
+                                            dims=('lat'), 
+                                            name='lat')
+                                       )
+        model = xr.DataArray(sfco2_ocn_inversions, dims=('model'), name='model')
+        ds_cum = xr.concat([dsets_cum[m].SFCO2_OCN for m in sfco2_ocn_inversions], dim=model).to_dataset()
+        ds_cum.to_netcdf(ds_cum_cache_file)
