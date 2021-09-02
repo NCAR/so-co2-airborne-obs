@@ -10,7 +10,7 @@ The Southern Ocean plays an important role in determining atmospheric CO2, yet e
 See {numref}`aircraft-surface-obs`.
 
 
-```{figure} figures/figure-1-co2-aircraft-surface-obs.png
+```{figure} figures/Fig-1-co2-aircraft-surface-obs.png
 :figwidth: 800px
 :name: aircraft-surface-obs
 
