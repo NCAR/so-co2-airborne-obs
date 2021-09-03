@@ -11,6 +11,7 @@ sections:
     - file: airborne-observations
     - file: surface-observations
     - file: surface-observations-sf6
+    - file: surface-observations-error
 - file: gradients  
   sections:
   - file: CO2-gradients
