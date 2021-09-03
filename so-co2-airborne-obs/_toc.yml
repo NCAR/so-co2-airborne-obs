@@ -4,22 +4,18 @@
 format: jb-article
 root: intro
 sections:
-- file: observations
+- file: obs-main
   sections:
-  - file: CO2-observations
-    sections:
-    - file: airborne-observations
-    - file: surface-observations
-    - file: surface-observations-sf6
-    - file: surface-observations-error
-- file: gradients  
+  - file: obs-aircraft
+  - file: obs-surface
+  - file: obs-surface-error
+  - file: obs-simulated-distributions        
+- file: gradients-main
   sections:
-  - file: CO2-gradients
-    sections:
-    - file: simulated-co2-distributions
-    - file: aircraft-profiles
-    - file: seasonal-amplitude
-    - file: methane-gradients
+  - file: gradients-seasonal-amplitude
+  - file: gradients-profiles
+  - file: gradients-methane
+  - file: gradients-sf6
 - file: emergent-constraint
   sections:
   - file: ec-s2n
