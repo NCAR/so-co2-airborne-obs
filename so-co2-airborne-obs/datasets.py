@@ -152,7 +152,8 @@ def _groupby(ds, groups, dim):
 def aircraft_profiles(source='obs', tracer='CO2', 
                       vertical_coord='theta', clobber=False):
     
-    lat_lo, lat_hi = -90., -45.
+    parameters = ec.get_parameters()
+    lat_lo, lat_hi = parameters['gradient_lat_range']
     
     file_name_cache = f'{cache_dir}/aircraft-profile-{source}-{vertical_coord}-{tracer}.zarr'
     if os.path.exists(file_name_cache) and clobber:

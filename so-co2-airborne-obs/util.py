@@ -1046,7 +1046,7 @@ def r2(ds_stl):
     return (1. - ssr/sst).values
 
 
-def stl_ds(da, trend, seasonal, period):
+def stl_ds(da, trend, seasonal, period, verbose):
     """
     Apply the STL model and return an Xarray Dataset.
             
@@ -1091,13 +1091,14 @@ def stl_ds(da, trend, seasonal, period):
         coords={'time': da.time},
     )
     dso.resid.data = dso.observed - dso.predicted            
-
-    print(f'STL fit: r^2 = {r2(dso):0.4f}')
+    
+    if verbose:
+        print(f'STL fit: r^2 = {r2(dso):0.4f}')
 
     return dso
 
 
-def apply_stl_decomp(co2_data, freq='monthly'):
+def apply_stl_decomp(co2_data, freq='monthly', verbose=True):
     """
     (1) Apply the STL fit with `trend_window=121`;
     (2) Fit the residuals from (1) with `trend_window=25`;
@@ -1126,7 +1127,8 @@ def apply_stl_decomp(co2_data, freq='monthly'):
             co2_data, 
             trend=trend_window, 
             seasonal=seasonal,
-            period = period,
+            period=period,
+            verbose=verbose,
         )
         spo_fits.append(stl_fit)
         co2_data.data = stl_fit.resid.data
@@ -1137,7 +1139,8 @@ def apply_stl_decomp(co2_data, freq='monthly'):
             spo_fit[v].data = spo_fit[v] + spo_fits[i][v]
 
     spo_fit.resid.data = spo_fit.observed - spo_fit.predicted
-    print(f'Overall r^2 = {r2(spo_fit):0.4f}')
+    if verbose:
+        print(f'Overall r^2 = {r2(spo_fit):0.4f}')
 
     return spo_fit
 
