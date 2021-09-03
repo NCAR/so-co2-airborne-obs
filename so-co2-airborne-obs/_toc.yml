@@ -11,7 +11,10 @@ sections:
     - file: airborne-observations
     - file: surface-observations
     - file: surface-observations-sf6
+- file: simulations  
   - file: CO2-seasonality
+    sections:
+    - file: simulated-co2-distributions
 - file: emergent-constraint
   sections:
   - file: ec-s2n

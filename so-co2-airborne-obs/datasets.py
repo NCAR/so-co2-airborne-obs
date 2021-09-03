@@ -5,9 +5,9 @@ from functools import partial
 import numpy as np
 import xarray as xr
 
+import emergent_constraint as ec
 import obs_aircraft
 import obs_surface
-import emergent_constraint as ec
 import util
 
 cache_dir = 'data/cache'
