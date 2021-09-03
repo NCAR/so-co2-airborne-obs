@@ -5,8 +5,8 @@ import yaml
 
 import xarray as xr
 import numpy as np
-import xpersist as xp
 
+from . import xpersist as xp
 from . import calc
 from . detrend import detrend
 from . generic_assets import list_assets
