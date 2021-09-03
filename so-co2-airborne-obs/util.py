@@ -73,9 +73,10 @@ def _gen_plotname(plot_name):
             if plot_basename == value:
                 fig_key = key 
                 break
-    if fig_key is not None:
-        plot_basename = f'Fig-{fig_key}-{plot_basename}'
-    
+                
+        if fig_key is not None:
+            plot_basename = f'Fig-{fig_key}-{plot_basename}'
+        
     return plot_basename
 
 
