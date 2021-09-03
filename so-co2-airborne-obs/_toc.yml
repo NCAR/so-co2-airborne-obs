@@ -12,10 +12,13 @@ sections:
     - file: surface-observations
     - file: surface-observations-sf6
 - file: gradients  
+  sections:
   - file: CO2-gradients
     sections:
     - file: simulated-co2-distributions
     - file: aircraft-profiles
+    - file: seasonal-amplitude
+    - file: methane-gradients
 - file: emergent-constraint
   sections:
   - file: ec-s2n

@@ -31,7 +31,7 @@ def aircraft_sections(
     df = obs_aircraft.open_aircraft_data(model=model)  
     
     campaign_info = obs_aircraft.get_campaign_info(
-        lump_orcas=True, clobber=clobber, verbose=True,
+        lump_orcas=True, clobber=clobber, verbose=False,
     )
     campaigns = list(campaign_info.keys())
     
