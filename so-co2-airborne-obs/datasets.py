@@ -100,7 +100,7 @@ def obs_surface_climatology(constituent='CO2', minus_spo=True):
 
 
 
-def _groupby_season_agg(ds, groups=['DJF', 'MAM', 'JJA', 'SON']):
+def _groupby_season_agg(ds, groups):
     """get groupby dict by season or groups of seasons"""
     group_ndx = {k: [] for k in groups}   
     for n, (season, ndx) in enumerate(ds.groupby('time.season').groups.items()):
@@ -172,8 +172,13 @@ def aircraft_profiles(source='obs', tracer='CO2',
 
 
 def aircraft_profiles_seasonal(source='obs', tracer='CO2', 
-                               vertical_coord='theta', clobber=False):
-    
+                               vertical_coord='theta', 
+                               seasonal_groups=['DJF', 'MAM', 'JJA', 'SON'],
+                               clobber=False):
+    """return dataset with profiles aggegated by seasonal groups
+       seasonal_group can be ['DJF', 'MAM', ...]
+       or ['DJF', 'MAMJJASON']
+    """
     file_name_cache = f'{cache_dir}/aircraft-profile-seasonal-{source}-{vertical_coord}-{tracer}.zarr'
     if os.path.exists(file_name_cache) and clobber:
         shutil.rmtree(file_name_cache)
@@ -182,10 +187,10 @@ def aircraft_profiles_seasonal(source='obs', tracer='CO2',
         return xr.open_zarr(file_name_cache).compute()
     
     ds = aircraft_profiles(source, tracer, vertical_coord, clobber)
-    ds = _groupby(ds, _groupby_season_agg(ds), dim='season')
+    ds = _groupby(ds, _groupby_season_agg(ds, seasonal_groups), dim='season')
     
-    if source == 'obs':
-        ds = ds[['co2_med', 'co2_med_std']]
+    #if source == 'obs':
+    #    ds = ds[['co2_med', 'co2_med_std']]
         
     ds.to_zarr(file_name_cache, consolidated=True)
     return ds.compute()
