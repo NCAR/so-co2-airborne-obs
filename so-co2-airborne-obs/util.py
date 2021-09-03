@@ -60,7 +60,7 @@ season_yearfrac = dict(
 def _gen_plotname(plot_name):
     """generate a name for plotting"""
     plot_basename, ext = os.path.splitext(plot_name)
-
+    
     if os.path.exists('_figure-order.yml'):
         with open('_figure-order.yml') as fid:
             fig_map = yaml.safe_load(fid)
@@ -92,7 +92,7 @@ def savefig(plot_name):
     plot_basename = _gen_plotname(plot_name)
     
     for ext in ['pdf', 'png']:
-        plt.savefig(os.path.join(dirout, f'{plot_basename}.{ext}'), 
+        plt.savefig(f'{dirout}/{plot_basename}.{ext}', 
                     dpi=300, 
                     bbox_inches='tight', 
                     metadata={'CreationDate': None})

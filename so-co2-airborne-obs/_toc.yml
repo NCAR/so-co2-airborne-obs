@@ -16,6 +16,7 @@ sections:
   - file: gradients-profiles
   - file: gradients-methane
   - file: gradients-sf6
+  - file: gradients-aircraft-sampling
 - file: emergent-constraint
   sections:
   - file: emergent-constraint-s2n
