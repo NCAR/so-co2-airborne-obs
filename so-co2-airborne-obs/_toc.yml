@@ -12,7 +12,7 @@ sections:
     - file: surface-observations
     - file: surface-observations-sf6
 - file: gradients  
-  - file: CO2-seasonality
+  - file: CO2-gradients
     sections:
     - file: simulated-co2-distributions
     - file: aircraft-profiles
