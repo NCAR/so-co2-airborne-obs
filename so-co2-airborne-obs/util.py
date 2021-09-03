@@ -56,17 +56,39 @@ season_yearfrac = dict(
 )
 
 
+
+def _gen_plotname(plot_name):
+    """generate a name for plotting"""
+    plot_basename, ext = os.path.splitext(plot_name)
+
+    if os.path.exists('_figure-order.yml'):
+        with open('_figure-order.yml') as fid:
+            fig_map = yaml.safe_load(fid)
+        assert len(set(fig_map.values())) == len(fig_map.values()), (
+            'non-unique figure names found in _figure-order.yml'
+        )
+        
+        fig_key = None
+        for key, value in fig_map.items():
+            if plot_basename == value:
+                fig_key = key 
+                break
+    if fig_key is not None:
+        plot_basename = f'Fig-{fig_key}-{plot_basename}'
+    
+    return plot_basename
+
+
 def savefig(plot_name):
     """Write figure"""
     
-    if 'CO2_HOLE_FIGURE_DIR' in os.environ:
-        dirout = os.environ['CO2_HOLE_FIGURE_DIR']
+    if 'TEST_PLOT_FIGURE_DIR' in os.environ:
+        dirout = os.environ['TEST_PLOT_FIGURE_DIR']
     else:
-        dirout = 'figures'
-    
+        dirout = 'figures'    
     os.makedirs(dirout, exist_ok=True)
     
-    plot_basename, ext = os.path.splitext(plot_name)
+    plot_basename = _gen_plotname(plot_name)
     
     for ext in ['pdf', 'png']:
         plt.savefig(os.path.join(dirout, f'{plot_basename}.{ext}'), 

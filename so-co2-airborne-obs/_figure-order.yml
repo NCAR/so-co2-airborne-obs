@@ -1,0 +1,24 @@
+1: co2-aircraft-surface-obs
+2: metrics-seasonal-cycle
+3: emergent-constraint-ocean_constraint
+4: fluxes-ocean_constraint
+S01: flight-tracks
+S02: aircraft-sections
+S03: zonal-mean-sections-CT2019B
+S04: surface-co2-maps
+S05: station-coverage
+S06: profiles-bottomrow-fff+lnd
+S07: seasonal-amplitude
+S08: methane
+S09: SF6
+S10: emergent-constraint-by-campaign-DJF-ocean_constraint
+S11: emergent-constraint-by-campaign-MAMJJASON-ocean_constraint
+S12: flux-timeseries-ocean_constraint
+S13: SPO-CGO-record-discrepancies
+S14: 
+S15: LMG-data
+S16: figure-3-emergent-constraint-total_constraint
+S17: theta-bin-S2N-ocean_constraint
+S18: fluxes-region-S2N-ocean_constraint
+S19: seasonal-cycle-zonal-representativeness
+
