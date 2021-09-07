@@ -33,28 +33,12 @@ so_lat_slice = slice(-80, -45)
 
 CO2_SF6_emission_ratio = 14.5
 
-# set the cache directory
-USER = os.environ['USER']
-cache_dir_root = f'/glade/work/{USER}'
-try:
-    os.listdir(cache_dir_root)
-except:
-    cache_dir_root = os.environ['TMPDIR']
-try:
-    os.listdir(cache_dir_root)
-except:
-    raise ValueError(f'cache_dir: {cache_dir_root} not accessible')
-
-cache_dir = f'{cache_dir_root}/so-co2-airborne-obs'
-os.makedirs(cache_dir, exist_ok=True)
-    
 # with open(f'{path_to_here}/data/named-points.yaml', 'r') as fid:
 #     named_points = yaml.safe_load(fid)
     
 season_yearfrac = dict(
     DJF=0.04, MAM=0.287, JJA=0.538, SON=0.790,
 )
-
 
 
 def _gen_plotname(plot_name):

@@ -8,7 +8,6 @@ import numpy as np
 
 import dask
 
-from . config import extended_domain_subset
 from . generic_assets import list_assets
 from . import calc
 
@@ -19,6 +18,10 @@ products = [
     'molefractions_surface',
     'molefractions_z',
 ]   
+
+extended_domain_subset = dict(
+    lat=slice(-90, -30)
+)    
     
 z3_coord_26lev = xr.DataArray(
     np.array([ 100.,   150.,   200.,   300.,   400.,   800.,  1200.,  1600.,

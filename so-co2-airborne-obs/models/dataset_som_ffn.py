@@ -3,26 +3,18 @@ Routines support load landschutzer fluxes
 """
 
 import os
+import intake
 import xarray as xr
 import numpy as np
 
 from . import calc
-
-cache_dir = '/glade/p/eol/stephens/longcoll/co2-hole-cache'
-try:
-    os.listdir(cache_dir)
-except:
-    cache_dir = os.environ['TMPDIR']
-try:
-    os.listdir(cache_dir)
-except:
-    raise ValueError(f'cache_dir: {cache_dir} not accessible')
+from . config import path_to_here, project_tmpdir
 
 this_model = 'SOM-FFN'
        
-def open_dataset(product, freq='mon'):
+def open_dataset(product='fluxes', freq='mon'):
     """open a dataset"""
-
+    assert product in ['fluxes']
     if product == 'fluxes':
         return _open_dataset_fluxes(freq)
     
@@ -32,17 +24,17 @@ def _open_dataset_fluxes(freq='mon'):
        gridded sea surface pCO2 product from 1982 onward and its monthly climatology
     """
     
-    data_dir = f'{cache_dir}/landschutzer/download'
-    filename = 'spco2_MPI_SOM-FFN_v2018.nc'
-    flux_file = f'{data_dir}/{filename}'
-
+    #data_dir = f'{cache_dir}/landschutzer/download'
+    #filename = 'spco2_MPI_SOM-FFN_v2018.nc'
+    #flux_file = f'{data_dir}/{filename}'
+    
     rename = {'fgco2_raw': 'SFCO2_OCN',
               'fgco2_smoothed': 'SFCO2_OCN_smoothed',
              }   
-    
-    data_vars = ['SFCO2_OCN',]
-            
-    ds = xr.open_dataset(flux_file, drop_variables='date')
+    data_vars = ['SFCO2_OCN',]    
+
+    cat = intake.open_catalog(f'{path_to_here}/fgco2_MPI_SOM_FFN.yml')
+    ds = cat.fgco2_MPI_SOM_FFN.to_dask().compute()            
     ds['area'] = calc.compute_grid_area(ds)
 
     ds = ds.rename(rename)

@@ -3,8 +3,9 @@
 import yaml
 from glob import glob
 from jinja2 import Template
-from .config import path_to_here, known_products, model_data_dir
+from .config import path_to_here, model_data_dir
 
+known_products = ['molefractions', 'fluxes', 'ObsPack']
 
 def get_model_info(this_model):
     """return model info"""

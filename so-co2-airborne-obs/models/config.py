@@ -1,23 +1,52 @@
 import os
 import yaml
-from . import dash_assets
+from jinja2 import Template
 
 path_to_here = os.path.dirname(os.path.realpath(__file__))
 
-#project_tmpdir = f"{os.environ['TMPDIR']}/so-co2-airborne-obs/models/cache"
-project_tmpdir = '/glade/p/eol/stephens/longcoll/cache'
+
+def get_config_dict():
+    """return the configuration dictionary with environment variables replaced"""
+    
+    assert os.path.exists('_config_calc.yml'), (
+        'Missing _config_calc.yml\n' +
+        'set paths in _config_calc.yml\n' +
+        'Example:\n' +
+        'project_tmpdir: /glade/p/eol/stephens/longcoll/cache\n' +
+        'model_data_dir_root: "/glade/work/{{env(USER)}}/so-co2-airborne-obs/model-data"\n'
+    )
+    
+    with open('_config_calc.yml') as fid:
+        config_dict_in = yaml.safe_load(fid)    
+    
+    required_keys = ['project_tmpdir', 'model_data_dir']
+    for key in required_keys:
+        assert key in config_dict_in, f'config missing {key}'
+        
+    config_dict = {}
+    for key, value in config_dict_in.items():
+        t = Template(value)
+        config_dict[key] = t.render(env=os.environ)
+    
+    return config_dict    
+    
+    
+# local cache path: files that are small enough to fit in the repo
 cache_rootdir_local = f'{path_to_here}/data-cache'
-model_data_dir_root = f"/glade/work/{os.environ['USER']}/so-co2-airborne-obs/model-data"
-
-os.makedirs(project_tmpdir, exist_ok=True)
 os.makedirs(cache_rootdir_local, exist_ok=True)
-os.makedirs(model_data_dir_root, exist_ok=True)
 
-model_data_dir = dash_assets.ensure_data(model_data_dir_root)
+# get configuration dictionary
+config_dict = get_config_dict()
 
-known_products = ['molefractions', 'fluxes', 'ObsPack']
-preferred_time_units = 'days since 2000-01-01 00:00:00'
+# cache directory for big file
+project_tmpdir = f"{config_dict['project_tmpdir']}/cache-model-calcs"
+os.makedirs(project_tmpdir, exist_ok=True)
 
-extended_domain_subset = dict(
-    lat=slice(-90, -30)
+os.environ['INTAKE_LOCAL_CACHE_DIR'] = f'{project_tmpdir}/intake-cache'    
+
+# location of model data
+model_data_dir = config_dict['model_data_dir']
+assert os.path.exists(model_data_dir), (
+    f'model_data_dir d.n.e.: {model_data_dir}'
 )
+

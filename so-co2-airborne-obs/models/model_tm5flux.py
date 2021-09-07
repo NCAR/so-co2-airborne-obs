@@ -8,7 +8,6 @@ import numpy as np
 
 import dask
 
-from . config import extended_domain_subset
 from . generic_assets import list_assets
 from . import calc
 

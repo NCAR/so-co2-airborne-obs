@@ -116,16 +116,6 @@ class Model(object):
                 cache_rootdir=cache_rootdir_local,
                 cache_format='nc',
             ),
-            spo_ts_daily_detrend=dict(
-                function=self._compute_spo_ts_daily_detrend,
-                cache_rootdir=cache_rootdir_local,
-                cache_format='zarr',
-            ),
-            spo_ts_daily_stl_trend=dict(
-                function=self._compute_spo_ts_daily_stl_trend,
-                cache_rootdir=cache_rootdir_local,
-                cache_format='zarr',
-            ),            
             spo_ts_monthly=dict(
                 function=self._compute_spo_ts_monthly,
                 cache_rootdir=cache_rootdir_local,
@@ -136,16 +126,6 @@ class Model(object):
                 cache_rootdir=cache_rootdir_bigfiles,
                 cache_format='zarr',
             ),
-            molefractions_surface_daily_detrend=dict(
-                function=self._compute_molefractions_surface_daily_detrend,
-                cache_rootdir=cache_rootdir_bigfiles,
-                cache_format='zarr',
-            ),                  
-            molefractions_surface_monthly=dict(
-                function=self._compute_molefractions_surface_monthly,
-                cache_rootdir=cache_rootdir_bigfiles,
-                cache_format='zarr',
-            ),            
             molefractions_z=dict(
                 function=self._compute_molefractions_z,
                 cache_rootdir=cache_rootdir_bigfiles,
@@ -156,11 +136,6 @@ class Model(object):
                 cache_rootdir=cache_rootdir_bigfiles,
                 cache_format='zarr',
             ),                 
-            molefractions_z_za_detrend=dict(
-                function=self._compute_molefractions_z_za_detrend,
-                cache_rootdir=cache_rootdir_bigfiles,
-                cache_format='zarr',
-            ),            
             molefractions_theta=dict(
                 function=self._compute_molefractions_theta,
                 cache_rootdir=cache_rootdir_bigfiles,
@@ -171,11 +146,6 @@ class Model(object):
                 cache_rootdir=cache_rootdir_bigfiles,
                 cache_format='zarr',
             ),
-            molefractions_theta_za_detrend=dict(
-                function=self._compute_molefractions_theta_za_detrend,
-                cache_rootdir=cache_rootdir_bigfiles,
-                cache_format='zarr',
-            ),                   
             molefractions_theta_bins=dict(
                 function=self._compute_molefractions_theta_bins,
                 cache_rootdir=cache_rootdir_local,
@@ -256,27 +226,11 @@ class Model(object):
         else:
             return compute_func(**kwargs)
     
-    def _compute_molefractions_surface_monthly(self):
-        """get surface mole fractions at monthly frequency"""
-        return self.open_dataset(
-            product='molefractions_surface',
-            freq='monthly',
-        )
-
     def _compute_molefractions_surface_daily(self):
         """get surface mole fractions at daily frequency"""
         return self.open_dataset(
             product='molefractions_surface',
             freq='daily',
-        )
-    
-    def _compute_molefractions_surface_daily_detrend(self):
-        """get surface mole fractions at daily frequency, detrended"""
-        return detrend(
-            self.open_derived_dataset(
-                'molefractions_surface_daily',
-            ),
-            map_blocks=True,
         )
     
     def _compute_spo_ts_daily(self):
@@ -302,43 +256,7 @@ class Model(object):
             dsa[v] = ds[v]
 
         return dsa
-    
-    def _compute_spo_ts_daily_detrend(self):
-        """get the spo timeseries, detrended"""        
-        return detrend(
-            self._compute_spo_ts_daily(),
-        )
         
-    def _compute_spo_ts_daily_stl_trend(self):
-        return calc.get_stl_trend_ds(
-            self.open_derived_dataset('spo_ts_daily'),
-            freq='daily',
-        )
-        
-    def _compute_spo_ts_monthly(self):
-        """get the spo timeseries"""        
-
-        ds = self.open_dataset(
-            product='molefractions_surface',
-            freq='monthly',
-        )
-        
-        lat_vars = [v for v in ds.variables if 'lat' in ds[v].dims]
-        other_vars = set(ds.variables) - set(lat_vars)        
-        
-        with xr.set_options(keep_attrs=True):            
-            dsa = ds.sel(
-                lat=-90, 
-                method='nearest', 
-                drop=True,
-            ).mean('lon').drop(['area']).compute()
-
-        # copy other vars
-        for v in other_vars:
-            dsa[v] = ds[v]
-
-        return dsa
-    
     def _compute_flux_ts_monthly(self, lat_range):
         """Compute the regional mean flux south of `lat_crit`"""
         
@@ -427,34 +345,12 @@ class Model(object):
     def _compute_molefractions_surface(self):
         """Compute the molefraction fields"""        
         return self.open_dataset('molefractions_surface')
-
-    def _compute_molefractions_theta(self):
-        """Compute the molefraction fields in theta coords"""        
-        return self.open_dataset('molefractions_theta')
-    
-    def _compute_molefractions_theta_za(self):
-        """Compute the molefraction fields in theta coords"""        
-        return self.open_derived_dataset('molefractions_theta').mean('lon').compute()
-    
-    def _compute_molefractions_theta_za_detrend(self):
-        """Compute the detrended zonal mean molefraction in theta coords"""        
-        with xr.set_options(keep_attrs=True):
-            ds = self.open_derived_dataset('molefractions_theta_za').compute()
-            
-        return detrend(ds)
-    
+   
     def _compute_molefractions_z_za(self):
         """Compute the zonal mean molefraction in z coords"""        
         with xr.set_options(keep_attrs=True):
             return self.open_derived_dataset('molefractions_z').mean('lon').compute()
     
-    def _compute_molefractions_z_za_detrend(self):
-        """Compute the detrended zonal mean molefraction in z coords"""        
-        with xr.set_options(keep_attrs=True):
-            ds = self.open_derived_dataset('molefractions_z').mean('lon').compute()
-            
-        return detrend(ds)
-
     def _compute_molefractions_theta_bins(self, lat_bounds, theta_bins, lon_bounds=None):
         """Compute theta-binned dataset"""
         ds = self.open_dataset('molefractions')
@@ -534,6 +430,7 @@ class Model(object):
                 dso[v] = dso[v].transpose(*newdims)
                 
         return dso
+
     
 def check_vars_coords(ds, expected_vars, expected_coords):
     missing_vars = set(expected_vars) - set(ds.variables)
