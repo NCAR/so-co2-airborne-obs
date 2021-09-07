@@ -1,42 +1,11 @@
 import os
-from glob import glob
 import yaml
-
-
-def exec_nb(notebook_filename, output_dir='.', kernel_name='python3'):
-    """
-    Execute a notebook.
-    see http://nbconvert.readthedocs.io/en/latest/execute_api.html
-    """
-    import io
-    import nbformat
-    from nbconvert.preprocessors import ExecutePreprocessor
-    from nbconvert.preprocessors import CellExecutionError
-
-    #-- open notebook
-    with io.open(notebook_filename, encoding='utf-8') as f:
-        nb = nbformat.read(f, as_version=4)
-
-    # config for execution
-    ep = ExecutePreprocessor(timeout=600, kernel_name=kernel_name)
-
-    # run with error handling
-    try:
-        out = ep.preprocess(nb, {'metadata': {'path': './'}})
-
-    except CellExecutionError:
-        out = None
-        msg = f'Error executing the notebook "{notebook_filename}".\n'
-        msg += f'See notebook "{notebook_filename}" for the traceback.\n'
-        print(msg)
-        raise
-
-    finally:
-        nb_out = os.path.join(output_dir, os.path.basename(notebook_filename))
-        with io.open(nb_out, mode='w', encoding='utf-8') as f:
-            nbformat.write(nb, f)
-
-    return out
+import subprocess 
+import json 
+import pathlib
+import nbterm 
+import traceback
+import asyncio
 
 
 def get_toc_files(toc_dict, file_list=[]):
@@ -52,6 +21,39 @@ def get_toc_files(toc_dict, file_list=[]):
     return file_list
 
 
+def get_conda_kernel_cwd(name: str):
+    command = ['conda', 'env', 'list', '--json']
+    output = subprocess.check_output(command).decode('ascii')
+    envs = json.loads(output)['envs']
+    for env in envs:
+        env = pathlib.Path(env)
+        if name == env.stem:
+            return env 
+
+    else:
+        return None
+
+
+def execute_notebook(notebook_path: str, kernel_cwd: str, output_dir=None):
+    try:
+        _nb_path = pathlib.Path(notebook_path)
+        if not output_dir:
+            output_dir = _nb_path.parent
+
+        save_path = pathlib.Path(output_dir) / _nb_path.name
+        nb = nbterm.Notebook(nb_path=_nb_path, kernel_cwd=kernel_cwd, save_path=save_path)
+        asyncio.run(nb.run_all())
+        nb.save(save_path)
+        print(f"Executed notebook has been saved to: {save_path}")
+
+    except Exception:
+        msg = f'Error executing the notebook "{notebook_path}".\n'
+        msg += f'See notebook "{notebook_path}" for the traceback.\n'
+        print(f'{traceback.format_exc()}\n{msg}')
+
+
+
+
 if __name__ == '__main__':
     
     output_dir = '/glade/u/home/mclong/test-calc'
@@ -63,7 +65,10 @@ if __name__ == '__main__':
     pre_notebooks = [] #['_prestage-data.ipynb', '_precompute.ipynb']
     notebooks = list(filter(lambda b: os.path.exists(f'{b}.ipynb'), get_toc_files(toc_dict)))
     notebooks = [f'{f}.ipynb' for f in notebooks]
-    
-    for nb in pre_notebooks + notebooks:
-        print(f'executing {nb}')
-        exec_nb(nb)
+
+    kernel_cwd = get_conda_kernel_cwd(name='so-co2')
+    if kernel_cwd:
+        for nb in pre_notebooks + notebooks:
+            print(f'executing {nb}')
+            execute_notebook(nb, kernel_cwd=kernel_cwd)
+          
