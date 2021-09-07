@@ -66,4 +66,4 @@ if __name__ == '__main__':
     
     for nb in pre_notebooks + notebooks:
         print(f'executing {nb}')
-        exec_nb(nb, kernel_name='conda-env-miniconda3-so-co2-py')
+        exec_nb(nb)
