@@ -8,15 +8,21 @@ import traceback
 import asyncio
 
 
-def get_toc_files(toc_dict, file_list=[]):
-    
+def get_toc_files(toc_dict, file_list=[], notebooks_only=True):
+    """return a list of files in the _toc.yml"""
     for key, value in toc_dict.items():
         if key in ['root', 'file']:
-            file_list.append(value)
+            if notebooks_only and not os.path.exists(value + '.ipynb'):
+                continue
+            if notebooks_only:
+                file_list.append(f'{value}.ipynb')
+            else:
+                file_list.append(value)
+                
         elif key == 'sections':
             file_list_ext = []
             for sub in value:
-                file_list_ext = get_toc_files(sub, file_list_ext)
+                file_list_ext = get_toc_files(sub, file_list_ext, notebooks_only)
             file_list.extend(file_list_ext)
     return file_list
 
@@ -63,12 +69,13 @@ if __name__ == '__main__':
         toc_dict = yaml.safe_load(fid)
     
     pre_notebooks = [] #['_prestage-data.ipynb', '_precompute.ipynb']
-    notebooks = list(filter(lambda b: os.path.exists(f'{b}.ipynb'), get_toc_files(toc_dict)))
-    notebooks = [f'{f}.ipynb' for f in notebooks]
+    notebooks = get_toc_files(toc_dict) #[f'{f}.ipynb' for f in notebooks]
 
     kernel_cwd = get_conda_kernel_cwd(name='so-co2')
+    
     if kernel_cwd:
         for nb in pre_notebooks + notebooks:
             print(f'executing {nb}')
             execute_notebook(nb, kernel_cwd=kernel_cwd)
+            break
           
