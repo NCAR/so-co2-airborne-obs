@@ -26,6 +26,7 @@ dependencies:
 - matplotlib
 - metpy
 - myst-nb
+- nb_conda_kernels
 - nc-time-axis
 - ncar-jobqueue
 - netcdf4

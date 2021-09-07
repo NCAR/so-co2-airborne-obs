@@ -14,7 +14,9 @@ To reproduce the calculation:
 conda env create -f environment.yml
 ```
 2. Set paths for input data and cache files by editing [_config_calc.yml](so-co2-airborne-obs/_config_calc.yml)
-3. Run [run_calc.py](so-co2-airborne-obs/run_calc.py), which executes all the notebooks.
+3. Run [_prestage-data.ipynb](so-co2-airborne-obs/_prestage-data.ipynb), which downloads input data.
+4. Run [_precompute.ipynb](so-co2-airborne-obs/_prestage-data.ipynb), which performs some time-consuming computations and cache's the results in `project_tmpdir`.
+5. Run all the notebooks in [_toc.yml](so-co2-airborne-obs/_toc.yml).
 
 
 ### Building the book

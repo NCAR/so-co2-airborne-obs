@@ -116,11 +116,6 @@ class Model(object):
                 cache_rootdir=cache_rootdir_local,
                 cache_format='nc',
             ),
-            spo_ts_monthly=dict(
-                function=self._compute_spo_ts_monthly,
-                cache_rootdir=cache_rootdir_local,
-                cache_format='zarr',
-            ),
             molefractions_surface_daily=dict(
                 function=self._compute_molefractions_surface_daily,
                 cache_rootdir=cache_rootdir_bigfiles,
@@ -136,16 +131,6 @@ class Model(object):
                 cache_rootdir=cache_rootdir_bigfiles,
                 cache_format='zarr',
             ),                 
-            molefractions_theta=dict(
-                function=self._compute_molefractions_theta,
-                cache_rootdir=cache_rootdir_bigfiles,
-                cache_format='zarr',
-            ),     
-            molefractions_theta_za=dict(
-                function=self._compute_molefractions_theta_za,
-                cache_rootdir=cache_rootdir_bigfiles,
-                cache_format='zarr',
-            ),
             molefractions_theta_bins=dict(
                 function=self._compute_molefractions_theta_bins,
                 cache_rootdir=cache_rootdir_local,
