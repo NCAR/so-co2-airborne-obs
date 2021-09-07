@@ -9,8 +9,8 @@ import numpy as np
 import calendar
 from collections.abc import Iterable
 
+from . config import project_tmpdir
 
-loc_data_dir = '/glade/p/eol/stephens/longcoll/co2-hole-cache'
 
 def calc_eomday(year, month):
     """end of month day"""
@@ -73,7 +73,7 @@ def ftp_files(ftp_site, ftp_data_dir, pinfo_all, clobber=False, check_md5=False)
 
     for pinfo in pinfo_all:
         local_dir = pinfo['path']
-        remote_dir = os.path.join(ftp_data_dir, pinfo["path"].replace(loc_data_dir+"/", ""))
+        remote_dir = os.path.join(ftp_data_dir, pinfo["path"].replace(project_tmpdir+"/", ""))
 
         glob_expression = pinfo['glob']
 
