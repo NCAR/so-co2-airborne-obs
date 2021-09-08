@@ -88,7 +88,7 @@ def nb_clear_outputs(file_in, file_out=None):
     nbformat.write(data, file_out)
 
     
-def execute_notebook(notebook_path: str, kernel_cwd: str, output_dir=None):
+def execute_notebook(notebook_path: str, kernel_cwd=None, output_dir=None):
     try:
         _nb_path = pathlib.Path(notebook_path)
         if not output_dir:
@@ -110,54 +110,49 @@ def execute_notebook(notebook_path: str, kernel_cwd: str, output_dir=None):
 
 
 if __name__ == '__main__':
-
     
-    output_dir = '/glade/u/home/mclong/test-calc'
-    subprocess.check_call(['rm', '-frv', output_dir])
-    os.makedirs(output_dir, exist_ok=True)    
-
-    print('identifying kernel')
-    kernel_cwd = get_conda_kernel_cwd(name='so-co2')
-    print(kernel_cwd, end='\n\n')
+    project_kernel = 'so-co2'
+        
+    assert os.environ['CONDA_DEFAULT_ENV'] == project_kernel, (
+        f'activate "{project_kernel}" conda environment before running'
+    )
 
     print('notebooks in _toc.yml')
     notebooks = list_notebooks_in_toc()
-    print(notebooks, end='\n\n')
-    
-    
-    print('getting notebook kernel names')
-    notebook_kernels = {}
+    print(notebooks, end='\n\n')   
+       
+    print('checking notebook kernels')
     for nb in notebooks:
-        notebook_kernels[nb] = nb_get_kernelname(nb)
-        print(f'{nb}: {notebook_kernels[nb]}')
+        notebook_kernel = nb_get_kernelname(nb)
+        assert notebook_kernel == f'conda-env-miniconda3-{project_kernel}-py', (
+            f'{nb}: unexpected kernel: {notebook_kernel}'
+        )
     print()    
-    
-    notebooks = ['_prestage-data.ipynb']
-    
+        
     cwd = os.getcwd()
-    if kernel_cwd:
-        failed_list = []
-        for nb in notebooks:
-            print('-'*80)
-            print(f'executing: {nb}')
-            
-            # set the kernel name to fool nbterm into running this
-            nb_set_kernelname(nb, kernel_name='python3')
-            
-            # clear output
-            nb_clear_outputs(nb)
-            
-            # run the notebook
-            ok = execute_notebook(nb, kernel_cwd=kernel_cwd, output_dir=cwd)
-            
-            # set the kernel back
-            nb_set_kernelname(nb, kernel_name=notebook_kernels[nb])
-                              
-            if not ok:
-                print('failed')
-                failed_list.append(nb)
-            print()
-            
+    failed_list = []
+    for nb in notebooks:
+        print('-'*80)
+        print(f'executing: {nb}')
+
+        # set the kernel name to fool nbterm into running this
+        nb_set_kernelname(nb, kernel_name='python3')
+
+        # clear output
+        nb_clear_outputs(nb)
+
+        # run the notebook
+        ok = execute_notebook(nb, output_dir=cwd)
+
+        # set the kernel back
+        nb_set_kernelname(nb, kernel_name=project_kernel)
+
+        if not ok:
+            print('failed')
+            failed_list.append(nb)
+        print()
+    
+    if failed_list:
         print('failed list')  
         print(failed_list)
 
