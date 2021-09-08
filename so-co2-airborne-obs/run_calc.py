@@ -46,15 +46,6 @@ def get_conda_kernel_cwd(name: str):
         return None
 
 
-def list_notebooks_in_toc():
-    """list notebooks found in _toc.yml"""
-    with open('_toc.yml') as fid:
-        toc_dict = yaml.safe_load(fid)
-    
-    pre_notebooks = ['_prestage-data.ipynb',] # '_precompute.ipynb']
-    return pre_notebooks + get_toc_files(toc_dict)
-    
-
 def nb_set_kernelname(file_in, kernel_name, file_out=None):
     """set the kernel name to python3"""
     if file_out is None:
@@ -117,7 +108,11 @@ if __name__ == '__main__':
     )
 
     print('notebooks in _toc.yml')
-    notebooks = list_notebooks_in_toc()
+    with open('_toc.yml') as fid:
+        toc_dict = yaml.safe_load(fid)
+    
+    pre_notebooks = ['_prestage-data.ipynb', '_precompute.ipynb']
+    notebooks = pre_notebooks + get_toc_files(toc_dict)
     print(notebooks, end='\n\n')   
        
     print('checking notebook kernels')
