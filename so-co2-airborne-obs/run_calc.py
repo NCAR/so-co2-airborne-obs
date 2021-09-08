@@ -88,7 +88,7 @@ def nb_clear_outputs(file_in, file_out=None):
     nbformat.write(data, file_out)
 
     
-def execute_notebook(notebook_path: str, kernel_cwd=None, output_dir=None):
+def nb_execute(notebook_path: str, kernel_cwd=None, output_dir=None):
     try:
         _nb_path = pathlib.Path(notebook_path)
         if not output_dir:
@@ -106,7 +106,6 @@ def execute_notebook(notebook_path: str, kernel_cwd=None, output_dir=None):
         msg += f'See notebook "{notebook_path}" for the traceback.\n'
         print(f'{traceback.format_exc()}\n{msg}')
         return False
-
 
 
 if __name__ == '__main__':
@@ -142,16 +141,15 @@ if __name__ == '__main__':
         nb_clear_outputs(nb)
 
         # run the notebook
-        ok = execute_notebook(nb, output_dir=cwd)
-
-        # set the kernel back
-        nb_set_kernelname(nb, kernel_name=project_kernel)
-
+        ok = nb_execute(nb, output_dir=cwd)
         if not ok:
             print('failed')
             failed_list.append(nb)
+
+        # set the kernel back
+        nb_set_kernelname(nb, kernel_name=project_kernel)
         print()
-    
+
     if failed_list:
         print('failed list')  
         print(failed_list)
