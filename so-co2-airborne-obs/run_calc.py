@@ -79,7 +79,7 @@ def nb_clear_outputs(file_in, file_out=None):
     nbformat.write(data, file_out)
 
     
-def nb_execute(notebook_path: str, kernel_cwd=None, output_dir=None):
+def nb_execute_nbterm(notebook_path: str, kernel_cwd=None, output_dir=None):
     try:
         _nb_path = pathlib.Path(notebook_path)
         if not output_dir:
@@ -97,6 +97,42 @@ def nb_execute(notebook_path: str, kernel_cwd=None, output_dir=None):
         msg += f'See notebook "{notebook_path}" for the traceback.\n'
         print(f'{traceback.format_exc()}\n{msg}')
         return False
+
+    
+def nb_execute(notebook_filename, output_dir='.', kernel_name='python3'):
+    """
+    Execute a notebook.
+    see http://nbconvert.readthedocs.io/en/latest/execute_api.html
+    """
+    import io
+    import nbformat
+    from nbconvert.preprocessors import ExecutePreprocessor
+    from nbconvert.preprocessors import CellExecutionError
+
+    #-- open notebook
+    with io.open(notebook_filename, encoding='utf-8') as f:
+        nb = nbformat.read(f, as_version=nbformat.NO_CONVERT)
+
+    # config for execution
+    ep = ExecutePreprocessor(timeout=600, kernel_name=kernel_name)
+
+    # run with error handling
+    try:
+        out = ep.preprocess(nb, {'metadata': {'path': './'}})
+
+    except CellExecutionError:
+        out = None
+        msg = f'Error executing the notebook "{notebook_filename}".\n'
+        msg += f'See notebook "{notebook_filename}" for the traceback.\n'
+        print(msg)
+        raise
+
+    finally:
+        nb_out = os.path.join(output_dir, os.path.basename(notebook_filename))
+        with io.open(nb_out, mode='w', encoding='utf-8') as f:
+            nbformat.write(nb, f)
+
+    return out    
 
 
 if __name__ == '__main__':
@@ -121,11 +157,14 @@ if __name__ == '__main__':
         assert notebook_kernel == f'conda-env-miniconda3-{project_kernel}-py', (
             f'{nb}: unexpected kernel: {notebook_kernel}'
         )
-    print()    
-        
+    print('checked.')    
+
+    
     cwd = os.getcwd()
     failed_list = []
     for nb in notebooks:
+        if 'obs-aircraft' not in nb:
+            continue
         print('-'*80)
         print(f'executing: {nb}')
 
@@ -142,8 +181,10 @@ if __name__ == '__main__':
             failed_list.append(nb)
 
         # set the kernel back
-        nb_set_kernelname(nb, kernel_name=project_kernel)
+        nb_set_kernelname(nb, kernel_name=f'conda-env-miniconda3-{project_kernel}-py')
         print()
+        
+        break
 
     if failed_list:
         print('failed list')  
