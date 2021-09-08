@@ -27,6 +27,7 @@ dependencies:
 - metpy
 - myst-nb
 - nb_conda_kernels
+- nbformat
 - nbterm
 - nc-time-axis
 - ncar-jobqueue

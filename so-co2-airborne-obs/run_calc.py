@@ -1,9 +1,14 @@
 import os
-import yaml
 import subprocess 
-import json 
+import sys
 import pathlib
+
+import json 
+import yaml
+
+import nbformat
 import nbterm 
+
 import traceback
 import asyncio
 
@@ -28,6 +33,7 @@ def get_toc_files(toc_dict, file_list=[], notebooks_only=True):
 
 
 def get_conda_kernel_cwd(name: str):
+    """get the directory of a conda kernel by name"""
     command = ['conda', 'env', 'list', '--json']
     output = subprocess.check_output(command).decode('ascii')
     envs = json.loads(output)['envs']
@@ -40,6 +46,48 @@ def get_conda_kernel_cwd(name: str):
         return None
 
 
+def list_notebooks_in_toc():
+    """list notebooks found in _toc.yml"""
+    with open('_toc.yml') as fid:
+        toc_dict = yaml.safe_load(fid)
+    
+    pre_notebooks = ['_prestage-data.ipynb',] # '_precompute.ipynb']
+    return pre_notebooks + get_toc_files(toc_dict)
+    
+
+def nb_set_kernelname(file_in, kernel_name, file_out=None):
+    """set the kernel name to python3"""
+    if file_out is None:
+        file_out = file_in        
+    data = nbformat.read(file_in, as_version=nbformat.NO_CONVERT)        
+    data['metadata']['kernelspec']['name'] = kernel_name
+    nbformat.write(data, file_out)
+
+    
+def nb_get_kernelname(file_in):
+    """get the kernel name of a notebook"""
+    data = nbformat.read(file_in, as_version=nbformat.NO_CONVERT)
+    return data['metadata']['kernelspec']['name']
+    
+
+def nb_clear_outputs(file_in, file_out=None):
+    """clear output cells"""
+    if file_out is None:
+        file_out = file_in           
+    data = nbformat.read(file_in, as_version=nbformat.NO_CONVERT)
+    
+    assert isinstance(data['cells'], list), 'cells is not a list'
+    
+    cells = []
+    for cell in data['cells']:
+        if cell['cell_type'] == 'code':
+            cell['execution_count'] = None
+            cell['outputs'] = []
+        cells.append(cell)
+    data['cells'] = cells
+    nbformat.write(data, file_out)
+
+    
 def execute_notebook(notebook_path: str, kernel_cwd: str, output_dir=None):
     try:
         _nb_path = pathlib.Path(notebook_path)
@@ -47,35 +95,74 @@ def execute_notebook(notebook_path: str, kernel_cwd: str, output_dir=None):
             output_dir = _nb_path.parent
 
         save_path = pathlib.Path(output_dir) / _nb_path.name
-        nb = nbterm.Notebook(nb_path=_nb_path, kernel_cwd=kernel_cwd, save_path=save_path)
+        nb = nbterm.Notebook(nb_path=_nb_path, save_path=save_path) #kernel_cwd=kernel_cwd, 
         asyncio.run(nb.run_all())
         nb.save(save_path)
         print(f"Executed notebook has been saved to: {save_path}")
-
+        return True
+    
     except Exception:
         msg = f'Error executing the notebook "{notebook_path}".\n'
         msg += f'See notebook "{notebook_path}" for the traceback.\n'
         print(f'{traceback.format_exc()}\n{msg}')
-
+        return False
 
 
 
 if __name__ == '__main__':
+
     
     output_dir = '/glade/u/home/mclong/test-calc'
-    os.makedirs(output_dir, exist_ok=True)
-    
-    with open('_toc.yml') as fid:
-        toc_dict = yaml.safe_load(fid)
-    
-    pre_notebooks = [] #['_prestage-data.ipynb', '_precompute.ipynb']
-    notebooks = get_toc_files(toc_dict) #[f'{f}.ipynb' for f in notebooks]
+    subprocess.check_call(['rm', '-frv', output_dir])
+    os.makedirs(output_dir, exist_ok=True)    
 
+    print('identifying kernel')
     kernel_cwd = get_conda_kernel_cwd(name='so-co2')
+    print(kernel_cwd, end='\n\n')
+
+    print('notebooks in _toc.yml')
+    notebooks = list_notebooks_in_toc()
+    print(notebooks, end='\n\n')
     
+    
+    print('getting notebook kernel names')
+    notebook_kernels = {}
+    for nb in notebooks:
+        notebook_kernels[nb] = nb_get_kernelname(nb)
+        print(f'{nb}: {notebook_kernels[nb]}')
+    print()    
+    
+    notebooks = ['_prestage-data.ipynb']
+    
+    cwd = os.getcwd()
     if kernel_cwd:
-        for nb in pre_notebooks + notebooks:
-            print(f'executing {nb}')
-            execute_notebook(nb, kernel_cwd=kernel_cwd)
-            break
+        failed_list = []
+        for nb in notebooks:
+            print('-'*80)
+            print(f'executing: {nb}')
+            
+            # set the kernel name to fool nbterm into running this
+            nb_set_kernelname(nb, kernel_name='python3')
+            
+            # clear output
+            nb_clear_outputs(nb)
+            
+            # run the notebook
+            ok = execute_notebook(nb, kernel_cwd=kernel_cwd, output_dir=cwd)
+            
+            # set the kernel back
+            nb_set_kernelname(nb, kernel_name=notebook_kernels[nb])
+                              
+            if not ok:
+                print('failed')
+                failed_list.append(nb)
+            print()
+            
+        print('failed list')  
+        print(failed_list)
+
           
+
+"""
+so-co2-airborne-obs/emergent-constraint-s2n.ipynb so-co2-airborne-obs/emergent-constraint.ipynb so-co2-airborne-obs/fluxes.ipynb so-co2-airborne-obs/gradients-aircraft-sampling.ipynb so-co2-airborne-obs/gradients-main.ipynb so-co2-airborne-obs/gradients-methane.ipynb so-co2-airborne-obs/gradients-profiles.ipynb so-co2-airborne-obs/gradients-seasonal-amplitude.ipynb so-co2-airborne-obs/gradients-sf6.ipynb so-co2-airborne-obs/obs-aircraft.ipynb so-co2-airborne-obs/obs-main.ipynb so-co2-airborne-obs/obs-simulated-distributions.ipynb so-co2-airborne-obs/obs-surface-error.ipynb so-co2-airborne-obs/obs-surface.ipynb
+"""
