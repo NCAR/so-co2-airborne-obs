@@ -163,8 +163,6 @@ if __name__ == '__main__':
     cwd = os.getcwd()
     failed_list = []
     for nb in notebooks:
-        if 'obs-aircraft' not in nb:
-            continue
         print('-'*80)
         print(f'executing: {nb}')
 
@@ -183,8 +181,6 @@ if __name__ == '__main__':
         # set the kernel back
         nb_set_kernelname(nb, kernel_name=f'conda-env-miniconda3-{project_kernel}-py')
         print()
-        
-        break
 
     if failed_list:
         print('failed list')  
