@@ -133,7 +133,7 @@ def nb_execute(notebook_filename, output_dir='.', kernel_name='python3'):
         nb = nbformat.read(f, as_version=nbformat.NO_CONVERT)
 
     # config for execution
-    ep = ExecutePreprocessor(timeout=600, kernel_name=kernel_name)
+    ep = ExecutePreprocessor(timeout=None, kernel_name=kernel_name)
 
     # run with error handling
     try:
