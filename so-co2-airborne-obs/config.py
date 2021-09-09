@@ -14,10 +14,13 @@ def get_config_dict():
         
     config_dict = {}
     for key, value in config_dict_in.items():
-        t = Template(value)
-        config_dict[key] = t.render(env=os.environ)
-    
+        if isinstance(value, str):
+            t = Template(value)
+            config_dict[key] = t.render(env=os.environ)
+        else:
+            config_dict[key] = value
     return config_dict
+
 
 # get configuration dictionary
 config_dict = get_config_dict()

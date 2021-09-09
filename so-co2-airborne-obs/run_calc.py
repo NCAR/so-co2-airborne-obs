@@ -12,26 +12,45 @@ import nbterm
 import traceback
 import asyncio
 
+import click
 
-def get_toc_files(toc_dict, file_list=[], notebooks_only=True):
+def get_toc_files(notebooks_only=True):
     """return a list of files in the _toc.yml"""
-    for key, value in toc_dict.items():
-        if key in ['root', 'file']:
-            if notebooks_only and not os.path.exists(value + '.ipynb'):
-                continue
-            if notebooks_only:
-                file_list.append(f'{value}.ipynb')
-            else:
-                file_list.append(value)
-                
-        elif key == 'sections':
-            file_list_ext = []
-            for sub in value:
-                file_list_ext = get_toc_files(sub, file_list_ext, notebooks_only)
-            file_list.extend(file_list_ext)
-    return file_list
+    with open('_toc.yml') as fid:
+        toc_dict = yaml.safe_load(fid)
+    
+    def _toc_files(toc_dict, file_list=[]):
+        for key, value in toc_dict.items():
+            if key in ['root', 'file']:
+                if notebooks_only and not os.path.exists(value + '.ipynb'):
+                    continue
+                if notebooks_only:
+                    file_list.append(f'{value}.ipynb')
+                else:
+                    file_list.append(value)
+
+            elif key == 'sections':
+                file_list_ext = []
+                for sub in value:
+                    file_list_ext = _toc_files(sub, file_list_ext)
+                file_list.extend(file_list_ext)
+        return file_list
+    
+    return _toc_files(toc_dict)
 
 
+def get_project_kernel():
+    """return the name of the project kernel stored in _config_calc.yml"""
+    with open('_config_calc.yml') as fid:
+        return yaml.safe_load(fid)['project_kernel']
+
+
+def get_pre_notebooks():
+    """return the names of the preliminary computational notebooks in _config_calc.yml"""    
+    with open('_config_calc.yml') as fid:
+        return yaml.safe_load(fid)['pre_notebooks']
+    
+    
 def get_conda_kernel_cwd(name: str):
     """get the directory of a conda kernel by name"""
     command = ['conda', 'env', 'list', '--json']
@@ -125,44 +144,51 @@ def nb_execute(notebook_filename, output_dir='.', kernel_name='python3'):
         msg = f'Error executing the notebook "{notebook_filename}".\n'
         msg += f'See notebook "{notebook_filename}" for the traceback.\n'
         print(msg)
-        raise
 
     finally:
         nb_out = os.path.join(output_dir, os.path.basename(notebook_filename))
         with io.open(nb_out, mode='w', encoding='utf-8') as f:
             nbformat.write(nb, f)
-
+        print(f'wrote: {nb_out}')
+        
     return out    
 
 
-if __name__ == '__main__':
+def kernel_munge(kernel_name):
+    return f'conda-env-miniconda3-{kernel_name}-py'
+
+
+@click.command()
+@click.option('--notebook', default=None)
+@click.option('--skip-pre', is_flag=True)
+@click.option('--stop-on-fail', is_flag=True)
+def main(skip_pre, notebook, stop_on_fail):
+    """run all notebooks"""
     
-    project_kernel = 'so-co2'
-        
+    project_kernel = get_project_kernel()
+    
     assert os.environ['CONDA_DEFAULT_ENV'] == project_kernel, (
         f'activate "{project_kernel}" conda environment before running'
     )
 
-    print('notebooks in _toc.yml')
-    with open('_toc.yml') as fid:
-        toc_dict = yaml.safe_load(fid)
+    if notebook is None:
+        notebook_list = [] if skip_pre else get_pre_notebooks()        
+        notebook_list = notebook_list + get_toc_files()
+    else:
+        notebook_list = [notebook]    
     
-    pre_notebooks = ['_prestage-data.ipynb', '_precompute.ipynb']
-    notebooks = pre_notebooks + get_toc_files(toc_dict)
-    print(notebooks, end='\n\n')   
        
-    print('checking notebook kernels')
-    for nb in notebooks:
+    # check kernels
+    for nb in notebook_list:
         notebook_kernel = nb_get_kernelname(nb)
-        assert notebook_kernel == f'conda-env-miniconda3-{project_kernel}-py', (
+        assert notebook_kernel == kernel_munge(project_kernel), (
             f'{nb}: unexpected kernel: {notebook_kernel}'
         )
-    print('checked.')    
-
     
+    # run the notebooks
     cwd = os.getcwd()
     failed_list = []
-    for nb in notebooks:
+    for nb in notebook_list:
         print('-'*80)
         print(f'executing: {nb}')
 
@@ -176,18 +202,22 @@ if __name__ == '__main__':
         ok = nb_execute(nb, output_dir=cwd)
         if not ok:
             print('failed')
+            if stop_on_fail:
+                sys.exit(1)            
             failed_list.append(nb)
 
         # set the kernel back
-        nb_set_kernelname(nb, kernel_name=f'conda-env-miniconda3-{project_kernel}-py')
+        nb_set_kernelname(nb, kernel_name=kernel_munge(project_kernel))
         print()
-
+        
     if failed_list:
         print('failed list')  
         print(failed_list)
+        sys.exit(1)
 
-          
 
-"""
-so-co2-airborne-obs/emergent-constraint-s2n.ipynb so-co2-airborne-obs/emergent-constraint.ipynb so-co2-airborne-obs/fluxes.ipynb so-co2-airborne-obs/gradients-aircraft-sampling.ipynb so-co2-airborne-obs/gradients-main.ipynb so-co2-airborne-obs/gradients-methane.ipynb so-co2-airborne-obs/gradients-profiles.ipynb so-co2-airborne-obs/gradients-seasonal-amplitude.ipynb so-co2-airborne-obs/gradients-sf6.ipynb so-co2-airborne-obs/obs-aircraft.ipynb so-co2-airborne-obs/obs-main.ipynb so-co2-airborne-obs/obs-simulated-distributions.ipynb so-co2-airborne-obs/obs-surface-error.ipynb so-co2-airborne-obs/obs-surface.ipynb
-"""
+if __name__ == '__main__':
+    main()
+    
+
+    
