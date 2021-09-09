@@ -155,15 +155,16 @@ def nb_execute(notebook_filename, output_dir='.', kernel_name='python3'):
 
 
 def kernel_munge(kernel_name):
+    """return the kernel name as it's rendered in the notebook metadata"""
     return f'conda-env-miniconda3-{kernel_name}-py'
 
 
 @click.command()
 @click.option('--notebook', default=None)
-@click.option('--skip-pre', is_flag=True)
+@click.option('--run-pre', is_flag=True)
 @click.option('--stop-on-fail', is_flag=True)
-def main(skip_pre, notebook, stop_on_fail):
-    """run all notebooks"""
+def main(run_pre, notebook, stop_on_fail):
+    """run notebooks"""
     
     project_kernel = get_project_kernel()
     
@@ -172,7 +173,7 @@ def main(skip_pre, notebook, stop_on_fail):
     )
 
     if notebook is None:
-        notebook_list = [] if skip_pre else get_pre_notebooks()        
+        notebook_list = get_pre_notebooks() if run_pre else []
         notebook_list = notebook_list + get_toc_files()
     else:
         notebook_list = [notebook]    
