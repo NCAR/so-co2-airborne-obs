@@ -51,6 +51,12 @@ def get_pre_notebooks():
         return yaml.safe_load(fid)['pre_notebooks']
     
     
+def get_R_notebooks():
+    """return the names of the preliminary computational notebooks in _config_calc.yml"""    
+    with open('_config_calc.yml') as fid:
+        return yaml.safe_load(fid)['R_notebooks']
+    
+    
 def get_conda_kernel_cwd(name: str):
     """get the directory of a conda kernel by name"""
     command = ['conda', 'env', 'list', '--json']
@@ -178,7 +184,9 @@ def main(run_pre, notebook, stop_on_fail):
     else:
         notebook_list = [notebook]    
     
-       
+    skip_notebooks = get_R_notebooks()
+    notebook_list = [f for f in notebook_list if f not in skip_notebooks]
+    
     # check kernels
     for nb in notebook_list:
         notebook_kernel = nb_get_kernelname(nb)
