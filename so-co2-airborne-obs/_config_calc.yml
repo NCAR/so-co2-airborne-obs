@@ -1,9 +1,8 @@
-#project_tmpdir: /glade/p/eol/stephens/longcoll/cache
-#model_data_dir: "/glade/work/{{env['USER']}}/so-co2-airborne-obs/model-data/Long-etal-2021-SO-CO2-Science"
 project_kernel: so-co2
 pre_notebooks:
     - _prestage-data.ipynb
     - _precompute.ipynb
-project_tmpdir: "/glade/scratch/{{env['USER']}}/tmp/calc-cache"
-model_data_dir: "/glade/scratch/{{env['USER']}}/tmp/so-co2-airborne-obs/model-data/Long-etal-2021-SO-CO2-Science"
+project_tmpdir: "/glade/work/{{env['USER']}}/so-co2-airborne-obs"
+project_tmpdir_obs: "/glade/work/{{env['USER']}}/so-co2-airborne-obs/obs-data"
+model_data_dir: "/glade/work/{{env['USER']}}/so-co2-airborne-obs/model-data/Long-etal-2021-SO-CO2-Science"
 dash_asset_fname: Long-etal-2021-SO-CO2-Science.tar.gz

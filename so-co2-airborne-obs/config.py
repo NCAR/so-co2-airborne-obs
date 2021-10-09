@@ -29,6 +29,9 @@ config_dict = get_config_dict()
 project_tmpdir = config_dict['project_tmpdir']
 os.makedirs(project_tmpdir, exist_ok=True)
 
+project_tmpdir_obs = config_dict['project_tmpdir_obs']
+os.makedirs(project_tmpdir_obs, exist_ok=True)
+
 # location of model data
 model_data_dir = config_dict['model_data_dir']
 model_data_dir_root = os.path.dirname(model_data_dir)
