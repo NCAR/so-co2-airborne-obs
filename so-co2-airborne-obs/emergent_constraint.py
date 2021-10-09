@@ -1499,7 +1499,10 @@ def plot_constraint(ax, df_data, fit_dict={},
             p = ax.errorbar(x, y, xerr=xerr, yerr=yerr, **marker_spec[model][field])
         else:
             if highlight_campaign is None:
-                p = ax.plot(x, y, linestyle='None', **marker_spec[model][field])
+                if model in ["CT2017", "CTE2108"]:
+                    p = ax.plot(x, y, linestyle='None', **marker_spec[model][field], zorder=100)
+                else:
+                    p = ax.plot(x, y, linestyle='None', **marker_spec[model][field])
                 if (model, field) not in plotted_elements:
                     legend_elements.append(p[0])
                     plotted_elements.append((model, field))
@@ -1511,7 +1514,7 @@ def plot_constraint(ax, df_data, fit_dict={},
                     marker_spec_here['markersize'] = 4
                     marker_spec_here['color'] = 'gray'
                     marker_spec_here['markerfacecolor'] = 'gray'
-                    marker_spec_here['zorder'] = -100
+                    marker_spec_here['zorder'] = -100                    
                 p = ax.plot(x, y, linestyle='None', **marker_spec_here)
 
                 if campaign in highlight_campaign:
