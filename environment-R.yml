@@ -1,0 +1,8 @@
+name: so-co2-R
+channels:
+ - conda-forge
+dependencies:
+ - r-base=4.1
+ - r-rcolorbrewer
+ - r-ncdf4
+ - r-irkernel
