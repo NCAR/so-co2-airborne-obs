@@ -9,7 +9,8 @@ sections:
   - file: obs-aircraft
   - file: obs-surface
   - file: obs-surface-error
-  - file: obs-simulated-distributions        
+  - file: obs-simulated-distributions
+  - file: obs-surface-diurnal-variations
 - file: gradients-main
   sections:
   - file: gradients-seasonal-amplitude
