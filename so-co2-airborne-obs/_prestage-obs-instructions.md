@@ -77,7 +77,7 @@ Download into `${project_tmpdir_obs}/niwa` subdirectory text file https://niwa.c
 ## Minimal file listing when finished (extra files can be kept if space allows):
 
 Once your done, `${project_tmpdir_obs}` should look like this:
-```bash
+```
 .
 ├── aircraft-merge-products
 │   ├── HIPPO_all_missions_merge_10s_20121129.tbl
@@ -99,6 +99,9 @@ Once your done, `${project_tmpdir_obs}` should look like this:
 │   └── ORCASall.mergeMED.tbl
 ├── atom_xsect_filt_datetime.txt
 ├── hippo_xsect_filt_datetime.txt
+├── Instructions.txt
+├── ncar-lmg
+│   └── lmg_all_results.txt
 ├── niwa
 │   └── co2_bhd_surface-insitu_57_1978-2019_hourly.txt
 ├── obspack_co2_1_ATom_v4.0_2020-04-06
@@ -165,5 +168,8 @@ Once your done, `${project_tmpdir_obs}` should look like this:
                 ├── co2_cgo_surface-insitu_16_9999-9999_hourly.nc
                 └── co2_mqa_surface-insitu_16_9999-9999_hourly.nc
 
-27 directories, 59 files
+28 directories, 60 files
 ```
+
+
+
