@@ -1,6 +1,6 @@
 # Overview
 
-This book contains code to reproduce the analysis of Long et al. (2021).
+This book documents the analysis presented in {cite:t}`Long-Stephens-etal-2021`.
 
 ## Abstract
 
