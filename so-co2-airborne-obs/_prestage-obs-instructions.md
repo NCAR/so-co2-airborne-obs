@@ -76,98 +76,94 @@ Download into `${project_tmpdir_obs}/niwa` subdirectory text file https://niwa.c
 
 ## Minimal file listing when finished (extra files can be kept if space allows):
 
-`${project_tmpdir_obs}`
-1. aircraft-merge-products/
-1. atom_xsect_filt_datetime.txt
-1. hippo_xsect_filt_datetime.txt
-1. Instructions.txt
-1. ncar-lmg/
-1. niwa/
-1. obspack_co2_1_ATom_v4.0_2020-04-06/
-1. obspack_co2_1_CARBONTRACKER_CT2017_2018-05-02/
-1. obspack_co2_1_GLOBALVIEWplus_v4.2.2_2019-06-05/
-1. obspack_co2_1_GLOBALVIEWplus_v5.0_2019-08-12/
-1. obspack_co2_1_GLOBALVIEWplus_v6.0_2020-09-11/
-1. obspack_co2_1_GLOBALVIEWplus_v7.0_2021-08-18/
-1. orcas_xsect_filt_datetime.txt
-1. sio/
-1. WDCGG/
+Once your done, `${project_tmpdir_obs}` should look like this:
+```
+.
+├── aircraft-merge-products
+│   ├── HIPPO_all_missions_merge_10s_20121129.tbl
+│   ├── HIPPO_medusa_flasks_merge_insitu_20121129.tbl
+│   ├── HIPPO_noaa_flask_allparams_merge_insitu_20121129.tbl
+│   ├── MER10_DC8_ATom-1.nc
+│   ├── MER10_DC8_ATom-2.nc
+│   ├── MER10_DC8_ATom-3.nc
+│   ├── MER10_DC8_ATom-4.nc
+│   ├── MER-MED_DC8_ATom-1.nc
+│   ├── MER-MED_DC8_ATom-2.nc
+│   ├── MER-MED_DC8_ATom-3.nc
+│   ├── MER-MED_DC8_ATom-4.nc
+│   ├── MER-PFP_DC8_ATom-1.nc
+│   ├── MER-PFP_DC8_ATom-2.nc
+│   ├── MER-PFP_DC8_ATom-3.nc
+│   ├── MER-PFP_DC8_ATom-4.nc
+│   ├── ORCASall.merge10.tbl
+│   └── ORCASall.mergeMED.tbl
+├── atom_xsect_filt_datetime.txt
+├── hippo_xsect_filt_datetime.txt
+├── niwa
+│   └── co2_bhd_surface-insitu_57_1978-2019_hourly.txt
+├── obspack_co2_1_ATom_v4.0_2020-04-06
+│   └── data
+│       └── nc
+│           └── co2_tom_aircraft-insitu_1_allvalid.nc
+├── obspack_co2_1_CARBONTRACKER_CT2017_2018-05-02
+│   └── data
+│       └── nc
+│           ├── co2_hip_aircraft-insitu_59_allvalid.nc
+│           ├── co2_orc_aircraft-insitu_3_allvalid-merge10.nc
+│           └── co2_tom_aircraft-insitu_1_allvalid.nc
+├── obspack_co2_1_GLOBALVIEWplus_v4.2.2_2019-06-05
+│   └── data
+│       └── nc
+│           ├── co2_hip_aircraft-insitu_59_allvalid.nc
+│           ├── co2_orc_aircraft-insitu_3_allvalid-merge10.nc
+│           └── co2_tom_aircraft-insitu_1_allvalid.nc
+├── obspack_co2_1_GLOBALVIEWplus_v5.0_2019-08-12
+│   └── data
+│       └── nc
+│           ├── co2_hip_aircraft-insitu_59_allvalid.nc
+│           ├── co2_orc_aircraft-insitu_3_allvalid-merge10.nc
+│           └── co2_tom_aircraft-insitu_1_allvalid.nc
+├── obspack_co2_1_GLOBALVIEWplus_v6.0_2020-09-11
+│   └── data
+│       └── nc
+│           ├── co2_ams_surface-insitu_11_representative.nc
+│           ├── co2_cgo_surface-flask_1_representative.nc
+│           ├── co2_cgo_surface-flask_2_representative.nc
+│           ├── co2_cpt_surface-insitu_36_marine.nc
+│           ├── co2_crz_surface-flask_1_representative.nc
+│           ├── co2_cya_surface-flask_2_representative.nc
+│           ├── co2_drp_shipboard-flask_1_representative.nc
+│           ├── co2_hba_surface-flask_1_representative.nc
+│           ├── co2_hip_aircraft-insitu_59_allvalid.nc
+│           ├── co2_maa_surface-flask_2_representative.nc
+│           ├── co2_orc_aircraft-insitu_3_allvalid-merge10.nc
+│           ├── co2_psa_surface-flask_1_representative.nc
+│           ├── co2_spo_surface-flask_1_representative.nc
+│           ├── co2_spo_surface-flask_2_representative.nc
+│           ├── co2_spo_surface-insitu_1_allvalid.nc
+│           ├── co2_syo_surface-flask_1_representative.nc
+│           ├── co2_syo_surface-insitu_8_allvalid.nc
+│           └── co2_tom_aircraft-insitu_1_allvalid.nc
+├── obspack_co2_1_GLOBALVIEWplus_v7.0_2021-08-18
+│   └── data
+│       └── nc
+│           ├── co2_ams_surface-insitu_11_allvalid.nc
+│           └── co2_gould_shipboard-insitu_1_allvalid.nc
+├── orcas_xsect_filt_datetime.txt
+├── sio
+│   ├── cgocav.csv
+│   ├── monthly_merge_co2_spo.csv
+│   ├── psacav.csv
+│   └── spocav.csv
+└── WDCGG
+    └── nc
+        ├── 222rn
+        │   └── hourly
+        │       └── 222rn_cpt_surface-insitu_7_9999-9999_hourly.nc
+        └── co2
+            └── hourly
+                ├── co2_cgo_surface-insitu_16_9999-9999_hourly.nc
+                └── co2_mqa_surface-insitu_16_9999-9999_hourly.nc
 
-`${project_tmpdir_obs}/aircraft-merge-products`:
-1. HIPPO_all_missions_merge_10s_20121129.tbl
-1. HIPPO_medusa_flasks_merge_insitu_20121129.tbl
-1. HIPPO_noaa_flask_allparams_merge_insitu_20121129.tbl
-1. MER10_DC8_ATom-1.nc
-1. MER10_DC8_ATom-2.nc
-1. MER10_DC8_ATom-3.nc
-1. MER10_DC8_ATom-4.nc
-1. MER-MED_DC8_ATom-1.nc
-1. MER-MED_DC8_ATom-2.nc
-1. MER-MED_DC8_ATom-3.nc
-1. MER-MED_DC8_ATom-4.nc
-1. MER-PFP_DC8_ATom-1.nc
-1. MER-PFP_DC8_ATom-2.nc
-1. MER-PFP_DC8_ATom-3.nc
-1. MER-PFP_DC8_ATom-4.nc
-1. ORCASall.merge10.tbl
-1. ORCASall.mergeMED.tbl
-
-`${project_tmpdir_obs}/ncar-lmg`:
-1. lmg_all_results.txt
-
-`${project_tmpdir_obs}/niwa`:
-1. co2_bhd_surface-insitu_57_1978-2019_hourly.txt
-
-`${project_tmpdir_obs}/sio`:
-1. cgocav.csv  
-1. monthly_merge_co2_spo.csv  
-1. psacav.csv  
-1. spocav.csv
-
-`${project_tmpdir_obs}/obspack_co2_1_ATom_v4.0_2020-04-06/data/nc`:
-1. co2_tom_aircraft-insitu_1_allvalid.nc
-
-`${project_tmpdir_obs}/obspack_co2_1_CARBONTRACKER_CT2017_2018-05-02/data/nc`:
-1. co2_hip_aircraft-insitu_59_allvalid.nc  
-1. co2_orc_aircraft-insitu_3_allvalid-merge10.nc  
-1. co2_tom_aircraft-insitu_1_allvalid.nc
-
-`${project_tmpdir_obs}/obspack_co2_1_GLOBALVIEWplus_v4.2.2_2019-06-05/data/nc`:
-1. co2_hip_aircraft-insitu_59_allvalid.nc  
-1. co2_orc_aircraft-insitu_3_allvalid-merge10.nc  
-1. co2_tom_aircraft-insitu_1_allvalid.nc
-
-`${project_tmpdir_obs}/obspack_co2_1_GLOBALVIEWplus_v5.0_2019-08-12/data/nc`:
-1. co2_hip_aircraft-insitu_59_allvalid.nc  
-1. co2_orc_aircraft-insitu_3_allvalid-merge10.nc  
-1. co2_tom_aircraft-insitu_1_allvalid.nc
-
-`${project_tmpdir_obs}/obspack_co2_1_GLOBALVIEWplus_v6.0_2020-09-11/data/nc`:
-1. co2_cgo_surface-flask_1_representative.nc  
-1. co2_drp_shipboard-flask_1_representative.nc    
-1. co2_psa_surface-flask_1_representative.nc  
-1. co2_syo_surface-insitu_8_allvalid.nc
-1. co2_cgo_surface-flask_2_representative.nc  
-1. co2_hba_surface-flask_1_representative.nc      
-1. co2_spo_surface-flask_1_representative.nc  
-1. co2_tom_aircraft-insitu_1_allvalid.nc
-1. co2_cpt_surface-insitu_36_marine.nc        
-1. co2_hip_aircraft-insitu_59_allvalid.nc         
-1. co2_spo_surface-flask_2_representative.nc
-1. co2_crz_surface-flask_1_representative.nc  
-1. co2_maa_surface-flask_2_representative.nc      
-1. co2_spo_surface-insitu_1_allvalid.nc
-1. co2_cya_surface-flask_2_representative.nc  
-1. co2_orc_aircraft-insitu_3_allvalid-merge10.nc  
-1. co2_syo_surface-flask_1_representative.nc
-
-`${project_tmpdir_obs}/obspack_co2_1_GLOBALVIEWplus_v7.0_2021-08-18/data/nc`:
-1. co2_ams_surface-insitu_11_allvalid.nc  
-1. co2_gould_shipboard-insitu_1_allvalid.nc
-
-`${project_tmpdir_obs}/wdcgg/nc/222rn/hourly`:
-1. 222rn_cpt_surface-insitu_7_9999-9999_hourly.nc
-
-`${project_tmpdir_obs}/WDCGG/nc/co2/hourly`:
-1. co2_cgo_surface-insitu_16_9999-9999_hourly.nc  
-1. co2_mqa_surface-insitu_16_9999-9999_hourly.nc
+27 directories, 59 files
+```
