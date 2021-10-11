@@ -625,7 +625,7 @@ class surface_constraint(object):
 
 class aircraft_constraint(object):
     """
-    This object supports computing the aircraft constraint.
+    This object computes the aircraft constraint.
 
     This is what happens here:
     1. Initialize object with parameters defining the computation;
@@ -634,6 +634,82 @@ class aircraft_constraint(object):
     4. Compute fluxes for each campaign based on the associated `fit_group`
     5. Fit a harmonic function to the campaign flux estimates, use this fit
        to generate an annual mean estimate with associated uncertainty.
+       
+    Parameters
+    ----------
+    ubin : float
+      The value of θ on which to center the upper bin.
+    
+    lbin : float
+      The value of θ on which to center the lower bin.    
+    
+    udθ : float
+      The width in θ units of the upper bin.
+    
+    ldθ : float
+      The width in θ units of the lower bin.    
+    
+    gradient_lat_range : [float, float]
+       The latitude range over which to compute the vertical gradient.
+    
+    flux_memory: float
+      The time in days over which to average air-sea fluxes in the calculation.
+    
+    flux_lat_range: [float, float]
+      The latitude range over which to integrate fluxes.
+    
+    campaign_time_point: string
+      Acceptable values: ["center", "end"]; where to set the campaign's time-axis value.
+      
+    bin_aggregation_method: string
+      Acceptable values: ["mean", "median"]; how to aggregate aircraft data in the θ bins.
+      
+    fit_groups: iterable
+      The groups by which to aggegrate campaigns.
+      
+    model_tracer_list: list of tuples
+      The models and their tracers to use, i.e. [(CT2017, "CO2_OCN"), (CT2019B, "CO2_OCN"), ...]
+    
+    dfs_obs: dict
+      Dictionary of observational data contained in pandas.DataFrame's returned from `load_data`.
+         
+    dfs_model: dict
+      Dictionary of simulated observations contained in pandas.DataFrame's returned from `load_data`.
+      
+    model_groups : dict
+      A dictionary specifying a grouping of the models; the code returns a model-group-weighted fit.
+    
+    model_tracer_ext_list : list of tuples
+      A list of tuples specifying the (model, tracer) pairs to use to estimate "external" 
+      contributions to the observed gradient. I.e., these data are used to correct the 
+      observed estimates of the gradient for land and fossil contributions.
+      
+    model_list_sfco2_lnd : list of tuples
+      A list of (model, tracer) pairs used to correct the resulting flux estimate for in-region 
+      land and fossil fuel fluxes. This is only used if the contraint is based on total CO2.
+      
+    methane_theta_lbound : float
+      Specifies the θ value above which to relate CH4 and CO2. This is only relevant if 
+      `use_methane_gradient_correction=True`, which is not the case by default. This option
+      was something we explored, but did not implement in the final computation.
+      
+    use_methane_gradient_correction: boolean
+      Use vertical gradients of CH4 to correct observed gradient; this option is not scientifically 
+      justified and should not be used.
+      
+    lbin_as_upper_bound : boolean
+      Interpret the value of `lbin` as the upper bound for the lower bin, i.e., aggegrate 
+      data where `θ < lbin`. If `lbin_as_upper_bound=True`, then `ldθ` is ignored.
+      
+    ubin_as_lower_bound : boolean
+      Interpret the value of `ubin` as the lower bound for the upper bin, i.e., aggegrate 
+      data where `θ > ubin`. If `ubin_as_lower_bound=True`, then `udθ` is ignored.
+      
+    restrict_groups : boolean
+      Only produce the analysis for `fit_groups`, not all possible groups (as determined by 
+      those groups defined in the code).
+
+    
     """
     def __init__(self,
                  ubin, lbin, udθ, ldθ,
