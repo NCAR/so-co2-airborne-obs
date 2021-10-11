@@ -5,7 +5,7 @@
 
 #######################################################################################
 # Book settings
-title: Strong Southern Ocean Carbon Uptake Evident in Airborne Observations  
+title: Strong Southern Ocean Carbon Uptake Evident in Airborne Observations
 author: Matthew C. Long and Britton B. Stephens
 copyright: "2021"
 logo: new-logo.png
@@ -28,7 +28,8 @@ bibtex_bibfiles:
 sphinx:
   config:
     bibtex_reference_style: author_year
-    
+    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
 # Information about where the book exists on the web
 repository:
   url: https://github.com/fluid-sphere/so-co2-airborne-obs
@@ -40,3 +41,4 @@ repository:
 html:
   use_issues_button: false
   use_repository_button: true
+  home_page_in_navbar: false

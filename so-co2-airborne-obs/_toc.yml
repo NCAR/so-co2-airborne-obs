@@ -1,25 +1,40 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
 
-format: jb-article
+format: jb-book
 root: intro
-sections:
-- file: obs-main
-  sections:
-  - file: obs-aircraft
-  - file: obs-surface
-  - file: obs-surface-error
-  - file: obs-simulated-distributions
-  - file: obs-surface-diurnal-variations
-- file: gradients-main
-  sections:
-  - file: gradients-seasonal-amplitude
-  - file: gradients-profiles
-  - file: gradients-methane
-  - file: gradients-sf6
-  - file: gradients-aircraft-sampling
-- file: emergent-constraint
-  sections:
-  - file: emergent-constraint-s2n
-- file: fluxes
-  
+parts:
+- caption: Data assets
+  chapters: 
+  - file: _prestage-obs-instructions
+  - file: _prestage-data
+  - file: _precompute
+- caption: Observations
+  chapters:
+  - file: obs-main
+    sections:
+    - file: obs-aircraft
+    - file: obs-surface
+    - file: obs-surface-error
+    - file: obs-simulated-distributions
+    - file: obs-surface-diurnal-variations
+- caption: Gradient metrics
+  chapters:
+  - file: gradients-main
+    sections:
+    - file: gradients-seasonal-amplitude
+    - file: gradients-profiles
+    - file: gradients-methane
+    - file: gradients-sf6
+    - file: gradients-aircraft-sampling
+- caption: Observations
+  chapters:    
+  - file: emergent-constraint
+    sections:
+    - file: emergent-constraint-s2n
+- caption: Flux Estimates
+  chapters:    
+  - file: fluxes  
+- caption: References
+  chapters:  
+  - file: references
