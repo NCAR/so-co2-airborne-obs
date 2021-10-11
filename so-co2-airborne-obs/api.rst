@@ -8,11 +8,16 @@ Emergent constraints
 
 .. currentmodule:: emergent_constraint
 
-.. autosummary::
-   aircraft_constraint
 
-.. autosummary::
-   whole_enchilada
+.. autoclass:: 
+   aircraft_constraint
+    :members: campaign_flux
+    :undoc-members: __init__
+    :member-order: bysource
+    :show-inheritance:
+
+.. autoclass:: 
+   aircraft_constraint
    
    
 .. currentmodule:: datasets
