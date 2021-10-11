@@ -10,22 +10,36 @@ import obs_aircraft
 import obs_surface
 import util
 
-cache_dir = 'data/cache'
+path_to_here = os.path.dirname(os.path.realpath(__file__))
+
+cache_dir = f'{path_to_here}/data/cache'
 os.makedirs(cache_dir, exist_ok=True)
 
 
 def aircraft_sections(
     source='obs-multi-sensor', 
+    vertical_coord='z',
     clobber=False, 
-    vertical_coord='z'):
+):
     """
-    Return a dataset with aircraft section
+    Return a dataset with aircraft sections.
     
     Parameters
     ----------
     source : str, optional
       The data to use, options include "obs", "obs-multi-sensor", or the name of a model.
+
+    vertical_coord : string, optional
+      The coordinate; possibilities include "z", "theta", and "pressure".
+      
+    clobber : boolean, optional
+      If true, remove cache and recompute.
+      
+    Returns
+    -------
     
+    ds : xarray.Dataset
+      The section dataset.
     """
     
     
@@ -67,7 +81,26 @@ def aircraft_sections(
     
 
 def obs_surface_stn_v_lat(season, constituent='CO2', minus_spo=True):
-    """return a dataset with seasonal-mean surface-station observations"""
+    """
+    Return a dataset with seasonal-mean surface-station observations.
+    
+    Parameters
+    ----------
+    
+    season : string
+      The season over which to compute mean.
+    constituent : string
+      Either CO2 or SF6
+    minus_spo : boolean
+      Specify whether to subtract the SPO record.
+    
+    Returns
+    -------
+    
+    ds : xarray.Dataset
+      Dataset with seasonal-mean station data.
+    
+    """
     da = obs_surface.open_surface_data_obs(constituent)
     
     if minus_spo:
@@ -79,7 +112,23 @@ def obs_surface_stn_v_lat(season, constituent='CO2', minus_spo=True):
 
 
 def obs_surface_climatology(constituent='CO2', minus_spo=True):
-    """return a dataset with seasonal-mean surface-station observations"""
+    """
+    Return a dataset with the climatological surface-station observations.
+    
+    Parameters
+    ----------
+    constituent : string
+      Either CO2 or SF6
+    minus_spo : boolean
+      Specify whether to subtract the SPO record.
+      
+    Returns
+    -------
+    
+    ds : xarray.Dataset
+      Dataset with seasonal-mean station data.      
+    
+    """
     constituent = constituent.upper()
     da = obs_surface.open_surface_data_obs(constituent)
     
@@ -161,7 +210,30 @@ def _groupby(ds, groups, dim):
 
 def aircraft_profiles(source='obs', tracer='CO2', 
                       vertical_coord='theta', clobber=False):
+    """
+    Return an xarray.Dataset with profiles from aircraft data binned on a "z" or "theta" coordinate.
     
+    Parameters
+    ----------
+    source : str, optional
+      The data to use, options include "obs", "obs-multi-sensor", or the name of a model.
+      
+    tracer : str, optional
+      The constituent for which to make the profiles.
+   
+    vertical_coord : string, optional
+      The coordinate; possibilities include "z", "theta", and "pressure". 
+    
+    clobber : boolean, optional
+      If true, remove cache and recompute.    
+    
+    Returns
+    -------
+    
+    ds : xarray.Dataset
+      Dataset with the profiles.
+      
+    """
     parameters = ec.get_parameters()
     lat_lo, lat_hi = parameters['gradient_lat_range']
     
@@ -186,9 +258,32 @@ def aircraft_profiles_seasonal(source='obs', tracer='CO2',
                                vertical_coord='theta', 
                                seasonal_groups=['DJF', 'MAM', 'JJA', 'SON'],
                                clobber=False):
-    """return dataset with profiles aggegated by seasonal groups
-       seasonal_group can be ['DJF', 'MAM', ...]
-       or ['DJF', 'MAMJJASON']
+    """
+    Return dataset with profiles aggegated by seasonal groups
+    
+    
+    Parameters
+    ----------
+    source : str, optional
+      The data to use, options include "obs", "obs-multi-sensor", or the name of a model.
+      
+    tracer : str, optional
+      The constituent for which to make the profiles.
+   
+    vertical_coord : string, optional
+      The coordinate; possibilities include "z", "theta", and "pressure". 
+    
+    seasonal_group: list
+      Can be ['DJF', 'MAM', ...] or ['DJF', 'MAMJJASON']
+    
+    clobber : boolean, optional
+      If true, remove cache and recompute.    
+    
+    Returns
+    -------    
+    ds : xarray.Dataset
+      Dataset with the profiles.
+             
     """
     file_name_cache = f'{cache_dir}/aircraft-profile-seasonal-{source}-{vertical_coord}-{tracer}.zarr'
     if os.path.exists(file_name_cache) and clobber:
