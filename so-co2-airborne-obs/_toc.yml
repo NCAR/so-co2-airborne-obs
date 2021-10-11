@@ -34,7 +34,10 @@ parts:
     - file: emergent-constraint-s2n
 - caption: Flux Estimates
   chapters:    
-  - file: fluxes  
+  - file: fluxes
+- caption: API
+  chapters:
+  - file: api
 - caption: References
   chapters:  
   - file: references

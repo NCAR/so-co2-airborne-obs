@@ -29,7 +29,15 @@ sphinx:
   config:
     bibtex_reference_style: author_year
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-
+  
+  local_extensions:
+    add_book_to_path: ../
+    
+  extra_extensions:
+  - sphinx.ext.autodoc
+  - sphinx.ext.autosummary
+  - sphinx.ext.napoleon
+    
 # Information about where the book exists on the web
 repository:
   url: https://github.com/fluid-sphere/so-co2-airborne-obs
@@ -42,3 +50,4 @@ html:
   use_issues_button: false
   use_repository_button: true
   home_page_in_navbar: false
+

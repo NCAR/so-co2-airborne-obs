@@ -18,7 +18,17 @@ def aircraft_sections(
     source='obs-multi-sensor', 
     clobber=False, 
     vertical_coord='z'):
-    """return a dataset with aircraft section"""
+    """
+    Return a dataset with aircraft section
+    
+    Parameters
+    ----------
+    source : str, optional
+      The data to use, options include "obs", "obs-multi-sensor", or the name of a model.
+    
+    """
+    
+    
     file_name_cache = f'{cache_dir}/aircraft-section-{source}-{vertical_coord}.zarr'
     
     if clobber and os.path.exists(file_name_cache):
