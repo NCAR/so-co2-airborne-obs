@@ -26,14 +26,14 @@ jobs:
         channels: conda-forge
         channel-priority: strict
         mamba-version: '*'
-        activate-environment: jupyter-book-build-env
+        activate-environment: so-co2
         auto-update-conda: false
         python-version: 3.8
         use-only-tar-bz2: true
 
     - name: Set up conda environment
       run: |
-        mamba env update -f env-book.yml
+        mamba env update -f environment.yml
         conda list
 
     # Build the book
