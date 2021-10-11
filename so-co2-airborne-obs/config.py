@@ -2,10 +2,12 @@ import os
 import yaml
 from jinja2 import Template
 
-def get_config_dict():
+path_to_here = os.path.dirname(os.path.realpath(__file__))
+
+def _get_config_dict():
     """return the configuration dictionary with environment variables replaced"""
     
-    with open('_config_calc.yml') as fid:
+    with open(f'{path_to_here}/_config_calc.yml') as fid:
         config_dict_in = yaml.safe_load(fid)    
     
     required_keys = ['project_tmpdir', 'model_data_dir', 'dash_asset_fname']
@@ -23,18 +25,34 @@ def get_config_dict():
 
 
 # get configuration dictionary
-config_dict = get_config_dict()
+def get(parameter):
+    config_dict = _get_config_dict()
+    
+    derived = False
+    if parameter in ["model_data_dir_root"]:
+        derived = True
+    else:
+        assert parameter in config_dict, f"unknown parameter {parameter}"
+    
+    if not derived:
+        value = config_dict[parameter]
+    
+    elif parameter == "model_data_dir_root":
+        model_data_dir = config_dict['model_data_dir']
+        value = os.path.dirname(model_data_dir)
 
-# cache directory for big file
-project_tmpdir = config_dict['project_tmpdir']
-os.makedirs(project_tmpdir, exist_ok=True)
-
-project_tmpdir_obs = config_dict['project_tmpdir_obs']
-os.makedirs(project_tmpdir_obs, exist_ok=True)
-
-# location of model data
-model_data_dir = config_dict['model_data_dir']
-model_data_dir_root = os.path.dirname(model_data_dir)
-os.makedirs(model_data_dir_root, exist_ok=True)
-
-dash_asset_fname = config_dict['dash_asset_fname']
+    if parameter in [
+        "project_tmpdir",
+        "project_tmpdir_obs",
+        "model_data_dir_root",
+    ]:
+        try:
+            os.makedirs(value, exist_ok=True)    
+        except OSError:
+            print(f"error in config: cannot mkdir {value}")
+            TMPDIR = os.environ["TMPDIR"]
+            value = f"{TMPDIR}/so-co2-airborne-obs/{parameter}"            
+            print(f"setting {parameter} to {value}")
+            os.makedirs(value, exist_ok=True) 
+                                
+    return value

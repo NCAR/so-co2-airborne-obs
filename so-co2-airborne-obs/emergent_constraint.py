@@ -19,13 +19,14 @@ import dask
 
 import matplotlib.pyplot as plt
 
-from config import project_tmpdir
+import config
 import figure_panels
 import models
 import obs_aircraft
 import obs_surface
 import util
 
+project_tmpdir = config.get("project_tmpdir")
 
 campaign_info = obs_aircraft.get_campaign_info(verbose=False)
 

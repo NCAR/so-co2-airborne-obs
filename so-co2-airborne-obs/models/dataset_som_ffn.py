@@ -8,7 +8,7 @@ import xarray as xr
 import numpy as np
 
 from . import calc
-from . config import path_to_here, project_tmpdir
+from . config_local import path_to_here, project_tmpdir
 
 this_model = 'SOM-FFN'
        

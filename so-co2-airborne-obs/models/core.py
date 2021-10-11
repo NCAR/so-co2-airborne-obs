@@ -19,7 +19,7 @@ from . import model_miroc
 from . import model_tm5flux
 from . import dataset_som_ffn
 
-from .config import path_to_here, project_tmpdir, cache_rootdir_local
+from .config_local import path_to_here, project_tmpdir, cache_rootdir_local
 
 cache_rootdir_bigfiles = project_tmpdir
 

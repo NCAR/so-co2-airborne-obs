@@ -131,3 +131,4 @@ dmypy.json
 # jupyter-book build directory
 so-co2-airborne-obs/_build/
 notes.md
+.DS_Store

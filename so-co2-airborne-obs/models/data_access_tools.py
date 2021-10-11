@@ -9,7 +9,7 @@ import numpy as np
 import calendar
 from collections.abc import Iterable
 
-from . config import project_tmpdir
+from . config_local import project_tmpdir
 
 
 def calc_eomday(year, month):

@@ -16,7 +16,7 @@ import xarray as xr
 
 import util
 
-os.makedirs('data/aircraft-sections', exist_ok=True)
+path_to_here = os.path.dirname(os.path.realpath(__file__))
 
 split_orcas = True
 
@@ -220,7 +220,7 @@ def _open_aircraft_data_model(model, tracer):
         ORCAS='ORCAS_SO_mSPO.txt',
     )
 
-    with open('data/model-description.yaml', 'r') as fid:
+    with open(f'{path_to_here}/data/model-description.yaml', 'r') as fid:
         model_info = yaml.safe_load(fid)
 
     if tracer in model_info[model]['obs_data_paths']:
@@ -304,7 +304,7 @@ def _open_aircraft_data_obs(model):
             ORCAS='ORCAS_SO_mSPO.txt',
         )
 
-    get_file = lambda m, f: f'data/aircraft-obs/{f}'
+    get_file = lambda m, f: f'{path_to_here}/data/aircraft-obs/{f}'
 
     print(f'loading {model}')
     dfs = []
@@ -422,9 +422,9 @@ def df_midtrop(df):
 def get_campaign_info(clobber=False, verbose=True, lump_orcas=False):
 
     if lump_orcas:
-        cache_file = 'data/aircraft-campaign-info-lump-orcas.pkl'
+        cache_file = f'{path_to_here}/data/aircraft-campaign-info-lump-orcas.pkl'
     else:
-        cache_file = 'data/aircraft-campaign-info.pkl'
+        cache_file = f'{path_to_here}/data/aircraft-campaign-info.pkl'
 
     if os.path.exists(cache_file) and clobber:
         os.remove(cache_file)

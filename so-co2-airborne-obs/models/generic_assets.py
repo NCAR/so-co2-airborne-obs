@@ -3,7 +3,7 @@
 import yaml
 from glob import glob
 from jinja2 import Template
-from .config import path_to_here, model_data_dir
+from .config_local import path_to_here, model_data_dir
 
 known_products = ['molefractions', 'fluxes', 'ObsPack']
 
@@ -33,7 +33,12 @@ def get_model_info(this_model):
 
 
 def list_assets(this_model, product):
-    """return a list of file assets by type"""    
+    """return a list of file assets by type""" 
+    
+    assert os.path.exists(model_data_dir), (
+        f'model_data_dir d.n.e.: {model_data_dir}'
+    )
+
     model_info = get_model_info(this_model)
     
     if product not in model_info['products']:
