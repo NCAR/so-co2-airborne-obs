@@ -3,13 +3,18 @@ API Reference
 
 This page provides an auto-generated summary of the API to several key functions used in the analysis.
 
+Emergent constraints
+~~~~~~~~~~~~~~~~~~~~
 
-.. currentmodule:: emergent_constraints
+.. currentmodule:: emergent_constraint
 
 .. autosummary::
    aircraft_constraint
 
-
+.. autosummary::
+   whole_enchilada
+   
+   
 .. currentmodule:: datasets
 
 datasets

@@ -624,8 +624,7 @@ class surface_constraint(object):
 
 
 class aircraft_constraint(object):
-    """
-    This object computes the aircraft constraint.
+    """This object computes the aircraft constraint.
 
     This is what happens here:
     1. Initialize object with parameters defining the computation;
@@ -1167,6 +1166,30 @@ class aircraft_constraint(object):
     
 
 class whole_enchilada(object):
+    """Encapsulate entire worflow for computing `aircraft_constraint`.
+    
+    Parameters
+    ----------
+    
+    model_tracer_list: list of tuples
+      The models and their tracers to use, i.e. [(CT2017, "CO2_OCN"), (CT2019B, "CO2_OCN"), ...]
+       
+    model_tracer_ext_list : list of tuples
+      A list of tuples specifying the (model, tracer) pairs to use to estimate "external" 
+      contributions to the observed gradient. I.e., these data are used to correct the 
+      observed estimates of the gradient for land and fossil contributions.
+      
+    model_list_sfco2_lnd : list of tuples
+      A list of (model, tracer) pairs used to correct the resulting flux estimate for in-region 
+      land and fossil fuel fluxes. This is only used if the contraint is based on total CO2.
+      
+    profiles_only : boolean
+      Use only data collected while "profiling."
+      
+    clobber : boolean
+      If true, recompute rather than reading pre-computed result from cache.
+     
+    """
     def __init__(self,
                  model_tracer_list,
                  model_list_sfco2_lnd=[],
