@@ -27,7 +27,7 @@ parts:
     - file: gradients-methane
     - file: gradients-sf6
     - file: gradients-aircraft-sampling
-- caption: Observations
+- caption: Emergent constraints
   chapters:    
   - file: emergent-constraint
     sections:

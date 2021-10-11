@@ -1,8 +1,8 @@
-# Instructions for obtaining observation data
+# Obtaining observational data
 
 Unfortunately, it is not possible to automate staging of the observational data used in this calculation. Here we provide instructions, however, for manually accessing these data products, which are all publicly available, but in several instances, require registration to access.
 
-[_config_calc.yml](_config_calc.yml) defines a variable `project_tmpdir_obs`, which specifies the directory in which to store the data referenced here.
+[_config_calc.yml](./_config_calc.yml) defines a variable `project_tmpdir_obs`, which specifies the directory in which to store the data referenced here.
 
 
 
