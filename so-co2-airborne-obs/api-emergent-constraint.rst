@@ -32,3 +32,6 @@ Emergent constraints
 
 .. autofunction:: emergent_constraint.load_data_surface
 
+.. autofunction:: emergent_constraint.get_parameters
+
+.. autofunction:: emergent_constraint.get_model_tracer_lists

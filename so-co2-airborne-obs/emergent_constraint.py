@@ -131,6 +131,36 @@ def ensure_components(model_tracer_list):
 
 
 def get_parameters(spec='default'):
+    """Return the parameters for computing the emergent constraint from aircraft data.
+    
+    Parameters
+    ----------
+    
+    spec : string
+      Specification of the constraint option in EC-input.yaml.  
+      Must be set to 'default'.
+    
+    Returns
+    -------
+    air_parms : dict
+      Dictionary with the parameters for computing the aircraft constraint.
+      Example:
+      
+        air_parms = {
+            'ubin': 300.0,
+            'lbin': 280.0,
+            'udθ': 10.0,
+            'lbin_as_upper_bound': True,
+            'ubin_as_lower_bound': False,
+            'gradient_lat_range': (-90.0, -45.0),
+            'flux_lat_range': (-90.0, -45.0),
+            'flux_memory': 90,
+            'fit_groups': ('DJF', 'MAMJJASON'),
+        }
+
+    """
+    
+    assert spec == "default", "`spec='default'` is the only supported option"
     with open('EC-input.yaml', 'r') as fid:
         input_dict = yaml.safe_load(fid)['parameters']
 
@@ -148,6 +178,25 @@ def get_parameters(spec='default'):
     
     
 def get_model_tracer_lists(spec):
+    """Return the `model_tracer_list` specified in the emergent constraint
+    input file: EC-input.yaml.
+    
+    Parameters
+    ----------
+    
+    spec : string
+      Specification of the constraint option in EC-input.yaml.  
+      Options include: 'ocean_constraint', 'total_constraint'
+      
+    Returns
+    -------
+    
+    model_tracer_list: list of tuples
+      The models and their tracers to use, i.e. [(CT2017, "CO2_OCN"), (CT2019B, "CO2_OCN"), ...]
+      
+    """
+    
+    
     with open('EC-input.yaml', 'r') as fid:
         input_dict = yaml.safe_load(fid)['model_input_lists']
 
