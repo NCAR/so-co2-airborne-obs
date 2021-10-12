@@ -53,7 +53,9 @@ The code to produce this figure is [here](./obs-main.ipynb).
 :name: aircraft-surface-obs
 
 **Observed patterns in atmospheric CO<sub>2</sub> over the Southern Ocean.** Observed patterns in atmospheric CO<sub>2</sub> over the Southern Ocean. Upper panels: Cross-sections observed by aircraft during (A) ORCAS, Jan–Feb 2016 and (B) ATom-1, Aug 2016. Colors show the observed CO<sub>2</sub> dry air mole fraction relative to the average observed within the 295–305 K potential temperature range south of 45°S on each campaign; contour lines show the observed potential temperature.
-See Figures S1–S2 for flight-tracks and cross-section plots for all campaigns and Figures S3–S4 for simulated fields. Lower panels: Compilation of mean CO<sub>2</sub> observed at surface monitoring stations minus the NOAA in situ record at the South Pole Observatory (SPO) over 1999–2019 for (C) summer (DJF) and (D) winter (JJA). The black line is a spline fit provided simply as a visual guide. Blue shading denotes the latitude band in which we designate “Southern Ocean stations.” See Table S1 and Figure S5 for station locations and temporal coverage. Supplementary Material includes additional methodological details.
+Fight-tracks and cross-section plots for all campaigns are shown [here](obs-aircraft.ipynb) and [this notebook](obs-simulated-distributions.ipynb) illustrates the distributions of CO<sub>2</sub> simulated by a 3-D transport model.
+Lower panels: Compilation of mean CO<sub>2</sub> observed at surface monitoring stations minus the NOAA in situ record at the South Pole Observatory (SPO) over 1999–2019 for (C) summer (DJF) and (D) winter (JJA). 
+The black line is a spline fit provided simply as a visual guide. Blue shading denotes the latitude band in which we designate “Southern Ocean stations.” Station locations and temporal coverage are shown [here](obs-surface.ipynb).
 ```
 
 (gradients)=
