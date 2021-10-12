@@ -33,6 +33,7 @@ def get(parameter):
     if parameter == "cache_dirs":
         cache_dirs = sorted(glob(f"{config_dict['project_tmpdir']}/cache-*"))
         cache_dirs += ["./data/cache"]
+        print("omitting: ./models/data-cache")
         return cache_dirs
     
     elif parameter in config_dict:
