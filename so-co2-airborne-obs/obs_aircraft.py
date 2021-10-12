@@ -422,9 +422,9 @@ def df_midtrop(df):
 def get_campaign_info(clobber=False, verbose=True, lump_orcas=False):
 
     if lump_orcas:
-        cache_file = f'{path_to_here}/data/aircraft-campaign-info-lump-orcas.pkl'
+        cache_file = f'{path_to_here}/data/cache/aircraft-campaign-info-lump-orcas.pkl'
     else:
-        cache_file = f'{path_to_here}/data/aircraft-campaign-info.pkl'
+        cache_file = f'{path_to_here}/data/cache/aircraft-campaign-info.pkl'
 
     if os.path.exists(cache_file) and clobber:
         os.remove(cache_file)
