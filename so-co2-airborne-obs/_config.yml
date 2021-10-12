@@ -47,7 +47,9 @@ repository:
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
+  favicon: favicon.ico
   use_issues_button: false
   use_repository_button: true
   home_page_in_navbar: false
 
+  
