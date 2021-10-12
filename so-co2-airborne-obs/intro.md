@@ -48,7 +48,7 @@ We examine the structure of atmospheric CO<sub>2</sub> variability over the Sout
 {numref}`aircraft-surface-obs` shows these patterns for two selected airborne transects and a collection of surface monitoring stations.
 The code to produce this figure is [here](./obs-main.ipynb).
 
-```{figure} figures/Fig-1-CO2-aircraft-surface-obs.png
+```{figure} figures/Fig-1-co2-aircraft-surface-obs.png
 :figwidth: 600px
 :name: aircraft-surface-obs
 
