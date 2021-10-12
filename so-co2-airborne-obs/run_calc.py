@@ -1,4 +1,6 @@
 import os
+from glob import glob
+
 import subprocess 
 import sys
 import pathlib
@@ -11,6 +13,8 @@ import nbterm
 
 import traceback
 import asyncio
+
+import config
 
 import click
 
@@ -39,24 +43,6 @@ def get_toc_files(notebooks_only=True):
     return _toc_files(toc_dict)
 
 
-def get_project_kernel():
-    """return the name of the project kernel stored in _config_calc.yml"""
-    with open('_config_calc.yml') as fid:
-        return yaml.safe_load(fid)['project_kernel']
-
-
-def get_pre_notebooks():
-    """return the names of the preliminary computational notebooks in _config_calc.yml"""    
-    with open('_config_calc.yml') as fid:
-        return yaml.safe_load(fid)['pre_notebooks']
-    
-    
-def get_R_notebooks():
-    """return the names of the preliminary computational notebooks in _config_calc.yml"""    
-    with open('_config_calc.yml') as fid:
-        return yaml.safe_load(fid)['R_notebooks']
-    
-    
 def get_conda_kernel_cwd(name: str):
     """get the directory of a conda kernel by name"""
     command = ['conda', 'env', 'list', '--json']
@@ -66,7 +52,6 @@ def get_conda_kernel_cwd(name: str):
         env = pathlib.Path(env)
         if name == env.stem:
             return env 
-
     else:
         return None
 
@@ -169,22 +154,23 @@ def kernel_munge(kernel_name):
 @click.option('--notebook', default=None)
 @click.option('--run-pre', is_flag=True)
 @click.option('--stop-on-fail', is_flag=True)
-def main(run_pre, notebook, stop_on_fail):
+@click.option('--clear-cache', is_flag=True)
+def main(run_pre, notebook, stop_on_fail, clear_cache=False):
     """run notebooks"""
     
-    project_kernel = get_project_kernel()
+    project_kernel = config.get('project_kernel')
     
     assert os.environ['CONDA_DEFAULT_ENV'] == project_kernel, (
         f'activate "{project_kernel}" conda environment before running'
     )
 
     if notebook is None:
-        notebook_list = get_pre_notebooks() if run_pre else []
+        notebook_list = config.get('pre_notebooks') if run_pre else []
         notebook_list = notebook_list + get_toc_files()
     else:
         notebook_list = [notebook]    
     
-    skip_notebooks = get_R_notebooks()
+    skip_notebooks = config.get('R_notebooks')
     notebook_list = [f for f in notebook_list if f not in skip_notebooks]
     
     # check kernels
@@ -195,6 +181,11 @@ def main(run_pre, notebook, stop_on_fail):
         )
     
     # run the notebooks
+    if clear_cache:
+        cache_dirs = config.get("cache_dirs")
+        for d in cache_dirs:
+            subprocess.check_call(["rm", "-fr", f"{d}/*"])
+    
     cwd = os.getcwd()
     failed_list = []
     for nb in notebook_list:

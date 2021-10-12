@@ -26,11 +26,11 @@ import obs_aircraft
 import obs_surface
 import util
 
-project_tmpdir = config.get("project_tmpdir")
+project_tmpdir = f"{config.get('project_tmpdir')}/cache-emergent-constraint"
 
 campaign_info = obs_aircraft.get_campaign_info(verbose=False)
 
-cache_path_pickles = f'{project_tmpdir}/emergent-constraint/pickles'
+cache_path_pickles = f'{project_tmpdir}/pickles'
 os.makedirs(cache_path_pickles, exist_ok=True)
 
 
@@ -58,7 +58,7 @@ def load_data(model_tracer_list, profiles_only=True, clobber=False):
       Dictionary of simulated observations contained in pandas.DataFrame's.    
     """
 
-    cache_path = f'{project_tmpdir}/emergent-constraint/inputdata'
+    cache_path = f'{project_tmpdir}/inputdata'
     os.makedirs(cache_path, exist_ok=True)
 
     lat_lo_aircraft = -90.

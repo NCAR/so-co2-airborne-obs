@@ -9,5 +9,7 @@ R_notebooks:
 project_tmpdir: "/glade/work/{{env['USER']}}/so-co2-airborne-obs"
 project_tmpdir_obs: "/glade/work/{{env['USER']}}/so-co2-airborne-obs/obs-data"
 
+model_data_dir_root: "/glade/work/{{env['USER']}}/so-co2-airborne-obs/model-data"
+
 dash_asset_fname: Long-etal-2021-SO-CO2-Science.tar.gz
 model_data_dir: "/glade/work/{{env['USER']}}/so-co2-airborne-obs/model-data/Long-etal-2021-SO-CO2-Science"

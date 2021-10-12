@@ -1,4 +1,5 @@
 import os
+from glob import glob
 import yaml
 from jinja2 import Template
 
@@ -29,34 +30,32 @@ def _get_config_dict():
 def get(parameter):
     config_dict = _get_config_dict()
 
-    derived = False
-    if parameter in ["model_data_dir_root"]:
-        derived = True
-    else:
-        assert parameter in config_dict, f"unknown parameter {parameter}"
-
-    if not derived:
+    if parameter == "cache_dirs":
+        cache_dirs = sorted(glob(f"{config_dict['project_tmpdir']}/cache-*"))
+        cache_dirs += ["./data/cache"]
+        return cache_dirs
+    
+    elif parameter in config_dict:
         value = config_dict[parameter]
 
-    elif parameter == "model_data_dir_root":
-        model_data_dir = config_dict["model_data_dir"]
-        value = os.path.dirname(model_data_dir)
-
-    if parameter in [
-        "project_tmpdir",
-        "project_tmpdir_obs",
-        "model_data_dir_root",
-    ]:
-        try:
-            os.makedirs(value, exist_ok=True)
-        except OSError:
-            print(f"error in config: cannot mkdir {value}")
+        if parameter in [
+            "project_tmpdir",
+            "project_tmpdir_obs",
+            "model_data_dir_root",
+        ]:
             try:
-                TMPDIR = os.environ["TMPDIR"]
-            except:
-                TMPDIR = os.environ["HOME"]
-            value = f"{TMPDIR}/so-co2-airborne-obs/{parameter}"
-            print(f"setting {parameter} to {value}")
-            os.makedirs(value, exist_ok=True)
+                os.makedirs(value, exist_ok=True)
+            except OSError:
+                print(f"error in config: cannot mkdir {value}")
+                try:
+                    TMPDIR = os.environ["TMPDIR"]
+                except:
+                    TMPDIR = os.environ["HOME"]
+                value = f"{TMPDIR}/so-co2-airborne-obs/{parameter}"
+                print(f"setting {parameter} to {value}")
+                os.makedirs(value, exist_ok=True)
 
-    return value
+        return value
+    
+    else:
+        raise ValueError(f"unknown parameter {parameter}")

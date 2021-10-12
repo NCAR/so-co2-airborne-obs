@@ -15,8 +15,8 @@ project_tmpdir = config.get("project_tmpdir")
 # cache directory for big file
 project_tmpdir = f"{project_tmpdir}/cache-model-calcs"
 os.makedirs(project_tmpdir, exist_ok=True)
-    
-os.environ['INTAKE_LOCAL_CACHE_DIR'] = f'{project_tmpdir}/intake-cache'    
+
+os.environ['INTAKE_LOCAL_CACHE_DIR'] = f'{config.get("project_tmpdir")}/intake-cache'    
 
 # location of model data
 model_data_dir = config.get('model_data_dir')
