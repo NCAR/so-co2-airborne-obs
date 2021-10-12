@@ -33,11 +33,12 @@ def get_toc_files(notebooks_only=True):
                 else:
                     file_list.append(value)
 
-            elif key == 'sections':
+            elif key in ['chapters', 'sections', 'parts']:
                 file_list_ext = []
                 for sub in value:
                     file_list_ext = _toc_files(sub, file_list_ext)
                 file_list.extend(file_list_ext)
+        
         return file_list
     
     return _toc_files(toc_dict)
@@ -149,13 +150,23 @@ def kernel_munge(kernel_name):
     """return the kernel name as it's rendered in the notebook metadata"""
     return f'conda-env-miniconda3-{kernel_name}-py'
 
-
 @click.command()
 @click.option('--notebook', default=None)
 @click.option('--run-pre', is_flag=True)
 @click.option('--stop-on-fail', is_flag=True)
 @click.option('--clear-cache', is_flag=True)
-def main(run_pre, notebook, stop_on_fail=False, clear_cache=False):
+def main(run_pre, notebook, stop_on_fail, clear_cache):
+    """Run all notebooks to complete calculation.
+    """
+    failed_list = _main(run_pre, notebook, stop_on_fail, clear_cache)
+
+    if failed_list:
+        print('failed list')  
+        print(failed_list)
+        sys.exit(1)
+    
+    
+def _main(run_pre=False, notebook=None, stop_on_fail=False, clear_cache=False):
     """run notebooks"""
     
     project_kernel = config.get('project_kernel')
@@ -167,12 +178,13 @@ def main(run_pre, notebook, stop_on_fail=False, clear_cache=False):
     if notebook is None:
         notebook_list = config.get('pre_notebooks') if run_pre else []
         notebook_list = notebook_list + get_toc_files()
+    
     else:
         notebook_list = [notebook]    
     
     skip_notebooks = config.get('R_notebooks')
     notebook_list = [f for f in notebook_list if f not in skip_notebooks]
-    
+
     # check kernels
     for nb in notebook_list:
         notebook_kernel = nb_get_kernelname(nb)
@@ -183,8 +195,8 @@ def main(run_pre, notebook, stop_on_fail=False, clear_cache=False):
     # run the notebooks
     if clear_cache:
         cache_dirs = config.get("cache_dirs")
-        for d in cache_dirs:
-            subprocess.check_call(["rm", "-fr", f"{d}/*"])
+        for d in cache_dirs:   
+            subprocess.check_call(f"rm -fvr {d}/*", shell=True)
     
     cwd = os.getcwd()
     failed_list = []
@@ -209,11 +221,8 @@ def main(run_pre, notebook, stop_on_fail=False, clear_cache=False):
         # set the kernel back
         nb_set_kernelname(nb, kernel_name=kernel_munge(project_kernel))
         print()
-        
-    if failed_list:
-        print('failed list')  
-        print(failed_list)
-        sys.exit(1)
+    
+    return failed_list
 
 
 if __name__ == '__main__':
