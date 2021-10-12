@@ -155,7 +155,7 @@ def kernel_munge(kernel_name):
 @click.option('--run-pre', is_flag=True)
 @click.option('--stop-on-fail', is_flag=True)
 @click.option('--clear-cache', is_flag=True)
-def main(run_pre, notebook, stop_on_fail, clear_cache=False):
+def main(run_pre, notebook, stop_on_fail=False, clear_cache=False):
     """run notebooks"""
     
     project_kernel = config.get('project_kernel')
