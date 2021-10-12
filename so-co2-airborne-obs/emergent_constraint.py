@@ -35,7 +35,28 @@ os.makedirs(cache_path_pickles, exist_ok=True)
 
 
 def load_data(model_tracer_list, profiles_only=True, clobber=False):
-    """load the data to support the emergent constraint calculation"""
+    """Load the data to support the emergent constraint calculation, applying some filters.
+    This function caches it's own output, which is simply read back in if the cache exists.
+    
+    Parameters
+    ----------
+    model_tracer_list: list of tuples
+      The models and their tracers to use, i.e. [(CT2017, "CO2_OCN"), (CT2019B, "CO2_OCN"), ...]
+    
+    profiles_only : boolean
+      Use only data collected while "profiling."
+      
+    clobber : boolean
+      Clear cache and recompute.
+      
+    Returns
+    -------
+    dfs_obs : dict
+      Dictionary of observational data contained in pandas.DataFrame's.
+      
+    dfs_model: dict
+      Dictionary of simulated observations contained in pandas.DataFrame's.    
+    """
 
     cache_path = f'{project_tmpdir}/emergent-constraint/inputdata'
     os.makedirs(cache_path, exist_ok=True)
@@ -75,6 +96,20 @@ def load_data(model_tracer_list, profiles_only=True, clobber=False):
 
 
 def load_data_surface(model_tracer_list):
+    """Return a dictionary of `xarray.DataArray`'s with observations 
+    and simulated observations.
+    
+    Parameters
+    ----------
+    model_tracer_list: list of tuples
+      The models and their tracers to use, i.e. [(CT2017, "CO2_OCN"), (CT2019B, "CO2_OCN"), ...]
+     
+    Returns
+    -------
+    das_srf : dict
+      Dictionary of `xarray.DataArray`'s with model and observational data. 
+      Keys are constructed from each `model_tracer_list` element as "{model}-{tracer}".
+    """
     return {
         f'{m}-{t}': obs_surface.open_surface_co2_data(m, t)
         for m, t in [('obs', 'CO2')] + ensure_components(model_tracer_list)
@@ -82,7 +117,7 @@ def load_data_surface(model_tracer_list):
 
 
 def ensure_components(model_tracer_list):
-    """if a co2 flavor is detected for a model, ensure all flavors are present"""
+    """If a CO2 flavor is detected for a model, ensure all flavors are present."""
     co2_components = {'CO2', 'CO2_OCN', 'CO2_LND', 'CO2_FFF'}
     models = set(m for m, t in model_tracer_list)
     new_list = []
@@ -417,8 +452,42 @@ def get_fit_dict(series, prefix=''):
         
 
 class surface_constraint(object):
-    """
-    Compute the surface constraint.
+    """This object computes the emergent flux constraint based on surface data.
+      
+    Parameters
+    ----------
+    
+    periods : list of tuples
+      A list of tuples with year ranges over which to compute the constraint; e.g. 
+      [(1999, 2020), (1999, 2009), (2009, 2020)].
+    
+    flux_lat_range: [float, float]
+      The latitude range over which to integrate fluxes.
+ 
+    weight_by_sd_iav : boolean
+      Use a weighted regression to estimate constraint relationship, with the weights set by the 
+      standard deviation of interannual variability.
+    
+    seasons : list
+      The seasons over which to compute the constraint. E.g. ["DJF", "JJA"].
+    
+    fit_period: string
+      The year-range in `periods` to use as the "calibrated" constraint. E.g., "1999-2020".
+    
+    das_srf: dict
+      Dictionary of observational data contained in pandas.DataFrame's returned from `load_data_surface`.
+         
+    model_tracer_list: list of tuples
+      The models and their tracers to use, i.e. [(CT2017, "CO2_OCN"), (CT2019B, "CO2_OCN"), ...]
+
+    model_tracer_ext_list : list of tuples
+      A list of tuples specifying the (model, tracer) pairs to use to estimate "external" 
+      contributions to the observed gradient. I.e., these data are used to correct the 
+      observed estimates of the gradient for land and fossil contributions.
+      
+    model_list_sfco2_lnd : list of tuples
+      A list of (model, tracer) pairs used to correct the resulting flux estimate for in-region 
+      land and fossil fuel fluxes. This is only used if the contraint is based on total CO2.
     """
     def __init__(self,
                  periods,
@@ -541,6 +610,9 @@ class surface_constraint(object):
 
     @property
     def surface_flux(self):
+        """Return a pandas.DataFrame with the surface flux estimates for each time 
+        range defined in `periods`.
+        """
         if self._surface_flux is None:
             self._surface_flux = self._compute_surface_flux()
         return self._surface_flux
@@ -627,12 +699,17 @@ class aircraft_constraint(object):
     """This object computes the aircraft constraint.
 
     This is what happens here:
+    
     1. Initialize object with parameters defining the computation;
+    
     2. Compute observed gradient and error estimate from campaigns;
+    
     3. Group campaigns into `fit_groups` and compute associated DataFrame;
+    
     4. Compute fluxes for each campaign based on the associated `fit_group`
-    5. Fit a harmonic function to the campaign flux estimates, use this fit
-       to generate an annual mean estimate with associated uncertainty.
+    
+    5. Fit a harmonic function to the campaign flux estimates, use this fit to generate an 
+    annual mean estimate with associated uncertainty.
        
     Parameters
     ----------
@@ -690,7 +767,8 @@ class aircraft_constraint(object):
     methane_theta_lbound : float
       Specifies the θ value above which to relate CH4 and CO2. This is only relevant if 
       `use_methane_gradient_correction=True`, which is not the case by default. This option
-      was something we explored, but did not implement in the final computation.
+      was something we explored, but did not feel it well justified, so did not implement in the 
+      final computation.
       
     use_methane_gradient_correction: boolean
       Use vertical gradients of CH4 to correct observed gradient; this option is not scientifically 
@@ -730,7 +808,7 @@ class aircraft_constraint(object):
                  ubin_as_lower_bound=False,
                  restrict_groups=False,
                 ):
-
+        """Initialize the `aircraft_contraint`."""
         # incoming parameters
         self.theta_bins = obs_aircraft.make_theta_bins(
             lbin, ubin, udθ, ldθ, lbin_as_upper_bound, ubin_as_lower_bound
@@ -775,6 +853,7 @@ class aircraft_constraint(object):
 
     @curry
     def get_flight_gradients(self, dfs):
+        """Return a DataFrame with the ∆θCO2 gradient estiamtes for each flight."""
         return obs_aircraft.flight_gradients(
             dfs,
             theta_bins=self.theta_bins,
@@ -784,6 +863,7 @@ class aircraft_constraint(object):
 
     @curry
     def get_campaign_gradients(self, dfs):
+        """Return a DataFrame with the ∆θCO2 gradient estiamtes for each campaign."""
         return obs_aircraft.campaign_gradients(
             dfs,
             campaign_info.keys(),
@@ -957,6 +1037,7 @@ class aircraft_constraint(object):
 
     @property
     def campaign_flux(self):
+        """Return a DataFrame with the flux estimate for each campaign."""
         if self._campaign_flux is None:
             self._campaign_flux = self._compute_campaign_flux()
         return self._campaign_flux
@@ -1087,6 +1168,7 @@ class aircraft_constraint(object):
 
     @property
     def harmonic_fit(self):
+        """Return a two-harmonic fit to the campaign fluxes."""
         if self._p_pcov is None:
             self._p_pcov = self._compute_harmonic_fit()
         return self._p_pcov
@@ -1168,6 +1250,9 @@ class aircraft_constraint(object):
 class whole_enchilada(object):
     """Encapsulate entire worflow for computing `aircraft_constraint`.
     
+    This object loads the observations and simulated observations. 
+    It provides a method `get_ac` to compute the `aircraft_constraint` on those data.
+    
     Parameters
     ----------
     
@@ -1188,7 +1273,6 @@ class whole_enchilada(object):
       
     clobber : boolean
       If true, recompute rather than reading pre-computed result from cache.
-     
     """
     def __init__(self,
                  model_tracer_list,
@@ -1197,7 +1281,7 @@ class whole_enchilada(object):
                  profiles_only=True,
                  clobber=False,
                 ):
-        """compute the constraint over a range of parameter values"""
+        """Initialize the `whole_enchilada`; load the input data, applying filters."""
         # set incoming parameters
         self.model_tracer_list = model_tracer_list
         self.model_list_sfco2_lnd = model_list_sfco2_lnd
@@ -1252,7 +1336,9 @@ class whole_enchilada(object):
                model_groups={},
                clobber=False
               ):
-        """compute constraint"""
+        """Compute the aircraft constraint: return an instance of `aircraft_constraint`.
+           See the documentation for `aircraft_constraint`.
+        """
 
         cache_file = self._obj_cache_file(
             ubin,
@@ -1330,7 +1416,26 @@ class whole_enchilada_srf(object):
                  model_list_sfco2_lnd=[],
                  model_tracer_ext_list=[],
                 ):
-        """compute the constraint over a range of parameter values"""
+        """Encapsulate entire worflow for computing `surface_constraint`.
+
+        This object loads the observations and simulated observations. 
+        It provides a method `get_sc` to compute the `surface_constraint` on those data.
+
+        Parameters
+        ----------
+
+        model_tracer_list: list of tuples
+          The models and their tracers to use, i.e. [(CT2017, "CO2_OCN"), (CT2019B, "CO2_OCN"), ...]
+
+        model_list_sfco2_lnd : list of tuples
+          A list of (model, tracer) pairs used to correct the resulting flux estimate for in-region 
+          land and fossil fuel fluxes. This is only used if the contraint is based on total CO2.
+          
+        model_tracer_ext_list : list of tuples
+          A list of tuples specifying the (model, tracer) pairs to use to estimate "external" 
+          contributions to the observed gradient. I.e., these data are used to correct the 
+          observed estimates of the gradient for land and fossil contributions.
+        """        
         # set incoming parameters
         self.model_tracer_list = model_tracer_list
         self.model_list_sfco2_lnd = model_list_sfco2_lnd
@@ -1378,7 +1483,10 @@ class whole_enchilada_srf(object):
                ] + [(1999, 2020), (1999, 2009), (2009, 2020)],               
                clobber=False
               ):
-        """compute constraint"""
+        """Compute the emergent flux constraint based on surface observations: return 
+        an instance of `surface_constraint`.
+        See the documentation for `surface_constraint`.
+        """
 
         cache_file = self._obj_cache_file(
             flux_lat_range,
