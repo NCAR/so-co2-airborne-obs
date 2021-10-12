@@ -32,7 +32,7 @@ model_aliases = dict(
 
 class Model(object):
     """
-    High level object encapsulating model resources used in this project
+    High level object encapsulating model resources used in this project.
     """
     dataset_methods = []
 

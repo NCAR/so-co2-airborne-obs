@@ -1,7 +1,7 @@
 .. currentmodule:: datasets
 
-datasets
-~~~~~~~~
+Observational datasets
+~~~~~~~~~~~~~~~~~~~~~~
 
 The `datasets` module provides ready access to several datasets that are cached locally. 
 

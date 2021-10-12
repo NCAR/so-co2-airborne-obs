@@ -16,8 +16,8 @@ parts:
     - file: obs-aircraft
     - file: obs-surface
     - file: obs-surface-error
-    - file: obs-simulated-distributions
     - file: obs-surface-diurnal-variations
+    - file: obs-simulated-distributions    
 - caption: Gradient metrics
   chapters:
   - file: gradients-main
