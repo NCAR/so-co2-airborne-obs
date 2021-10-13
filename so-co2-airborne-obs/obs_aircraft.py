@@ -355,8 +355,13 @@ def _open_aircraft_data_obs(model):
         df = df.loc[~np.isnan(df.camp)]
         df['camp'] = [int(c) for c in df.camp.values]
         df['flt'] = [int(c) for c in df.flt.values]
+        
+        df.prof.values[np.isnan(df.prof.values)] = -1
         df['prof'] = [int(c) for c in df.prof.values]
 
+    if "mon" in df.columns and "month" not in df.columns:
+        df = df.rename(columns=dict(mon="month"))
+        
     set_campaign_flight_profile_date(df)
 
     # retain 1 co2-minus field and reverse sign; drop other CO2-fields
