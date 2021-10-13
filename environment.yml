@@ -50,3 +50,5 @@ dependencies:
 - xesmf
 - xhistogram
 - zarr
+- pip:
+  - sphinx-click

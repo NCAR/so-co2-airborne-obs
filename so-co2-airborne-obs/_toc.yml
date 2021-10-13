@@ -39,6 +39,7 @@ parts:
   chapters:
   - file: api
     sections:
+    - file: api-cli
     - file: api-datasets
     - file: api-emergent-constraint
 - caption: References

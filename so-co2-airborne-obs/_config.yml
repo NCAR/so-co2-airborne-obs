@@ -37,7 +37,8 @@ sphinx:
   - sphinx.ext.autodoc
   - sphinx.ext.autosummary
   - sphinx.ext.napoleon
-    
+  - sphinx_click
+  
 # Information about where the book exists on the web
 repository:
   url: https://github.com/fluid-sphere/so-co2-airborne-obs
