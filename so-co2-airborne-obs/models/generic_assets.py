@@ -1,5 +1,6 @@
 """tools to support getting data assets in a general way
 """
+import os
 import yaml
 from glob import glob
 from jinja2 import Template
