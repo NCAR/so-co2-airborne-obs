@@ -150,15 +150,27 @@ def kernel_munge(kernel_name):
     """return the kernel name as it's rendered in the notebook metadata"""
     return f'conda-env-miniconda3-{kernel_name}-py'
 
+
 @click.command()
-@click.option('--notebook', default=None)
-@click.option('--run-pre', is_flag=True)
-@click.option('--stop-on-fail', is_flag=True)
-@click.option('--clear-cache', is_flag=True)
-def main(run_pre, notebook, stop_on_fail, clear_cache):
-    """Run all notebooks to complete calculation.
+@click.option(
+    '--notebook',
+    default=None,
+    help="Optionally select a particular notebook to run. If omitted, then all notebooks are run.",
+)
+@click.option(
+    '--run-pre',
+    is_flag=True,
+    help="Run the 'pre-processing' notebooks; these notebooks are designated in `_config_calc.yml` and are omitted by default.",
+)
+@click.option(
+    '--clear-cache',
+    is_flag=True,
+    help="Delete all previously cached data prior to running the computation.",
+)
+def main(run_pre, notebook, clear_cache):
+    """Command line tool to run all the notebooks comprising this calculation.
     """
-    failed_list = _main(run_pre, notebook, stop_on_fail, clear_cache)
+    failed_list = _main(run_pre, notebook, clear_cache)
 
     if failed_list:
         print('failed list')  
@@ -166,7 +178,7 @@ def main(run_pre, notebook, stop_on_fail, clear_cache):
         sys.exit(1)
     
     
-def _main(run_pre=False, notebook=None, stop_on_fail=False, clear_cache=False):
+def _main(run_pre=False, notebook=None, clear_cache=False, stop_on_fail=True):
     """run notebooks"""
     
     project_kernel = config.get('project_kernel')

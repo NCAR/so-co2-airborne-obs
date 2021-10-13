@@ -135,10 +135,9 @@ def get_parameters(spec='default'):
     
     Parameters
     ----------
-    
     spec : string
       Specification of the constraint option in EC-input.yaml.  
-      Only one parameter set is suppored, so spec='default' is the only support option.
+      Only one parameter set is suppored, so `spec='default'` is the only support option.
     
     Returns
     -------
@@ -146,8 +145,9 @@ def get_parameters(spec='default'):
       Dictionary with the parameters for computing the aircraft constraint.
       Example:
       
-      ```python 
-        air_parms = {
+      .. code-block:: python
+      
+         air_parms = {
             'ubin': 300.0,
             'lbin': 280.0,
             'udθ': 10.0,
@@ -157,8 +157,8 @@ def get_parameters(spec='default'):
             'flux_lat_range': (-90.0, -45.0),
             'flux_memory': 90,
             'fit_groups': ('DJF', 'MAMJJASON'),
-        }
-      ```
+          }
+
     """
     
     assert spec == "default", "`spec='default'` is the only supported option"
