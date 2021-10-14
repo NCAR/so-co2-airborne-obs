@@ -190,18 +190,21 @@ def _main(run_pre=False, notebook=None, clear_cache=False, stop_on_fail=True):
     if notebook is None:
         notebook_list = config.get('pre_notebooks') if run_pre else []
         notebook_list = notebook_list + get_toc_files()
-    
+        # if the "pre" notebooks are in the _toc, remove them here
+        if not run_pre:
+            notebook_list = [nb for nb in notebook_list if nb not in config.get('pre_notebooks')]
     else:
         notebook_list = [notebook]    
     
     skip_notebooks = config.get('R_notebooks')
     notebook_list = [f for f in notebook_list if f not in skip_notebooks]
-
+    
     # check kernels
+    kernels = {}
     for nb in notebook_list:
-        notebook_kernel = nb_get_kernelname(nb)
-        assert notebook_kernel == kernel_munge(project_kernel), (
-            f'{nb}: unexpected kernel: {notebook_kernel}'
+        kernels[nb] = nb_get_kernelname(nb)
+        assert project_kernel in kernels[nb], (
+            f'{nb}: unexpected kernel: {kernels[nb]}'
         )
     
     # run the notebooks
