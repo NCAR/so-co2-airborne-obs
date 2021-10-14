@@ -158,6 +158,11 @@ def kernel_munge(kernel_name):
     help="Optionally select a particular notebook to run. If omitted, then all notebooks are run.",
 )
 @click.option(
+    '--start-after-notebook',
+    default=None,
+    help="Run all notebooks occurring after a specified notebook.",
+)
+@click.option(
     '--run-pre',
     is_flag=True,
     help="Run the 'pre-processing' notebooks; these notebooks are designated in `_config_calc.yml` and are omitted by default.",
@@ -167,10 +172,10 @@ def kernel_munge(kernel_name):
     is_flag=True,
     help="Delete all previously cached data prior to running the computation.",
 )
-def main(run_pre, notebook, clear_cache):
+def main(run_pre, notebook, start_after_notebook, clear_cache):
     """Command line tool to run all the notebooks comprising this calculation.
     """
-    failed_list = _main(run_pre, notebook, clear_cache)
+    failed_list = _main(run_pre, notebook, start_after_notebook, clear_cache)
 
     if failed_list:
         print('failed list')  
@@ -178,7 +183,7 @@ def main(run_pre, notebook, clear_cache):
         sys.exit(1)
     
     
-def _main(run_pre=False, notebook=None, clear_cache=False, stop_on_fail=True):
+def _main(run_pre=False, notebook=None, start_after_notebook=None, clear_cache=False, stop_on_fail=True):
     """run notebooks"""
     
     project_kernel = config.get('project_kernel')
@@ -194,11 +199,17 @@ def _main(run_pre=False, notebook=None, clear_cache=False, stop_on_fail=True):
         if not run_pre:
             notebook_list = [nb for nb in notebook_list if nb not in config.get('pre_notebooks')]
     else:
-        notebook_list = [notebook]    
+        notebook_list = [notebook]
     
     skip_notebooks = config.get('R_notebooks')
     notebook_list = [f for f in notebook_list if f not in skip_notebooks]
     
+    if start_after_notebook is not None:
+        assert start_after_notebook in notebook_list, f"{start_after_notebook} not found."
+        
+        ndx = notebook_list.index(start_after_notebook)
+        notebook_list = notebook_list[ndx+1:]
+            
     # check kernels
     kernels = {}
     for nb in notebook_list:
