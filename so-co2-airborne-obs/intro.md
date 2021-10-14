@@ -34,29 +34,6 @@ This constraint enables using observations of these gradient metrics to estimate
 
 ## Outline
 
-The calculation has the following components.
-
-1. {ref}`obs`
-1. {ref}`gradients`
-1. {ref}`emergent-constraint`
-1. {ref}`fluxes`
-
-(obs)=
-### Structure of variability in atmospheric carbon dioxide
-
-We examine the structure of atmospheric CO<sub>2</sub> variability over the Southern Ocean, demonstrating surface drawdown in the lower troposphere during summer and relatively homogenous distributions during winter.
-{numref}`aircraft-surface-obs` shows these patterns for two selected airborne transects and a collection of surface monitoring stations.
-The code to produce this figure is [here](./obs-main.ipynb).
-
-```{figure} figures/Fig-1-co2-aircraft-surface-obs.png
-:figwidth: 600px
-:name: aircraft-surface-obs
-
-**Observed patterns in atmospheric CO<sub>2</sub> over the Southern Ocean.** Observed patterns in atmospheric CO<sub>2</sub> over the Southern Ocean. Upper panels: Cross-sections observed by aircraft during (A) ORCAS, Jan–Feb 2016 and (B) ATom-1, Aug 2016. Colors show the observed CO<sub>2</sub> dry air mole fraction relative to the average observed within the 295–305 K potential temperature range south of 45°S on each campaign; contour lines show the observed potential temperature.
-Fight-tracks and cross-section plots for all campaigns are shown [here](obs-aircraft.ipynb) and [this notebook](obs-simulated-distributions.ipynb) illustrates the distributions of CO<sub>2</sub> simulated by a 3-D transport model.
-Lower panels: Compilation of mean CO<sub>2</sub> observed at surface monitoring stations minus the NOAA in situ record at the South Pole Observatory (SPO) over 1999–2019 for (C) summer (DJF) and (D) winter (JJA). 
-The black line is a spline fit provided simply as a visual guide. Blue shading denotes the latitude band in which we designate “Southern Ocean stations.” Station locations and temporal coverage are shown [here](obs-surface.ipynb).
-```
 
 (gradients)=
 ###  Gradient metrics to isolate ocean influence

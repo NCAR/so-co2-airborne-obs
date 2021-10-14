@@ -54,3 +54,16 @@ html:
   home_page_in_navbar: false
 
   
+parse:
+  myst_enable_extensions:
+    - amsmath
+    - colon_fence
+    # - deflist
+    - dollarmath
+    # - html_admonition
+    - html_image
+    - linkify
+    # - replacements
+    - smartquotes
+    - substitution
+    # - tasklist    

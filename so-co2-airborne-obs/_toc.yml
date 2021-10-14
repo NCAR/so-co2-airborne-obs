@@ -2,11 +2,12 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
+root: deck
 parts:
 - caption: Data assets
   chapters: 
   - file: _prestage-obs-instructions
+  - file: table-s1
   - file: _prestage-data
   - file: _precompute
 - caption: Observations
