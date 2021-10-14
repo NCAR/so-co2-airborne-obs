@@ -30,11 +30,26 @@ def _get_config_dict():
 def get(parameter):
     config_dict = _get_config_dict()
 
-    if parameter == "cache_dirs":
-        cache_dirs = sorted(glob(f"{config_dict['project_tmpdir']}/cache-*"))
-        cache_dirs += ["./data/cache"]
-        print("omitting: ./models/data-cache")
+    if parameter in ["cache_dirs", "cache_dirs_all"]:
+        project_tmpdir = config_dict['project_tmpdir'] 
+        cache_dirs = [
+                "./data/cache", 
+                f"{project_tmpdir}/cache-emergent-constraint",
+            ]
+        if parameter == "cache_dirs_all":
+            # this is a circular dependency, which is stupid
+            # but points to some basic deficiencies in the overall
+            # design. Anyway, confine import to here.
+            import models.config_local
+            cache_dirs.append(
+                [
+                    models.config_local.cache_rootdir_local,
+                    models.config_local.project_tmpdir,
+                ]
+            )
+        
         return cache_dirs
+
     
     elif parameter in config_dict:
         value = config_dict[parameter]
