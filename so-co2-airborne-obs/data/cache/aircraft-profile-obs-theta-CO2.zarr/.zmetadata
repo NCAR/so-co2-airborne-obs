@@ -1,0 +1,2640 @@
+{
+    "metadata": {
+        ".zattrs": {
+            "coordinates": "theta_bounds"
+        },
+        ".zgroup": {
+            "zarr_format": 2
+        },
+        "campaign/.zarray": {
+            "chunks": [
+                361
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<U32",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361
+            ],
+            "zarr_format": 2
+        },
+        "campaign/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile"
+            ]
+        },
+        "ch4/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "ch4/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "ch4_med/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "ch4_med/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "ch4_std/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "ch4_std/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "ch4mpanther/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "ch4mpanther/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "ch4mpanther_med/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "ch4mpanther_med/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "ch4mpanther_std/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "ch4mpanther_std/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "ch4mqcls/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "ch4mqcls/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "ch4mqcls_med/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "ch4mqcls_med/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "ch4mqcls_std/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "ch4mqcls_std/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "ch4mucats/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "ch4mucats/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "ch4mucats_med/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "ch4mucats_med/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "ch4mucats_std/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "ch4mucats_std/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "ch4noaa/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "ch4noaa/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "ch4noaa_med/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "ch4noaa_med/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "ch4noaa_std/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "ch4noaa_std/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "ch4panther/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "ch4panther/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "ch4panther_med/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "ch4panther_med/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "ch4panther_std/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "ch4panther_std/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "ch4qcls/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "ch4qcls/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "ch4qcls_med/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "ch4qcls_med/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "ch4qcls_std/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "ch4qcls_std/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "ch4ucats/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "ch4ucats/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "ch4ucats_med/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "ch4ucats_med/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "ch4ucats_std/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "ch4ucats_std/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2_med/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2_med/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2_std/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2_std/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2ao2/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2ao2/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2ao2_med/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2ao2_med/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2ao2_std/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2ao2_std/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2mao2/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2mao2/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2mao2_med/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2mao2_med/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2mao2_std/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2mao2_std/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2mnoaa/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2mnoaa/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2mnoaa_med/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2mnoaa_med/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2mnoaa_std/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2mnoaa_std/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2moms/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2moms/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2moms_med/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2moms_med/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2moms_std/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2moms_std/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2mqcls/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2mqcls/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2mqcls_med/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2mqcls_med/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2mqcls_std/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2mqcls_std/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2mspo/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2mspo/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2mspo_med/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2mspo_med/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2mspo_std/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2mspo_std/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2mx/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2mx/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2mx_med/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2mx_med/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2mx_std/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2mx_std/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2noaa/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2noaa/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2noaa_med/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2noaa_med/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2noaa_std/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2noaa_std/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2oms/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2oms/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2oms_med/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2oms_med/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2oms_std/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2oms_std/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2qcls/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2qcls/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2qcls_med/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2qcls_med/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2qcls_std/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2qcls_std/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2x/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2x/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2x_med/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2x_med/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "co2x_std/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "co2x_std/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "doy/.zarray": {
+            "chunks": [
+                361
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361
+            ],
+            "zarr_format": 2
+        },
+        "doy/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile"
+            ]
+        },
+        "flight_id/.zarray": {
+            "chunks": [
+                361
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<U32",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361
+            ],
+            "zarr_format": 2
+        },
+        "flight_id/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile"
+            ]
+        },
+        "lat/.zarray": {
+            "chunks": [
+                361
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361
+            ],
+            "zarr_format": 2
+        },
+        "lat/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile"
+            ]
+        },
+        "lon/.zarray": {
+            "chunks": [
+                361
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361
+            ],
+            "zarr_format": 2
+        },
+        "lon/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile"
+            ]
+        },
+        "month/.zarray": {
+            "chunks": [
+                361
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361
+            ],
+            "zarr_format": 2
+        },
+        "month/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile"
+            ]
+        },
+        "profile/.zarray": {
+            "chunks": [
+                361
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<U17",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361
+            ],
+            "zarr_format": 2
+        },
+        "profile/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile"
+            ]
+        },
+        "sf6/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "sf6/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "sf6_med/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "sf6_med/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "sf6_std/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "sf6_std/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "sf6mpfp/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "sf6mpfp/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "sf6mpfp_med/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "sf6mpfp_med/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "sf6mpfp_std/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "sf6mpfp_std/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "sf6mucats/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "sf6mucats/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "sf6mucats_med/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "sf6mucats_med/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "sf6mucats_std/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "sf6mucats_std/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "sf6panther/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "sf6panther/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "sf6panther_med/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "sf6panther_med/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "sf6panther_std/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "sf6panther_std/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "sf6pfp/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "sf6pfp/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "sf6pfp_med/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "sf6pfp_med/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "sf6pfp_std/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "sf6pfp_std/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "sf6ucats/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "sf6ucats/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "sf6ucats_med/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "sf6ucats_med/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "sf6ucats_std/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "sf6ucats_std/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "strat/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "strat/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "strat_med/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "strat_med/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "strat_std/.zarray": {
+            "chunks": [
+                361,
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361,
+                27
+            ],
+            "zarr_format": 2
+        },
+        "strat_std/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile",
+                "theta"
+            ],
+            "coordinates": "lat campaign year doy lon month time flight_id"
+        },
+        "theta/.zarray": {
+            "chunks": [
+                27
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                27
+            ],
+            "zarr_format": 2
+        },
+        "theta/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "theta"
+            ]
+        },
+        "theta_bounds/.zarray": {
+            "chunks": [
+                27,
+                2
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                27,
+                2
+            ],
+            "zarr_format": 2
+        },
+        "theta_bounds/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "theta",
+                "d2"
+            ]
+        },
+        "time/.zarray": {
+            "chunks": [
+                361
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<i8",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361
+            ],
+            "zarr_format": 2
+        },
+        "time/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile"
+            ],
+            "calendar": "proleptic_gregorian",
+            "units": "days since 2009-01-20 00:00:00"
+        },
+        "year/.zarray": {
+            "chunks": [
+                361
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                361
+            ],
+            "zarr_format": 2
+        },
+        "year/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "profile"
+            ]
+        }
+    },
+    "zarr_consolidated_format": 1
+}

@@ -1,0 +1,7 @@
+{
+    "_ARRAY_DIMENSIONS": [
+        "profile",
+        "theta"
+    ],
+    "coordinates": "lat campaign year doy lon month time flight_id"
+}

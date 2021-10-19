@@ -1,0 +1,8 @@
+{
+    "_ARRAY_DIMENSIONS": [
+        "time",
+        "z",
+        "y"
+    ],
+    "coordinates": "LAT ALT month campaigns year"
+}
