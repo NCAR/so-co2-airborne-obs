@@ -30,5 +30,3 @@ readacmod() # ~45 min
 
 source('read_surface_sf6.r')
 readsurfsf6()
-
-source('diur_plot_forpub.r')
