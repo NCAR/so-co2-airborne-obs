@@ -172,18 +172,32 @@ def kernel_munge(kernel_name):
     is_flag=True,
     help="Delete all previously cached data prior to running the computation.",
 )
-def main(run_pre, notebook, start_after_notebook, clear_cache):
+@click.option(
+    '--list-notebooks',
+    is_flag=True,
+    help="List all notebooks and return.",
+)
+def main(run_pre, notebook, start_after_notebook, clear_cache, list_notebooks):
     """Command line tool to run all the notebooks comprising this calculation.
     """
-    failed_list = _main(run_pre, notebook, start_after_notebook, clear_cache)
+    failed_list = _main(
+        run_pre, 
+        notebook, 
+        start_after_notebook, 
+        clear_cache, 
+        True, 
+        list_notebooks,
+    )
 
     if failed_list:
         print('failed list')  
         print(failed_list)
         sys.exit(1)
     
+    sys.exit(0)
     
-def _main(run_pre=False, notebook=None, start_after_notebook=None, clear_cache=False, stop_on_fail=True):
+    
+def _main(run_pre=False, notebook=None, start_after_notebook=None, clear_cache=False, stop_on_fail=True, list_notebooks=False):
     """run notebooks"""
     
     project_kernel = config.get('project_kernel')
@@ -209,14 +223,20 @@ def _main(run_pre=False, notebook=None, start_after_notebook=None, clear_cache=F
         
         ndx = notebook_list.index(start_after_notebook)
         notebook_list = notebook_list[ndx+1:]
-            
+
+    if list_notebooks:
+        for nb in notebook_list:
+            print(nb)
+        return []
+    
     # check kernels
-    kernels = {}
-    for nb in notebook_list:
-        kernels[nb] = nb_get_kernelname(nb)
-        assert project_kernel in kernels[nb], (
-            f'{nb}: unexpected kernel: {kernels[nb]}'
-        )
+    if False:
+        kernels = {}
+        for nb in notebook_list:
+            kernels[nb] = nb_get_kernelname(nb)
+            assert project_kernel in kernels[nb], (
+                f'{nb}: unexpected kernel: {kernels[nb]}'
+            )
     
     # run the notebooks
     if clear_cache:
