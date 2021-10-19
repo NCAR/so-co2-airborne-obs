@@ -36,6 +36,8 @@ parts:
 - caption: Flux Estimates
   chapters:    
   - file: fluxes
+    section:
+    - file: fluxes-aircraft-campaign-table
 - caption: API
   chapters:
   - file: api
