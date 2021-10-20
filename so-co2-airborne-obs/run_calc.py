@@ -182,6 +182,11 @@ def kernel_munge(kernel_name):
     is_flag=True,
     help="List all notebooks and return.",
 )
+@click.option(
+    '--skip-notebooks',
+    default="",
+    help="List notebooks to skip.",
+)
 def main(
     run_pre, 
     notebook, 
@@ -189,6 +194,7 @@ def main(
     clear_cache, 
     clear_cache_ec_only, 
     list_notebooks,
+    skip_notebooks,
 ):
     """Command line tool to run all the notebooks comprising this calculation.
     """
@@ -199,6 +205,7 @@ def main(
         clear_cache=clear_cache, 
         clear_cache_ec_only=clear_cache_ec_only,
         list_notebooks=list_notebooks,
+        skip_notebooks=skip_notebooks,
     )
 
     if failed_list:
@@ -216,6 +223,7 @@ def _main(
     clear_cache=False,  
     clear_cache_ec_only=False,
     list_notebooks=False,
+    skip_notebooks="",
 ):
     """run notebooks"""
     
@@ -235,7 +243,14 @@ def _main(
     else:
         notebook_list = [notebook]
     
-    skip_notebooks = config.get('R_notebooks')
+    if skip_notebooks:
+        skip_notebooks = skip_notebooks.split(",")
+    else:
+        skip_notebooks = []
+    skip_notebooks += config.get('R_notebooks')
+    print(skip_notebooks)
+    return
+    
     notebook_list = [f for f in notebook_list if f not in skip_notebooks]
     
     if start_after_notebook is not None:
