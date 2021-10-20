@@ -173,20 +173,32 @@ def kernel_munge(kernel_name):
     help="Delete all previously cached data prior to running the computation.",
 )
 @click.option(
+    '--clear-cache-ec-only',
+    is_flag=True,
+    help="Delete cached data associated with emergent constraint fits.",
+)
+@click.option(
     '--list-notebooks',
     is_flag=True,
     help="List all notebooks and return.",
 )
-def main(run_pre, notebook, start_after_notebook, clear_cache, list_notebooks):
+def main(
+    run_pre, 
+    notebook, 
+    start_after_notebook, 
+    clear_cache, 
+    clear_cache_ec_only, 
+    list_notebooks,
+):
     """Command line tool to run all the notebooks comprising this calculation.
     """
     failed_list = _main(
-        run_pre, 
-        notebook, 
-        start_after_notebook, 
-        clear_cache, 
-        True, 
-        list_notebooks,
+        run_pre=run_pre, 
+        notebook=notebook, 
+        start_after_notebook=start_after_notebook, 
+        clear_cache=clear_cache, 
+        clear_cache_ec_only=clear_cache_ec_only,
+        list_notebooks=list_notebooks,
     )
 
     if failed_list:
@@ -197,9 +209,17 @@ def main(run_pre, notebook, start_after_notebook, clear_cache, list_notebooks):
     sys.exit(0)
     
     
-def _main(run_pre=False, notebook=None, start_after_notebook=None, clear_cache=False, stop_on_fail=True, list_notebooks=False):
+def _main(
+    run_pre=False, 
+    notebook=None, 
+    start_after_notebook=None, 
+    clear_cache=False,  
+    clear_cache_ec_only=False,
+    list_notebooks=False,
+):
     """run notebooks"""
     
+    stop_on_fail = True
     project_kernel = config.get('project_kernel')
     
     assert os.environ['CONDA_DEFAULT_ENV'] == project_kernel, (
@@ -241,8 +261,19 @@ def _main(run_pre=False, notebook=None, start_after_notebook=None, clear_cache=F
     # run the notebooks
     if clear_cache:
         cache_dirs = config.get("cache_dirs")
-        for d in cache_dirs:   
+        for d in cache_dirs:
+            print('-'*80)
+            print(f'clearing {d}')
             subprocess.check_call(f"rm -fvr {d}/*", shell=True)
+            print()
+            
+    if clear_cache_ec_only:
+        cache_dirs = config.get("cache_dirs_ec")
+        for d in cache_dirs:   
+            print('-'*80)
+            print(f'clearing {d}')            
+            subprocess.check_call(f"rm -fvr {d}/*", shell=True)        
+            print()
     
     cwd = os.getcwd()
     failed_list = []
