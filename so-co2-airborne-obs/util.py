@@ -973,8 +973,19 @@ class linreg_odr(object):
         self.odr = odr.ODR(self.data, odr.unilinear).run()
         
         self.beta = self.odr.beta
+        self.res_var = self.odr.res_var
+
+
+        # sd_beta = sqrt(diag(cov_beta * res_var))
+        # the documentation of `curve_fit` is illuminating:
+        # https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html
+        # ODR's cov_beta return argument is consistent with `absolute_sigma=True`.
+        # This thread:
+        # https://mail.python.org/pipermail/scipy-user/2013-February/034196.html
+        # explains some reasoning behind the original implementation 
+        # (which was `absolute_sigma=False`).
         self.cov_beta = self.odr.cov_beta
-        self.stderr_beta = self.odr.sd_beta
+        self.stderr_beta = self.odr.sd_beta #np.sqrt(np.diag(self.cov_beta))
         self.s2n = np.abs(self.beta[0]) / (self.cov_beta[0, 0]**0.5)
 
         self.xhat = np.sort(x)
@@ -1011,6 +1022,7 @@ class linreg_odr(object):
             'beta',
             'stderr_beta',
             'cov_beta',
+            'res_var',
             'r2',
             'rmse',
             'pval',
