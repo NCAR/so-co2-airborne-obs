@@ -248,8 +248,6 @@ def _main(
     else:
         skip_notebooks = []
     skip_notebooks += config.get('R_notebooks')
-    print(skip_notebooks)
-    return
     
     notebook_list = [f for f in notebook_list if f not in skip_notebooks]
     
