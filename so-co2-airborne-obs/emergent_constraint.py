@@ -24,6 +24,8 @@ import figure_panels
 import models
 import obs_aircraft
 import obs_surface
+
+import regression_models
 import util
 
 project_tmpdir = f"{config.get('project_tmpdir')}/cache-emergent-constraint"
@@ -444,7 +446,7 @@ def compute_constraint_fit(df, weight_by_sd_iav=False, weight_by_model_family=Fa
     k = np.isnan(x) | np.isnan(y)
 
     if np.sum(~k) < 3:
-        fit = util.linreg_odr()
+        fit = regression_models.linreg_odr()
         fit_dict = {f'fit_{k}': v for k, v in fit.to_dict().items()}
         fit_dict.update({f'yxfit_{k}': v for k, v in fit.to_dict().items()})        
 
@@ -473,8 +475,8 @@ def compute_constraint_fit(df, weight_by_sd_iav=False, weight_by_model_family=Fa
             xerr = wgts
             yerr = wgts
             
-        fit_xy = util.linreg_odr(x[~k], y[~k], xerr=xerr, yerr=yerr)
-        fit_yx = util.linreg_odr(y[~k], x[~k], xerr=yerr, yerr=xerr)
+        fit_xy = regression_models.linreg_odr(x[~k], y[~k], xerr=xerr, yerr=yerr)
+        fit_yx = regression_models.linreg_odr(y[~k], x[~k], xerr=yerr, yerr=xerr)
         
         fit_dict = {f'fit_{k}': v for k, v in fit_xy.to_dict().items()}
         fit_dict.update({f'yxfit_{k}': v for k, v in fit_yx.to_dict().items()})
@@ -970,7 +972,7 @@ class aircraft_constraint(object):
             df_list.append(
                 pd.DataFrame(dict(co2=co2, ch4=ch4, campaign_group=c))
             )
-            fit = util.linreg_odr(ch4, co2)
+            fit = regression_models.linreg_odr(ch4, co2)
             result = {'campaign_group': c}
             result.update({f'fit_{k}': v for k, v in fit.to_dict().items()})
             fit_lines.append(result)
