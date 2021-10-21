@@ -1,9 +1,20 @@
 import numpy as np
+import xarray as xr
 
 from scipy import stats
 import scipy.odr as odr
+from statsmodels.tsa.seasonal import STL
 
 
+
+def _ensure_monthly(ds):
+    np.testing.assert_approx_equal(
+            actual=(ds.time.diff('time') / np.timedelta64(1, 'D')).mean(),
+            desired=30.4,
+            significant=1
+        )
+
+    
 class linreg_odr(object):
     """Wrapper to SciPy's Orthogonal Distance Regression Package.
     The wrapping provides some ready access to goodness of fit 
@@ -155,3 +166,102 @@ class linreg_odr(object):
         """
         return {k: self.__dict__[k] for k in self.persist_keys}        
        
+        
+        
+def r2_stl(ds_stl):
+    """compute coefficient of determination"""
+    sst = np.sum((ds_stl.observed - ds_stl.observed.mean())**2)
+    ssr = np.sum(ds_stl.resid**2)
+    return (1. - ssr/sst).values
+
+
+def stl_ds(da, trend, seasonal, period, verbose):
+    """
+    Apply the STL model and return an Xarray Dataset.
+            
+    References
+    ----------
+    
+    [1] https://www.statsmodels.org/devel/examples/notebooks/generated/stl_decomposition.html
+    
+    [2] R. B. Cleveland, W. S. Cleveland, J.E. McRae, and I. Terpenning
+    (1990) STL: A Seasonal-Trend Decomposition Procedure Based on LOESS.
+    Journal of Official Statistics, 6, 3-73.    
+    """
+    
+    dso = xr.Dataset(
+        {
+            'observed': da.copy().reset_coords(
+                [c for c in da.coords if c != 'time'], 
+                drop=True,
+            )
+        }
+    )    
+    
+    stl = STL(
+        da, 
+        period=period,
+        trend=trend,
+        seasonal=seasonal,
+        robust=True,
+    ).fit()                
+
+    for attr in ['trend', 'seasonal', 'resid']:
+        dso[attr] = xr.DataArray(
+            getattr(stl, attr), 
+            dims=('time'), 
+            coords={'time': da.time},
+        )
+    dso['predicted'] = xr.DataArray(
+        stl.trend + stl.seasonal,
+        dims=('time'), 
+        coords={'time': da.time},
+    )
+    dso.resid.data = dso.observed - dso.predicted            
+    
+    if verbose:
+        print(f'STL fit: r^2 = {r2_stl(dso):0.4f}')
+
+    return dso
+
+
+def apply_stl_decomp(co2_data, freq='monthly', verbose=True):
+    """
+    (1) Apply the STL fit with `trend_window=121`;
+    (2) Fit the residuals from (1) with `trend_window=25`;
+    (3) Add (1) and (2) to get the final fit.
+
+    """
+    co2_data = co2_data.dropna(dim='time').copy()
+    
+    if freq == 'monthly':
+        windows = [121, 25]
+        seasonal = 13 
+        period = 12
+        _ensure_monthly(co2_data)        
+    else:
+        raise ValueError('unknown freq')
+    
+    spo_fits = []
+    for trend_window in windows:
+        stl_fit =  stl_ds(
+            co2_data, 
+            trend=trend_window, 
+            seasonal=seasonal,
+            period=period,
+            verbose=verbose,
+        )
+        spo_fits.append(stl_fit)
+        co2_data.data = stl_fit.resid.data
+    
+    spo_fit = spo_fits[0]
+    for i in range(1, len(spo_fits)):
+        for v in ['trend', 'seasonal', 'predicted']:
+            spo_fit[v].data = spo_fit[v] + spo_fits[i][v]
+
+
+    spo_fit.resid.data = spo_fit.observed - spo_fit.predicted
+    spo_fit.attrs["r2"] = r2_stl(spo_fit)
+    
+    return spo_fit
+        

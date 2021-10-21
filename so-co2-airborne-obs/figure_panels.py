@@ -73,10 +73,25 @@ marker_order = [
 marker_order += [f'${a}$' for a in [chr(i).upper() for i in range(97,97+26)]]
 
 
+def marker_colororder(marker_spec, palette=None):
+    """replace colors in marker spec"""
+    
+    import seaborn as sns
+    
+    current_palette = sns.color_palette(palette, len(marker_spec.keys()))
+    colors = current_palette.as_hex()
+
+    for label, spec in marker_spec.items():
+        color = colors.pop(0)
+        for attr, value in spec.items():
+            if 'color' in attr and '#' in value:
+                marker_spec[label][attr] = color
+                
+
 def marker_spec_co2_inst():
     with open('data/marker_spec_co2_institutions.yaml', 'r') as fid:
         marker_spec = yaml.safe_load(fid)
-    util.marker_colororder(marker_spec, sns_palette)
+    marker_colororder(marker_spec, sns_palette)
     return marker_spec
 
 
