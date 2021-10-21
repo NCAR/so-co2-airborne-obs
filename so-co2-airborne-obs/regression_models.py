@@ -164,7 +164,7 @@ class linreg_odr(object):
     def to_dict(self):        
         """Return a dictionary documenting the results of the regression analysis.        
         """
-        return {k: self.__dict__[k] for k in self.persist_keys}        
+        return {k: getattr(self, k) for k in self.persist_keys}        
        
         
         
