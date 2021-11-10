@@ -4,5 +4,5 @@
         "z",
         "y"
     ],
-    "coordinates": "ALT year LAT month campaigns"
+    "coordinates": "LAT ALT month year campaigns"
 }

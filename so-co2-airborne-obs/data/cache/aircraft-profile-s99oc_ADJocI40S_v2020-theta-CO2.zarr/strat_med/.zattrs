@@ -3,5 +3,5 @@
         "profile",
         "theta"
     ],
-    "coordinates": "time lon year month lat campaign flight_id doy"
+    "coordinates": "doy lat flight_id month lon year campaign time"
 }

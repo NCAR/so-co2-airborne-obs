@@ -62,7 +62,7 @@
                 "z",
                 "y"
             ],
-            "coordinates": "LAT ALT month campaigns year"
+            "coordinates": "campaigns year ALT LAT month"
         },
         "DCO2_binned/.zarray": {
             "chunks": [
@@ -94,7 +94,7 @@
                 "z",
                 "y"
             ],
-            "coordinates": "LAT ALT month campaigns year"
+            "coordinates": "campaigns year ALT LAT month"
         },
         "LAT/.zarray": {
             "chunks": [
@@ -154,7 +154,7 @@
                 "z",
                 "y"
             ],
-            "coordinates": "LAT ALT month campaigns year"
+            "coordinates": "campaigns year ALT LAT month"
         },
         "N_DCO2/.zarray": {
             "chunks": [
@@ -186,7 +186,7 @@
                 "z",
                 "y"
             ],
-            "coordinates": "LAT ALT month campaigns year"
+            "coordinates": "campaigns year ALT LAT month"
         },
         "THETA/.zarray": {
             "chunks": [
@@ -218,7 +218,7 @@
                 "z",
                 "y"
             ],
-            "coordinates": "LAT ALT month campaigns year"
+            "coordinates": "campaigns year ALT LAT month"
         },
         "THETA_binned/.zarray": {
             "chunks": [
@@ -250,7 +250,7 @@
                 "z",
                 "y"
             ],
-            "coordinates": "LAT ALT month campaigns year"
+            "coordinates": "campaigns year ALT LAT month"
         },
         "campaigns/.zarray": {
             "chunks": [

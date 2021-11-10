@@ -58,7 +58,7 @@
                 "profile",
                 "theta"
             ],
-            "coordinates": "time lon year month lat campaign flight_id doy"
+            "coordinates": "doy lat flight_id month lon year campaign time"
         },
         "co2_med/.zarray": {
             "chunks": [
@@ -87,7 +87,7 @@
                 "profile",
                 "theta"
             ],
-            "coordinates": "time lon year month lat campaign flight_id doy"
+            "coordinates": "doy lat flight_id month lon year campaign time"
         },
         "co2_std/.zarray": {
             "chunks": [
@@ -116,7 +116,7 @@
                 "profile",
                 "theta"
             ],
-            "coordinates": "time lon year month lat campaign flight_id doy"
+            "coordinates": "doy lat flight_id month lon year campaign time"
         },
         "doy/.zarray": {
             "chunks": [
@@ -295,7 +295,7 @@
                 "profile",
                 "theta"
             ],
-            "coordinates": "time lon year month lat campaign flight_id doy"
+            "coordinates": "doy lat flight_id month lon year campaign time"
         },
         "strat_med/.zarray": {
             "chunks": [
@@ -324,7 +324,7 @@
                 "profile",
                 "theta"
             ],
-            "coordinates": "time lon year month lat campaign flight_id doy"
+            "coordinates": "doy lat flight_id month lon year campaign time"
         },
         "strat_std/.zarray": {
             "chunks": [
@@ -353,7 +353,7 @@
                 "profile",
                 "theta"
             ],
-            "coordinates": "time lon year month lat campaign flight_id doy"
+            "coordinates": "doy lat flight_id month lon year campaign time"
         },
         "theta/.zarray": {
             "chunks": [

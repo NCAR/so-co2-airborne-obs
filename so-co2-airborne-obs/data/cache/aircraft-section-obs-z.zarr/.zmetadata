@@ -62,7 +62,7 @@
                 "z",
                 "y"
             ],
-            "coordinates": "ALT year LAT month campaigns"
+            "coordinates": "LAT ALT month year campaigns"
         },
         "CO2_binned/.zarray": {
             "chunks": [
@@ -94,7 +94,7 @@
                 "z",
                 "y"
             ],
-            "coordinates": "ALT year LAT month campaigns"
+            "coordinates": "LAT ALT month year campaigns"
         },
         "DCH4_binned/.zarray": {
             "chunks": [
@@ -126,7 +126,7 @@
                 "z",
                 "y"
             ],
-            "coordinates": "ALT year LAT month campaigns"
+            "coordinates": "LAT ALT month year campaigns"
         },
         "DCO2_binned/.zarray": {
             "chunks": [
@@ -158,7 +158,7 @@
                 "z",
                 "y"
             ],
-            "coordinates": "ALT year LAT month campaigns"
+            "coordinates": "LAT ALT month year campaigns"
         },
         "DSF6_binned/.zarray": {
             "chunks": [
@@ -190,7 +190,7 @@
                 "z",
                 "y"
             ],
-            "coordinates": "ALT year LAT month campaigns"
+            "coordinates": "LAT ALT month year campaigns"
         },
         "LAT/.zarray": {
             "chunks": [
@@ -250,7 +250,7 @@
                 "z",
                 "y"
             ],
-            "coordinates": "ALT year LAT month campaigns"
+            "coordinates": "LAT ALT month year campaigns"
         },
         "N_CO2/.zarray": {
             "chunks": [
@@ -282,7 +282,7 @@
                 "z",
                 "y"
             ],
-            "coordinates": "ALT year LAT month campaigns"
+            "coordinates": "LAT ALT month year campaigns"
         },
         "N_DCH4/.zarray": {
             "chunks": [
@@ -314,7 +314,7 @@
                 "z",
                 "y"
             ],
-            "coordinates": "ALT year LAT month campaigns"
+            "coordinates": "LAT ALT month year campaigns"
         },
         "N_DCO2/.zarray": {
             "chunks": [
@@ -346,7 +346,7 @@
                 "z",
                 "y"
             ],
-            "coordinates": "ALT year LAT month campaigns"
+            "coordinates": "LAT ALT month year campaigns"
         },
         "N_DSF6/.zarray": {
             "chunks": [
@@ -378,7 +378,7 @@
                 "z",
                 "y"
             ],
-            "coordinates": "ALT year LAT month campaigns"
+            "coordinates": "LAT ALT month year campaigns"
         },
         "N_SF6/.zarray": {
             "chunks": [
@@ -410,7 +410,7 @@
                 "z",
                 "y"
             ],
-            "coordinates": "ALT year LAT month campaigns"
+            "coordinates": "LAT ALT month year campaigns"
         },
         "N_STRATOSPHERE/.zarray": {
             "chunks": [
@@ -442,7 +442,7 @@
                 "z",
                 "y"
             ],
-            "coordinates": "ALT year LAT month campaigns"
+            "coordinates": "LAT ALT month year campaigns"
         },
         "SF6_binned/.zarray": {
             "chunks": [
@@ -474,7 +474,7 @@
                 "z",
                 "y"
             ],
-            "coordinates": "ALT year LAT month campaigns"
+            "coordinates": "LAT ALT month year campaigns"
         },
         "STRATOSPHERE_binned/.zarray": {
             "chunks": [
@@ -506,7 +506,7 @@
                 "z",
                 "y"
             ],
-            "coordinates": "ALT year LAT month campaigns"
+            "coordinates": "LAT ALT month year campaigns"
         },
         "THETA/.zarray": {
             "chunks": [
@@ -538,7 +538,7 @@
                 "z",
                 "y"
             ],
-            "coordinates": "ALT year LAT month campaigns"
+            "coordinates": "LAT ALT month year campaigns"
         },
         "THETA_binned/.zarray": {
             "chunks": [
@@ -570,7 +570,7 @@
                 "z",
                 "y"
             ],
-            "coordinates": "ALT year LAT month campaigns"
+            "coordinates": "LAT ALT month year campaigns"
         },
         "campaigns/.zarray": {
             "chunks": [
