@@ -1944,7 +1944,7 @@ def flux_contraint_seasonal_cycle(ax, ac, dsets_sfco2_mon=None,
             'HIPPO-3': 0, #-5, #-6,
             'ORCAS-J': 2, #5,
             'ORCAS-F': 0, #+10,
-            'ATOM-2': 0, #+10
+            'ATom-2': 0, #+10
         }
 
         ylm = np.array(ax.get_ylim())
@@ -2021,7 +2021,7 @@ def flux_contraint_djf_timeseries(ax, dsets_sfco2_mmm, ac, df_surface_flux, sfco
     ylm = ax.get_ylim()
     xoff = {
         'HIPPO-1': -0.5,
-        'ATOM-2': 0.6,
+        'ATom-2': 0.6,
         'ORCAS-J': -0.5,
         'ORCAS-F': 0.6,
     }
@@ -2071,7 +2071,7 @@ def flux_contraint_jja_timeseries(ax, dsets_sfco2_mmm, ac):
 
     xoff = {
         'HIPPO-5': -0.4,
-        'ATOM-1': -0.4,
+        'ATom-1': -0.4,
     }
     ylm = ax.get_ylim()
     for xi, c in zip(x, clist):
@@ -2258,8 +2258,8 @@ def assemble_plot_constraint(ac, model_group=None, highlight_campaign=[], suppre
         add_obs_constraint(
             ax=ax_alias['MAMJJASON'],
             df=ac.campaign_flux,
-            indexes=['ATOM-1',],
+            indexes=['ATom-1',],
             marker_spec=figure_panels.marker_spec_campaigns(),
-            labels=['ATOM-1',],
-            label_dx={'ATOM-1': 0.05},
+            labels=['ATom-1',],
+            label_dx={'ATom-1': 0.05},
         )

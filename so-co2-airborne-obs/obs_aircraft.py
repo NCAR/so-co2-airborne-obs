@@ -28,10 +28,10 @@ if split_orcas:
         'HIPPO-5',
         'ORCAS-J',
         'ORCAS-F',
-        'ATOM-1',
-        'ATOM-2',
-        'ATOM-3',
-        'ATOM-4',
+        'ATom-1',
+        'ATom-2',
+        'ATom-3',
+        'ATom-4',
     ]
 else:
     campaign_list = [
@@ -40,16 +40,16 @@ else:
         'HIPPO-3',
         'HIPPO-5',
         'ORCAS',
-        'ATOM-1',
-        'ATOM-2',
-        'ATOM-3',
-        'ATOM-4',
+        'ATom-1',
+        'ATom-2',
+        'ATom-3',
+        'ATom-4',
     ]
 
 instruments = dict(
     ORCAS=['AO2', 'QCLS', 'Medusa',],
     HIPPO=['AO2', 'OMS', 'Medusa', 'PFP'],
-    ATOM=['AO2', 'QCLS', 'Medusa', 'PFP'],
+    ATom=['AO2', 'QCLS', 'Medusa', 'PFP'],
 )
 
 co2vars = {c: [f'co2{i.lower()}' for i in instr]
@@ -79,18 +79,18 @@ best CH4 from ATom is CH4_NOAA
 ch4vars_primary = dict(
     HIPPO='ch4qcls',
     ORCAS='ch4noaa',
-    ATOM='ch4noaa',
+    ATom='ch4noaa',
 )
 
 ch4vars = dict(
     HIPPO=['ch4pfp'], # 'ch4ucats', 'ch4panther',
     ORCAS=['ch4qcls'],
-    ATOM=['ch4qcls', 'ch4pfp'],  # 'ch4ucats', 'ch4panther',
+    ATom=['ch4qcls', 'ch4pfp'],  # 'ch4ucats', 'ch4panther',
 )
 ch4mvars = dict(
     HIPPO=['ch4mpfp'], # 'ch4mucats', 'ch4mpanther',
     ORCAS=['ch4mqcls'],
-    ATOM=['ch4mqcls', 'ch4mpfp'],  # , 'ch4mucats', 'ch4mpanther'
+    ATom=['ch4mqcls', 'ch4mpfp'],  # , 'ch4mucats', 'ch4mpanther'
 )
 
 ch4vars = expand_project_vars(ch4vars)
@@ -119,17 +119,17 @@ Note for both HIPPO and ATom, SF6 PANTHER and UCATS also have error variables fo
 sf6vars_primary = dict(
     HIPPO='sf6panther',
     ORCAS=None,
-    ATOM='sf6panther',
+    ATom='sf6panther',
 )
 sf6vars = dict(
     HIPPO=['sf6ucats', 'sf6pfp'],
     ORCAS=[],
-    ATOM=['sf6ucats', 'sf6pfp'],
+    ATom=['sf6ucats', 'sf6pfp'],
 )
 sf6mvars = dict(
     HIPPO=['sf6mucats'],
     ORCAS=[],
-    ATOM=['sf6mucats'],
+    ATom=['sf6mucats'],
 )
 
 sf6vars = expand_project_vars(sf6vars)
@@ -216,7 +216,7 @@ def _open_aircraft_data_model(model, tracer):
 
     files = dict(
         HIPPO='HIPPO_SO_mSPO.txt',
-        ATOM='ATOM_SO_mSPO.txt',
+        ATom='ATOM_SO_mSPO.txt',
         ORCAS='ORCAS_SO_mSPO.txt',
     )
 
@@ -244,7 +244,7 @@ def _open_aircraft_data_model(model, tracer):
             columns = columns.union(dfp.columns)
 
             # subsample as TM5 runs did not include all of ATOM data
-            if 'TM5-Flux' in model and project == 'ATOM' and tracer_i in ['CO2_LND', 'CO2_FFF', 'CO2_BKG']:
+            if 'TM5-Flux' in model and project == 'ATom' and tracer_i in ['CO2_LND', 'CO2_FFF', 'CO2_BKG']:
                 dfp = dfp.loc[dfp.year != 2018]
 
             dfs.append(dfp)
@@ -288,19 +288,19 @@ def _open_aircraft_data_obs(model):
     if model == 'medusa':
         files = dict(
             HIPPO='HIPPO_SO_mSPO_medusa.txt',
-            ATOM='ATOM_SO_mSPO_medusa.txt',
+            ATom='ATOM_SO_mSPO_medusa.txt',
             ORCAS='ORCAS_SO_mSPO_medusa.txt',
         )
     elif model == 'pfp':
         files = dict(
             HIPPO='HIPPO_SO_mSPO_pfp.txt',
-            ATOM='ATOM_SO_mSPO_pfp.txt',
+            ATom='ATOM_SO_mSPO_pfp.txt',
         )
 
     else:
         files = dict(
             HIPPO='HIPPO_SO_mSPO.txt',
-            ATOM='ATOM_SO_mSPO.txt',
+            ATom='ATOM_SO_mSPO.txt',
             ORCAS='ORCAS_SO_mSPO.txt',
         )
 
@@ -371,7 +371,7 @@ def _open_aircraft_data_obs(model):
         for constituent in constituents:
             rev_dict = {
                 f'{constituent}mnoaa': (
-                    df.campaign_id.str.contains('ORCAS') | df.campaign_id.str.contains('ATOM')
+                    df.campaign_id.str.contains('ORCAS') | df.campaign_id.str.contains('ATom')
                 ),
                 f'{constituent}mqcls': (
                     df.campaign_id.str.contains('HIPPO') #& ~df.campaign_id.str.contains('HIPPO-1')
