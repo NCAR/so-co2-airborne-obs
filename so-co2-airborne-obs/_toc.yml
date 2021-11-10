@@ -10,6 +10,16 @@ parts:
   - file: table-s1
   - file: _prestage-data
   - file: _precompute
+- caption: Preprocessing Observations
+  chapters:
+  - file: _prestage-obs/process_aircraft_10s.ipynb
+  - file: _prestage-obs/process_aircraft_pfp.ipynb
+  - file: _prestage-obs/process_aircraft_med.ipynb
+  - file: _prestage-obs/aircraft_obspack_merge.ipynb
+  - file: _prestage-obs/process_surface_obs.ipynb
+  - file: _prestage-obs/process_surface_models.ipynb
+  - file: _prestage-obs/process_aircraft_models.ipynb
+  - file: _prestage-obs/process_surface_sf6.ipynb 
 - caption: Observations
   chapters:
   - file: obs-main

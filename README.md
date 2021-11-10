@@ -9,14 +9,16 @@ Long et al. (2021).
 
 To reproduce the calculation:
 
-1. Build conda environment for computations:
+1. Build conda Python and R environments for computations:
 ```bash
 conda env create -f environment.yml
+conda env create -f environment-R.yml
 ```
 2. Set paths for input data and cache files by editing [_config_calc.yml](so-co2-airborne-obs/_config_calc.yml)
-3. Run [_prestage-data.ipynb](so-co2-airborne-obs/_prestage-data.ipynb), which downloads input data.
-4. Run [_precompute.ipynb](so-co2-airborne-obs/_prestage-data.ipynb), which performs some time-consuming computations and cache's the results in `project_tmpdir`.
-5. Run all the notebooks in [_toc.yml](so-co2-airborne-obs/_toc.yml).
+3. Run [_prestage-data.ipynb](so-co2-airborne-obs/_prestage-data.ipynb), which downloads model flux and concentration data.
+4. Run [_precompute.ipynb](so-co2-airborne-obs/_precompute.ipynb), which performs some time-consuming computations and cache's the results in `project_tmpdir`.
+5. Follow the steps in [_prestage-obs-instructions.md](so-co2-airborne-obs/_prestage-obs-instructions.md), to manually download atmospheric observation data.
+6. Run all the notebooks in [_toc.yml](so-co2-airborne-obs/_toc.yml).
 
 
 ### Building the book
@@ -24,7 +26,7 @@ conda env create -f environment.yml
 The JupyterBook rendition can be built with the following steps.
 
 1. Clone this repository
-2. Run `conda env create -f env-book.yml`
+2. Build environments as described in 1. above
 3. (Optional) Edit the books source files located in the `so-co2-airborne-obs/` directory
 4. Run `jupyter-book clean so-co2-airborne-obs/` to remove any existing builds
 5. Run `jupyter-book build so-co2-airborne-obs/`

@@ -6,3 +6,4 @@ dependencies:
  - r-rcolorbrewer
  - r-ncdf4
  - r-irkernel
+ - r-yaml

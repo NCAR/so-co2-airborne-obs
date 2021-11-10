@@ -1,0 +1,16 @@
+station lab method use lat lon masl
+SPO NOAA flask 0 -89.9800  -24.8000 2810
+HBA NOAA flask 2 -75.6050  -26.2100   10
+SYO NOAA flask 2 -69.0125   39.5900   14
+PSA NOAA flask 2 -64.9000  -64.0000   10
+DRP NOAA flask 2 -59.0000  -64.6900   10
+CRZ NOAA flask 2 -46.4337   51.8478  197
+CGO NOAA flask 0 -40.6830  144.6900  164
+CPT NOAA flask 0 -34.3523   18.4891  230 
+USH NOAA flask 0 -54.8484  -68.3106   12
+BHD NOAA flask 0 -41.4083  174.8710   85
+EIC NOAA flask 0 -27.1600 -109.4300   47
+NMB NOAA flask 0 -23.5800   15.0300  456
+SMO NOAA flask 0 -14.2474 -170.5644   42
+ASC NOAA flask 0  -7.9667  -14.4000   85
+SEY NOAA flask 0  -4.6824   55.5325    2

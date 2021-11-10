@@ -22,9 +22,10 @@ For each campaign, download the following files into `${project_tmpdir_obs}/airc
 ### ATom
 
 - ATom merge products (Version 2.0): 
-MER10_DC8_ATom-1.nc, MER10_DC8_ATom-2.nc, MER10_DC8_ATom-3.nc, MER10_DC8_ATom-4.nc, MER-MED_DC8_ATom-1.nc, MER-MED_DC8_ATom-2.nc, 
-MER-MED_DC8_ATom-3.nc, MER-MED_DC8_ATom-4.nc, MER-PFP_DC8_ATom-2.nc, MER-PFP_DC8_ATom-3.nc, and MER-PFP_DC8_ATom-4.nc 
-from https://doi.org/10.3334/ORNLDAAC/1925
+- MER10_DC8_ATom-1.nc, MER10_DC8_ATom-2.nc, MER10_DC8_ATom-3.nc, MER10_DC8_ATom-4.nc
+- MER-MED_DC8_ATom-1.nc, MER-MED_DC8_ATom-2.nc, MER-MED_DC8_ATom-3.nc, MER-MED_DC8_ATom-4.nc
+- MER-PFP_DC8_ATom-2.nc, MER-PFP_DC8_ATom-3.nc, and MER-PFP_DC8_ATom-4.nc 
+- from https://doi.org/10.3334/ORNLDAAC/1925
 
 
 ## ObsPack data files
@@ -75,7 +76,7 @@ Download into `${project_tmpdir_obs}/niwa` subdirectory text file https://niwa.c
 
 ## Minimal file listing when finished (extra files can be kept if space allows):
 
-Once your done, `${project_tmpdir_obs}` should look like this:
+Once your done, `${project_tmpdir_obs}` should include at least these files in this structure:
 ```bash
 .
 ├── aircraft-merge-products
@@ -127,23 +128,29 @@ Once your done, `${project_tmpdir_obs}` should look like this:
 ├── obspack_co2_1_GLOBALVIEWplus_v6.0_2020-09-11
 │   └── data
 │       └── nc
-│           ├── co2_ams_surface-insitu_11_representative.nc
-│           ├── co2_cgo_surface-flask_1_representative.nc
-│           ├── co2_cgo_surface-flask_2_representative.nc
-│           ├── co2_cpt_surface-insitu_36_marine.nc
-│           ├── co2_crz_surface-flask_1_representative.nc
-│           ├── co2_cya_surface-flask_2_representative.nc
-│           ├── co2_drp_shipboard-flask_1_representative.nc
-│           ├── co2_hba_surface-flask_1_representative.nc
-│           ├── co2_hip_aircraft-insitu_59_allvalid.nc
-│           ├── co2_maa_surface-flask_2_representative.nc
-│           ├── co2_orc_aircraft-insitu_3_allvalid-merge10.nc
-│           ├── co2_psa_surface-flask_1_representative.nc
-│           ├── co2_spo_surface-flask_1_representative.nc
-│           ├── co2_spo_surface-flask_2_representative.nc
-│           ├── co2_spo_surface-insitu_1_allvalid.nc
-│           ├── co2_syo_surface-flask_1_representative.nc
-│           ├── co2_syo_surface-insitu_8_allvalid.nc
+│           └── co2_ams_surface-insitu_11_representative.nc
+│           └── co2_bhd_surface-insitu_15_baseline.nc
+│           └── co2_cgo_surface-flask_1_representative.nc
+│           └── co2_cgo_surface-flask_2_representative.nc
+│           └── co2_cgo_surface-flask_4_representative.nc
+│           └── co2_cpt_surface-insitu_36_marine.nc
+│           └── co2_crz_surface-flask_1_representative.nc
+│           └── co2_cya_surface-flask_2_representative.nc
+│           └── co2_drp_shipboard-flask_1_representative.nc
+│           └── co2_hba_surface-flask_1_representative.nc
+│           └── co2_hip_aircraft-insitu_59_allvalid.nc
+│           └── co2_maa_surface-flask_2_representative.nc
+│           └── co2_mqa_surface-flask_2_representative.nc
+│           └── co2_orc_aircraft-insitu_3_allvalid-merge10.nc
+│           └── co2_psa_surface-flask_1_representative.nc
+│           └── co2_psa_surface-flask_4_representative.nc
+│           └── co2_spo_surface-flask_1_representative.nc
+│           └── co2_spo_surface-flask_2_representative.nc
+│           └── co2_spo_surface-flask_426_representative.nc
+│           └── co2_spo_surface-flask_4_representative.nc
+│           └── co2_spo_surface-insitu_1_allvalid.nc
+│           └── co2_syo_surface-flask_1_representative.nc
+│           └── co2_syo_surface-insitu_8_allvalid.nc
 │           └── co2_tom_aircraft-insitu_1_allvalid.nc
 ├── obspack_co2_1_GLOBALVIEWplus_v7.0_2021-08-18
 │   └── data
@@ -166,7 +173,7 @@ Once your done, `${project_tmpdir_obs}` should look like this:
                 ├── co2_cgo_surface-insitu_16_9999-9999_hourly.nc
                 └── co2_mqa_surface-insitu_16_9999-9999_hourly.nc
 
-28 directories, 60 files
+28 directories, 65 files
 ```
 
 
