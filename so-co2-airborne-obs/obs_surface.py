@@ -326,13 +326,7 @@ def seasonal_uncertainty(das_srf, season=None, verbose=False):
         das_spo_a_djf = util.ann_mean(das_spo_a.to_dataset(), season=season, time_bnds_varname=None, n_req=2)
         stn_errors.append(np.float(das_spo_a_djf.CO2.mean('time').std('record', ddof=1).values))
 
-    if season is None:
-        stn_error = max(stn_errors)
-    else:
-        assert season in seasons
-        ndx = seasons.index(season)
-        stn_error = stn_errors[ndx]
-        
+    stn_error = max(stn_errors)        
     n_stn = len(southern_ocean_records)
     n_rep = 2 # there are two stations with co-located records
     
@@ -344,6 +338,7 @@ def seasonal_uncertainty(das_srf, season=None, verbose=False):
     
     if verbose:
         print('-'*60)
+        print(f'n_stn = {n_stn}; n_rep = {n_rep}')
         print(f'stn_error = {stn_error:0.4f} ppm')
         print([f'{s}: {e:0.4f}' for s, e in zip(seasons, stn_errors)])
 

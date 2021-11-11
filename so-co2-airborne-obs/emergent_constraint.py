@@ -381,7 +381,7 @@ def surface_obs_gradient(da_srf, season, time_slice):
     # I am not subsetting in time here; we don't feel that we have a
     # clear enough handle onanalytical uncertainty to compute it in a
     # time-varying sense, so we just compute an estimate for the whole record
-    obs_gradient_std = obs_surface.seasonal_uncertainty(da_srf, season=season, verbose=False)
+    obs_gradient_std = obs_surface.seasonal_uncertainty(da_srf, season=season, verbose=True)
 
     return obs_gradient_mean, obs_gradient_std
 
