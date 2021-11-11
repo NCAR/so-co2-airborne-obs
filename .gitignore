@@ -132,3 +132,4 @@ dmypy.json
 so-co2-airborne-obs/_build/
 notes.md
 .DS_Store
+so-co2-airborne-obs/_tmp-cp-data.ipynb
