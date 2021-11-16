@@ -137,6 +137,7 @@ We also examined 44 atmospheric CO<sub>2</sub> records from surface monitoring s
 
 #### Long-term monitoring of surface CO<sub>2</sub>
 <img src="figures/Fig-S05-station-coverage.png">
+
 **Temporal coverage (left) and location (right) of measurements** at Southern Ocean CO2 monitoring stations used in this study. See also this [table](./table-s1.md).
 The code to produce this figure is [here](./obs-surface.ipynb).
 
