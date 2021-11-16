@@ -30,35 +30,34 @@ def _get_config_dict():
 def get(parameter):
     config_dict = _get_config_dict()
 
-    if parameter in ["cache_dirs", "cache_dirs_all", "cache_dirs_ec"]:        
-        project_tmpdir = config_dict['project_tmpdir'] 
-        
+    if parameter in ["cache_dirs", "cache_dirs_all", "cache_dirs_ec"]:
+        project_tmpdir = config_dict["project_tmpdir"]
+
         if parameter == "cache_dirs_ec":
             return [
                 f"{project_tmpdir}/cache-emergent-constraint/pickles",
             ]
-        
-        
+
         cache_dirs = [
-                "./data/cache", 
-                f"{project_tmpdir}/cache-emergent-constraint",
-            ]
-                    
+            "./data/cache",
+            f"{project_tmpdir}/cache-emergent-constraint",
+        ]
+
         if parameter == "cache_dirs_all":
             # this is a circular dependency, which is stupid
             # but points to some basic deficiencies in the overall
             # design. Anyway, confine import to here.
             import models.config_local
+
             cache_dirs.append(
                 [
                     models.config_local.cache_rootdir_local,
                     models.config_local.project_tmpdir,
                 ]
             )
-        
+
         return cache_dirs
 
-    
     elif parameter in config_dict:
         value = config_dict[parameter]
 
@@ -70,7 +69,7 @@ def get(parameter):
             try:
                 os.makedirs(value, exist_ok=True)
             except OSError:
-                print(f"error in config: cannot mkdir {value}")
+                print(f"config warning: cannot mkdir {value}")
                 try:
                     TMPDIR = os.environ["TMPDIR"]
                 except:
@@ -80,6 +79,6 @@ def get(parameter):
                 os.makedirs(value, exist_ok=True)
 
         return value
-    
+
     else:
         raise ValueError(f"unknown parameter {parameter}")
