@@ -44,7 +44,7 @@ sphinx:
   
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/fluid-sphere/so-co2-airborne-obs
+  url: https://github.com/ncar/so-co2-airborne-obs
   path_to_book: so-co2-airborne-obs
   branch: main
 
