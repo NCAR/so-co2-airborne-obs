@@ -4,26 +4,23 @@
 format: jb-book
 root: deck
 parts:
-- caption: Data assets
-  maxdepth: 2
+- caption: Data assets and preprocessing  
   chapters:
-  - file: _prestage-obs-instructions
-  - file: table-s1
-  - file: _prestage-data
-  - file: _precompute
-- caption: Preprocessing Observations
-  maxdepth: 1
-  chapters:
-  - file: _prestage-obs/process_aircraft_10s.ipynb
-  - file: _prestage-obs/process_aircraft_pfp.ipynb
-  - file: _prestage-obs/process_aircraft_med.ipynb
-  - file: _prestage-obs/aircraft_obspack_merge.ipynb
-  - file: _prestage-obs/process_surface_obs.ipynb
-  - file: _prestage-obs/process_surface_models.ipynb
-  - file: _prestage-obs/process_aircraft_models.ipynb
-  - file: _prestage-obs/process_surface_sf6.ipynb
+  - file: data-assets-preprocessing
+    sections:
+    - file: _prestage-obs-instructions
+    - file: table-s1
+    - file: _prestage-data
+    - file: _prestage-obs/process_aircraft_10s.ipynb
+    - file: _prestage-obs/process_aircraft_pfp.ipynb
+    - file: _prestage-obs/process_aircraft_med.ipynb
+    - file: _prestage-obs/aircraft_obspack_merge.ipynb
+    - file: _prestage-obs/process_surface_obs.ipynb
+    - file: _prestage-obs/process_surface_models.ipynb
+    - file: _prestage-obs/process_aircraft_models.ipynb
+    - file: _prestage-obs/process_surface_sf6.ipynb
+    - file: _precompute
 - caption: Observations
-  maxdepth: 1
   chapters:
   - file: obs-main
     sections:
@@ -33,7 +30,6 @@ parts:
     - file: obs-surface-diurnal-variations
     - file: obs-simulated-distributions
 - caption: Gradient metrics
-  maxdepth: 1
   chapters:
   - file: gradients-main
     sections:
@@ -44,19 +40,16 @@ parts:
     - file: gradients-sf6
     - file: gradients-aircraft-sampling
 - caption: Emergent constraints
-  maxdepth: 1
   chapters:
   - file: emergent-constraint
     sections:
     - file: emergent-constraint-s2n
 - caption: Flux Estimates
-  maxdepth: 1
   chapters:
   - file: fluxes
     sections:
     - file: fluxes-aircraft-campaign-table
 - caption: API
-  maxdepth: 1
   chapters:
   - file: api
     sections:
@@ -64,6 +57,5 @@ parts:
     - file: api-datasets
     - file: api-emergent-constraint
 - caption: References
-  maxdepth: 1
   chapters:
   - file: references

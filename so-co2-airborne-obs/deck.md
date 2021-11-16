@@ -19,6 +19,36 @@ The horizontal gradients captured by these observations do not provide as robust
 However, the inferences from surface observations are consistent with the aircraft-based flux estimates, and suggest a trend of increasing Southern Ocean uptake since 2005.
 
 
+## Citation
+
+Please cite {cite:t}`Long-Stephens-etal-2021` for the results of this research: 
+
+```bibtex
+@article{Long-Stephens-etal-2021,
+  author={M. C. Long and B. B. Stephens and K. McKain and C. Sweeney and R. F. Keeling and E. A. Kort and E. J. Morgan and J. D. Bent and N. Chandra and F. Chevallier and R. Commane and B. C. Daube and P. B. Krummel and Z. Loh and I. T. Luijkx and D. Munro and P. Patra and W. Peters and M. Ramonet and C. Rödenbeck and A. Stavert and P. Tans and S. C. Wofsy},
+  year={2021}, 
+  journal={Science},
+  title={Strong {Southern Ocean} Carbon Uptake Evident in Airborne Observations},
+  doi={10.5065/6vnv-1x08}
+}
+```
+
+
+If you are interested in explicitly citing this book, please use the following citation.
+
+> M.C. Long, B. B. Stephens, Southern Ocean Air-Sea Carbon Fluxes from Aircraft Observations: Analysis code, National Center for Atmospheric Research (2021), https:/doi.org/10.5065/6vnv-1x08.
+
+
+```bibtex
+@book{Long-Stephens-code-2021,
+  title={Southern Ocean Air-Sea Carbon Fluxes from Aircraft Observations: Analysis code},
+  author={Long, Matthew C. and Stephens, Britton B.},
+  publisher={National Center for Atmospheric Research},
+  url={https://ncar.github.io/so-co2-airborne-obs},
+  doi={10.5065/6vnv-1x08},
+  year={2021}
+}
+```
 
 ## Main document
 
