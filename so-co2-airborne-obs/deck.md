@@ -5,7 +5,7 @@ Matthew C. Long and Britton B. Stephens
 
 This book documents the analysis underpinning {cite:t}`Long-Stephens-etal-2021`:
 
-M. C. Long, B. B. Stephens, K. McKain, C. Sweeney, R. F. Keeling, E. A. Kort, E. J. Morgan, J. D. Bent, N. Chandra, F. Chevallier, R. Commane, B. C. Daube, P. B. Krummel, Z. Loh, I. T. Luijkx, D. Munro, P. Patra, W. Peters, M. Ramonet, C. Rödenbeck, A. Stavert, P. Tans, S. C. Wofsy, Strong Southern Ocean carbon uptake evident in airborne observations, *Science* (2021), https://doi.org/10.1126/science.abi4355.
+> M. C. Long, B. B. Stephens, K. McKain, C. Sweeney, R. F. Keeling, E. A. Kort, E. J. Morgan, J. D. Bent, N. Chandra, F. Chevallier, R. Commane, B. C. Daube, P. B. Krummel, Z. Loh, I. T. Luijkx, D. Munro, P. Patra, W. Peters, M. Ramonet, C. Rödenbeck, A. Stavert, P. Tans, S. C. Wofsy, Strong Southern Ocean carbon uptake evident in airborne observations, *Science* (2021), https://doi.org/10.1126/science.abi4355.
 
 
 ## Summary
