@@ -1,0 +1,923 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Merge flight parameters onto obspack IDs &#8212; Strong Southern Ocean Carbon Uptake Evident in Airborne Observations</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Process surface observations" href="process_surface_obs.html" />
+    <link rel="prev" title="Process airborne Medusa merge files" href="process_aircraft_med.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/new-logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Strong Southern Ocean Carbon Uptake Evident in Airborne Observations</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data assets and preprocessing
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../data-assets-preprocessing.html">
+   Overview
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_prestage-obs-instructions.html">
+     Obtaining observational data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../table-s1.html">
+     Station measurement records
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_prestage-data.html">
+     Prestage model data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="process_aircraft_10s.html">
+     Process airborne 10-sec merge files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="process_aircraft_pfp.html">
+     Process airborne PFP merge files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="process_aircraft_med.html">
+     Process airborne Medusa merge files
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Merge flight parameters onto obspack IDs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="process_surface_obs.html">
+     Process surface observations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="process_surface_models.html">
+     Process surface model output
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="process_aircraft_models.html">
+     Process airborne model output
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="process_surface_sf6.html">
+     Process surface SF6 observations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_precompute.html">
+     Precompute model data
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Observations
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../obs-main.html">
+   Observed patterns in atmospheric CO
+   <sub>
+    2
+   </sub>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../obs-aircraft.html">
+     Airborne observations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../obs-surface.html">
+     Surface observations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../obs-surface-error.html">
+     Analytical uncertainty at CO
+     <sub>
+      2
+     </sub>
+     measurement stations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../obs-surface-diurnal-variations.html">
+     Climatological mean diurnal CO
+     <sub>
+      2
+     </sub>
+     cycles since 1999 for four stations with in situ instruments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../obs-simulated-distributions.html">
+     Simulated CO
+     <sub>
+      2
+     </sub>
+     distributions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Gradient metrics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../gradients-main.html">
+   Gradient metrics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../gradients-seasonal-amplitude.html">
+     Seasonal amplitude of vertical gradient
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../gradients-trends.html">
+     Trend in horizontal gradient metric
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../gradients-profiles.html">
+     Aircraft atmospheric CO
+     <sub>
+      2
+     </sub>
+     profiles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../gradients-methane.html">
+     Observed concentrations and gradients of methane
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../gradients-sf6.html">
+     Surface observations of SF
+     <sub>
+      6
+     </sub>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../gradients-aircraft-sampling.html">
+     Aircraft sampling representativeness
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Emergent constraints
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../emergent-constraint.html">
+   Emergent constraints on air-sea fluxes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../emergent-constraint-s2n.html">
+     Sensitivity analysis of emergent constraint
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Flux Estimates
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../fluxes.html">
+   Estimate of Southern Ocean air-sea CO
+   <sub>
+    2
+   </sub>
+   fluxes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../fluxes-aircraft-campaign-table.html">
+     Flux estimates for each aircraft campaign
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  API
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../api.html">
+   API Reference
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api-cli.html">
+     Run calculation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api-datasets.html">
+     Observational datasets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api-emergent-constraint.html">
+     Emergent constraints
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  References
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   References
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/_prestage-obs/aircraft_obspack_merge.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ncar/so-co2-airborne-obs"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ncar/so-co2-airborne-obs/main?urlpath=tree/so-co2-airborne-obs/_prestage-obs/aircraft_obspack_merge.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="merge-flight-parameters-onto-obspack-ids">
+<h1>Merge flight parameters onto obspack IDs<a class="headerlink" href="#merge-flight-parameters-onto-obspack-ids" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>R program to merge flight parameters from campaign 10-sec merge files onto obspack IDs for use by process_aircraft_models.ipynb</p></li>
+<li><p>Notes:</p></li>
+<li><p>merging is needed because model files generally do not include pressure, theta, campaign, flight, and profile variables</p></li>
+<li><p>also models either do not report or round time and position values, such that merging on those not possible, so using 2 steps:</p></li>
+<li><ol class="simple">
+<li><p>merge 10-sec flight data and NOAA Obpack here and write out</p></li>
+</ol>
+</li>
+<li><ol class="simple">
+<li><p>in process_aircraft_models.ipynb, merge model output with these output files</p></li>
+</ol>
+</li>
+<li><p>because the model output corresponds to many different ObsPack versions, need to download each and match flight data for each</p></li>
+<li><p>CT2017, CT2019B, CTE2020, MIROC, TM5pCO2, and CAMS have obspack_id variables (CAMS only has obspack_id and co2)</p></li>
+<li><p>CarboScope text files do not include obspack_id, so need to merge based on row matching</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="s">&#39;ncdf4&#39;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&#39;yaml&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">project_tmpdir_obs</span> <span class="o">=</span> <span class="nf">read_yaml</span><span class="p">(</span><span class="s">&#39;../_config_calc.yml&#39;</span><span class="p">)</span><span class="o">$</span><span class="n">project_tmpdir_obs</span>
+<span class="n">username</span> <span class="o">=</span> <span class="nf">Sys.info</span><span class="p">()[</span><span class="s">&#39;user&#39;</span><span class="p">]</span>
+<span class="n">project_tmpdir_obs</span> <span class="o">=</span> <span class="nf">gsub</span><span class="p">(</span><span class="s">&#39;\\{\\{env\\[\&#39;USER\&#39;\\]\\}\\}&#39;</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">project_tmpdir_obs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># read in preprocessed aircraft files from process_aircraft_10s.ipynb</span>
+<span class="nf">load</span><span class="p">(</span><span class="s">&#39;HIPPO_10s.RData&#39;</span><span class="p">)</span>
+<span class="nf">load</span><span class="p">(</span><span class="s">&#39;ORCAS_10s.RData&#39;</span><span class="p">)</span>
+<span class="nf">load</span><span class="p">(</span><span class="s">&#39;ATom_10s.RData&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># point to ObsPack directories and define short names</span>
+<span class="n">ncdirs</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span>
+<span class="nf">paste</span><span class="p">(</span><span class="n">project_tmpdir_obs</span><span class="p">,</span><span class="s">&#39;/obspack_co2_1_GLOBALVIEWplus_v4.2.2_2019-06-05/data/nc&#39;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">),</span>
+<span class="nf">paste</span><span class="p">(</span><span class="n">project_tmpdir_obs</span><span class="p">,</span><span class="s">&#39;/obspack_co2_1_GLOBALVIEWplus_v5.0_2019-08-12/data/nc&#39;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">),</span> <span class="c1"># CT2019B includes this</span>
+<span class="nf">paste</span><span class="p">(</span><span class="n">project_tmpdir_obs</span><span class="p">,</span><span class="s">&#39;/obspack_co2_1_GLOBALVIEWplus_v6.0_2020-09-11/data/nc&#39;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">),</span>
+<span class="nf">paste</span><span class="p">(</span><span class="n">project_tmpdir_obs</span><span class="p">,</span><span class="s">&#39;/obspack_co2_1_ATom_v4.0_2020-04-06/data/nc&#39;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">),</span>
+<span class="nf">paste</span><span class="p">(</span><span class="n">project_tmpdir_obs</span><span class="p">,</span><span class="s">&#39;/obspack_co2_1_CARBONTRACKER_CT2017_2018-05-02/data/nc&#39;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+<span class="c1"># CT2017 includes these 3: obspack_co2_1_ORCAS_v2.0_2017-04-05, obspack_co2_1_GLOBALVIEWplus_v3.1_2017-10-18, obspack_co2_1_NRT_v4.0_2017-09-08 (includes ATom-2 but fluxes only go through 12/2016 so not included in paper)</span>
+<span class="p">)</span>
+<span class="n">ops</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;GLOBALVIEWplus_v4.2.2&#39;</span><span class="p">,</span><span class="s">&#39;GLOBALVIEWplus_v5.0&#39;</span><span class="p">,</span><span class="s">&#39;GLOBALVIEWplus_v6.0&#39;</span><span class="p">,</span><span class="s">&#39;ATom_v4.0&#39;</span><span class="p">,</span><span class="s">&#39;CARBONTRACKER_CT2017&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># specify file names and campaigns</span>
+<span class="n">ncfiles</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span> <span class="s">&#39;co2_hip_aircraft-insitu_59_allvalid.nc&#39;</span><span class="p">,</span> <span class="s">&#39;co2_orc_aircraft-insitu_3_allvalid-merge10.nc&#39;</span><span class="p">,</span> <span class="s">&#39;co2_tom_aircraft-insitu_1_allvalid.nc&#39;</span> <span class="p">)</span>
+<span class="n">camps</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;HIPPO&#39;</span><span class="p">,</span><span class="s">&#39;ORCAS&#39;</span><span class="p">,</span><span class="s">&#39;ATOM&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># loop on ObsPack, merge, and write out</span>
+<span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">ncdirs</span><span class="p">))){</span>
+	<span class="n">ncdir</span><span class="o">=</span><span class="n">ncdirs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+	<span class="n">op</span><span class="o">=</span><span class="n">ops</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+	<span class="c1"># loop on campaign</span>
+	<span class="nf">for</span><span class="p">(</span><span class="n">j</span> <span class="n">in</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)){</span>
+		<span class="n">camp</span><span class="o">=</span><span class="n">camps</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+		<span class="n">ncfile</span><span class="o">=</span><span class="n">ncfiles</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+		<span class="nf">if</span><span class="p">(</span><span class="o">!</span><span class="nf">grepl</span><span class="p">(</span><span class="s">&#39;ATom&#39;</span><span class="p">,</span><span class="n">ncdir</span><span class="p">)</span><span class="o">|</span><span class="n">camp</span><span class="o">==</span><span class="s">&#39;ATOM&#39;</span><span class="p">){</span> <span class="c1"># only process ATom v4.0 ObsPack for ATom</span>
+			<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">op</span><span class="p">,</span><span class="n">camp</span><span class="p">))</span>
+			<span class="n">ncin</span><span class="o">=</span><span class="nf">nc_open</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">ncdir</span><span class="p">,</span><span class="s">&#39;/&#39;</span><span class="p">,</span><span class="n">ncfile</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">))</span>
+			<span class="n">ncdat</span><span class="o">=</span><span class="nf">data.frame</span><span class="p">(</span><span class="nf">cbind</span><span class="p">(</span><span class="nf">t</span><span class="p">(</span><span class="nf">ncvar_get</span><span class="p">(</span><span class="n">ncin</span><span class="p">,</span><span class="s">&#39;time_components&#39;</span><span class="p">)),</span><span class="nf">ncvar_get</span><span class="p">(</span><span class="n">ncin</span><span class="p">,</span><span class="s">&#39;obspack_id&#39;</span><span class="p">)),</span><span class="n">stringsAsFactors</span><span class="o">=</span><span class="bp">F</span><span class="p">)</span> <span class="p">;</span> <span class="nf">colnames</span><span class="p">(</span><span class="n">ncdat</span><span class="p">)</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;year&#39;</span><span class="p">,</span><span class="s">&#39;mon&#39;</span><span class="p">,</span><span class="s">&#39;day&#39;</span><span class="p">,</span><span class="s">&#39;hour&#39;</span><span class="p">,</span><span class="s">&#39;min&#39;</span><span class="p">,</span><span class="s">&#39;sec&#39;</span><span class="p">,</span><span class="s">&#39;obspack_id&#39;</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">head</span><span class="p">(</span><span class="n">ncdat</span><span class="p">))</span>
+			<span class="n">mergefile</span><span class="o">=</span><span class="nf">get</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="nf">tolower</span><span class="p">(</span><span class="n">camp</span><span class="p">),</span><span class="s">&#39;merge&#39;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">))</span> <span class="c1"># from .RData load above</span>
+			<span class="nf">print</span><span class="p">(</span><span class="nf">dim</span><span class="p">(</span><span class="n">mergefile</span><span class="p">))</span>
+			<span class="nf">print</span><span class="p">(</span><span class="nf">dim</span><span class="p">(</span><span class="n">ncdat</span><span class="p">))</span>
+			<span class="n">mrgdat</span><span class="o">=</span><span class="nf">merge</span><span class="p">(</span><span class="n">mergefile</span><span class="p">,</span><span class="n">ncdat</span><span class="p">,</span><span class="n">by</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;year&#39;</span><span class="p">,</span><span class="s">&#39;mon&#39;</span><span class="p">,</span><span class="s">&#39;day&#39;</span><span class="p">,</span><span class="s">&#39;hour&#39;</span><span class="p">,</span><span class="s">&#39;min&#39;</span><span class="p">,</span><span class="s">&#39;sec&#39;</span><span class="p">))</span>
+			<span class="nf">print</span><span class="p">(</span><span class="nf">dim</span><span class="p">(</span><span class="n">mrgdat</span><span class="p">))</span>
+			<span class="nf">if</span><span class="p">(</span><span class="n">camp</span><span class="o">==</span><span class="s">&#39;ATOM&#39;</span><span class="o">&amp;!</span><span class="nf">grepl</span><span class="p">(</span><span class="s">&#39;CT2017&#39;</span><span class="p">,</span><span class="n">ncdir</span><span class="p">)){</span> <span class="c1"># ATom (except for CT2017) fails to match 7925 because ObsPack includes test flights that are not in the 10s merge product. Only report days:</span>
+				<span class="nf">print</span><span class="p">(</span><span class="nf">unique</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">ncdat</span><span class="o">$</span><span class="n">year</span><span class="p">,</span><span class="n">ncdat</span><span class="o">$</span><span class="n">mon</span><span class="p">,</span><span class="n">ncdat</span><span class="o">$</span><span class="n">day</span><span class="p">)[</span><span class="o">!</span><span class="nf">is.element</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">ncdat</span><span class="o">$</span><span class="n">year</span><span class="p">,</span><span class="n">ncdat</span><span class="o">$</span><span class="n">mon</span><span class="p">,</span><span class="n">ncdat</span><span class="o">$</span><span class="n">day</span><span class="p">,</span><span class="n">ncdat</span><span class="o">$</span><span class="n">hour</span><span class="p">,</span><span class="n">ncdat</span><span class="o">$</span><span class="n">min</span><span class="p">,</span><span class="n">ncdat</span><span class="o">$</span><span class="n">sec</span><span class="p">),</span><span class="nf">paste</span><span class="p">(</span><span class="n">mrgdat</span><span class="o">$</span><span class="n">year</span><span class="p">,</span><span class="n">mrgdat</span><span class="o">$</span><span class="n">mon</span><span class="p">,</span><span class="n">mrgdat</span><span class="o">$</span><span class="n">day</span><span class="p">,</span><span class="n">mrgdat</span><span class="o">$</span><span class="n">hour</span><span class="p">,</span><span class="n">mrgdat</span><span class="o">$</span><span class="n">min</span><span class="p">,</span><span class="n">mrgdat</span><span class="o">$</span><span class="n">sec</span><span class="p">))]))</span>
+			<span class="p">}</span> <span class="n">else</span> <span class="p">{</span> <span class="c1"># HIPPO fails to match 6 values because of uneven seconds in the ObsPack, ATom fails to match 11 values in CT2017</span>
+				<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">ncdat</span><span class="o">$</span><span class="n">year</span><span class="p">,</span><span class="n">ncdat</span><span class="o">$</span><span class="n">mon</span><span class="p">,</span><span class="n">ncdat</span><span class="o">$</span><span class="n">day</span><span class="p">,</span><span class="n">ncdat</span><span class="o">$</span><span class="n">hour</span><span class="p">,</span><span class="n">ncdat</span><span class="o">$</span><span class="n">min</span><span class="p">,</span><span class="n">ncdat</span><span class="o">$</span><span class="n">sec</span><span class="p">)[</span><span class="o">!</span><span class="nf">is.element</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">ncdat</span><span class="o">$</span><span class="n">year</span><span class="p">,</span><span class="n">ncdat</span><span class="o">$</span><span class="n">mon</span><span class="p">,</span><span class="n">ncdat</span><span class="o">$</span><span class="n">day</span><span class="p">,</span><span class="n">ncdat</span><span class="o">$</span><span class="n">hour</span><span class="p">,</span><span class="n">ncdat</span><span class="o">$</span><span class="n">min</span><span class="p">,</span><span class="n">ncdat</span><span class="o">$</span><span class="n">sec</span><span class="p">),</span><span class="nf">paste</span><span class="p">(</span><span class="n">mrgdat</span><span class="o">$</span><span class="n">year</span><span class="p">,</span><span class="n">mrgdat</span><span class="o">$</span><span class="n">mon</span><span class="p">,</span><span class="n">mrgdat</span><span class="o">$</span><span class="n">day</span><span class="p">,</span><span class="n">mrgdat</span><span class="o">$</span><span class="n">hour</span><span class="p">,</span><span class="n">mrgdat</span><span class="o">$</span><span class="n">min</span><span class="p">,</span><span class="n">mrgdat</span><span class="o">$</span><span class="n">sec</span><span class="p">))])</span>
+			<span class="p">}</span>
+			<span class="nf">if</span><span class="p">(</span><span class="n">camp</span><span class="o">==</span><span class="s">&#39;ORCAS&#39;</span><span class="p">){</span> <span class="c1"># no &#39;camp&#39; variable</span>
+				<span class="n">mrgdat</span><span class="o">=</span><span class="n">mrgdat</span><span class="p">[,</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;year&#39;</span><span class="p">,</span><span class="s">&#39;mon&#39;</span><span class="p">,</span><span class="s">&#39;day&#39;</span><span class="p">,</span><span class="s">&#39;hour&#39;</span><span class="p">,</span><span class="s">&#39;min&#39;</span><span class="p">,</span><span class="s">&#39;sec&#39;</span><span class="p">,</span><span class="s">&#39;flt&#39;</span><span class="p">,</span><span class="s">&#39;prof&#39;</span><span class="p">,</span><span class="s">&#39;pressure&#39;</span><span class="p">,</span><span class="s">&#39;theta&#39;</span><span class="p">,</span><span class="s">&#39;strat&#39;</span><span class="p">,</span><span class="s">&#39;obspack_id&#39;</span><span class="p">)]</span>
+				<span class="nf">write</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;year month day hour min sec flt prof pressure theta strat obspack_id&#39;</span><span class="p">),</span><span class="nf">paste</span><span class="p">(</span><span class="n">camp</span><span class="p">,</span><span class="s">&#39;_obspack_&#39;</span><span class="p">,</span><span class="n">op</span><span class="p">,</span><span class="s">&#39;_merge.txt&#39;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">))</span>
+			<span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+				<span class="n">mrgdat</span><span class="o">=</span><span class="n">mrgdat</span><span class="p">[,</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;year&#39;</span><span class="p">,</span><span class="s">&#39;mon&#39;</span><span class="p">,</span><span class="s">&#39;day&#39;</span><span class="p">,</span><span class="s">&#39;hour&#39;</span><span class="p">,</span><span class="s">&#39;min&#39;</span><span class="p">,</span><span class="s">&#39;sec&#39;</span><span class="p">,</span><span class="s">&#39;camp&#39;</span><span class="p">,</span><span class="s">&#39;flt&#39;</span><span class="p">,</span><span class="s">&#39;prof&#39;</span><span class="p">,</span><span class="s">&#39;pressure&#39;</span><span class="p">,</span><span class="s">&#39;theta&#39;</span><span class="p">,</span><span class="s">&#39;strat&#39;</span><span class="p">,</span><span class="s">&#39;obspack_id&#39;</span><span class="p">)]</span>
+				<span class="nf">write</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;year month day hour min sec camp flt prof pressure theta strat obspack_id&#39;</span><span class="p">),</span><span class="nf">paste</span><span class="p">(</span><span class="n">camp</span><span class="p">,</span><span class="s">&#39;_obspack_&#39;</span><span class="p">,</span><span class="n">op</span><span class="p">,</span><span class="s">&#39;_merge.txt&#39;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">))</span>
+			<span class="p">}</span>
+			<span class="nf">write</span><span class="p">(</span><span class="nf">t</span><span class="p">(</span><span class="n">mrgdat</span><span class="p">),</span><span class="nf">paste</span><span class="p">(</span><span class="n">camp</span><span class="p">,</span><span class="s">&#39;_obspack_&#39;</span><span class="p">,</span><span class="n">op</span><span class="p">,</span><span class="s">&#39;_merge.txt&#39;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">),</span><span class="n">ncol</span><span class="o">=</span><span class="nf">ncol</span><span class="p">(</span><span class="n">mrgdat</span><span class="p">),</span><span class="n">append</span><span class="o">=</span><span class="bp">T</span><span class="p">)</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;GLOBALVIEWplus_v4.2.2 HIPPO&quot;
+  year mon day hour min sec
+1 2009   1   9   20  28  40
+2 2009   1   9   20  28  50
+3 2009   1   9   20  29   0
+4 2009   1   9   20  29  10
+5 2009   1   9   20  29  20
+6 2009   1   9   20  29  30
+                                                                                   obspack_id
+1 obspack_co2_1_GLOBALVIEWplus_v4.2.2_2019-06-05~co2_hip_aircraft-insitu_59_allvalid~14594606
+2 obspack_co2_1_GLOBALVIEWplus_v4.2.2_2019-06-05~co2_hip_aircraft-insitu_59_allvalid~14594607
+3 obspack_co2_1_GLOBALVIEWplus_v4.2.2_2019-06-05~co2_hip_aircraft-insitu_59_allvalid~14594608
+4 obspack_co2_1_GLOBALVIEWplus_v4.2.2_2019-06-05~co2_hip_aircraft-insitu_59_allvalid~14594609
+5 obspack_co2_1_GLOBALVIEWplus_v4.2.2_2019-06-05~co2_hip_aircraft-insitu_59_allvalid~14594610
+6 obspack_co2_1_GLOBALVIEWplus_v4.2.2_2019-06-05~co2_hip_aircraft-insitu_59_allvalid~14594611
+[1] 156551     28
+[1] 130016      7
+[1] 130010     29
+[1] &quot;2009 11 11 21 26 13&quot; &quot;2010 4 16 1 59 57&quot;   &quot;2011 8 24 20 0 13&quot;  
+[4] &quot;2011 8 29 22 16 21&quot;  &quot;2011 9 1 21 59 33&quot;   &quot;2011 9 9 16 11 23&quot;  
+[1] &quot;GLOBALVIEWplus_v4.2.2 ORCAS&quot;
+  year mon day hour min sec
+1 2016   1   5   19  19  54
+2 2016   1   5   19  20   4
+3 2016   1   5   19  25  34
+4 2016   1   5   19  25  44
+5 2016   1   5   19  25  54
+6 2016   1   5   19  26   4
+                                                                                          obspack_id
+1 obspack_co2_1_GLOBALVIEWplus_v4.2.2_2019-06-05~co2_orc_aircraft-insitu_3_allvalid-merge10~20017854
+2 obspack_co2_1_GLOBALVIEWplus_v4.2.2_2019-06-05~co2_orc_aircraft-insitu_3_allvalid-merge10~20017855
+3 obspack_co2_1_GLOBALVIEWplus_v4.2.2_2019-06-05~co2_orc_aircraft-insitu_3_allvalid-merge10~20017856
+4 obspack_co2_1_GLOBALVIEWplus_v4.2.2_2019-06-05~co2_orc_aircraft-insitu_3_allvalid-merge10~20017857
+5 obspack_co2_1_GLOBALVIEWplus_v4.2.2_2019-06-05~co2_orc_aircraft-insitu_3_allvalid-merge10~20017858
+6 obspack_co2_1_GLOBALVIEWplus_v4.2.2_2019-06-05~co2_orc_aircraft-insitu_3_allvalid-merge10~20017859
+[1] 46646    22
+[1] 40217     7
+[1] 40217    23
+character(0)
+[1] &quot;GLOBALVIEWplus_v4.2.2 ATOM&quot;
+  year mon day hour min sec
+1 2016   8   3   19   3  10
+2 2016   8   3   19   3  20
+3 2016   8   3   19   3  30
+4 2016   8   3   19   3  40
+5 2016   8   3   19   3  50
+6 2016   8   3   19   4   0
+                                                                                  obspack_id
+1 obspack_co2_1_GLOBALVIEWplus_v4.2.2_2019-06-05~co2_tom_aircraft-insitu_1_allvalid~27984457
+2 obspack_co2_1_GLOBALVIEWplus_v4.2.2_2019-06-05~co2_tom_aircraft-insitu_1_allvalid~27984458
+3 obspack_co2_1_GLOBALVIEWplus_v4.2.2_2019-06-05~co2_tom_aircraft-insitu_1_allvalid~27984459
+4 obspack_co2_1_GLOBALVIEWplus_v4.2.2_2019-06-05~co2_tom_aircraft-insitu_1_allvalid~27984460
+5 obspack_co2_1_GLOBALVIEWplus_v4.2.2_2019-06-05~co2_tom_aircraft-insitu_1_allvalid~27984461
+6 obspack_co2_1_GLOBALVIEWplus_v4.2.2_2019-06-05~co2_tom_aircraft-insitu_1_allvalid~27984462
+[1] 149133     28
+[1] 95399     7
+[1] 95399    29
+character(0)
+[1] &quot;GLOBALVIEWplus_v5.0 HIPPO&quot;
+  year mon day hour min sec
+1 2009   1   9   20  28  40
+2 2009   1   9   20  28  50
+3 2009   1   9   20  29   0
+4 2009   1   9   20  29  10
+5 2009   1   9   20  29  20
+6 2009   1   9   20  29  30
+                                                                                obspack_id
+1 obspack_co2_1_GLOBALVIEWplus_v5.0_2019-08-12~co2_hip_aircraft-insitu_59_allvalid~6556353
+2 obspack_co2_1_GLOBALVIEWplus_v5.0_2019-08-12~co2_hip_aircraft-insitu_59_allvalid~6556354
+3 obspack_co2_1_GLOBALVIEWplus_v5.0_2019-08-12~co2_hip_aircraft-insitu_59_allvalid~6556355
+4 obspack_co2_1_GLOBALVIEWplus_v5.0_2019-08-12~co2_hip_aircraft-insitu_59_allvalid~6556356
+5 obspack_co2_1_GLOBALVIEWplus_v5.0_2019-08-12~co2_hip_aircraft-insitu_59_allvalid~6556357
+6 obspack_co2_1_GLOBALVIEWplus_v5.0_2019-08-12~co2_hip_aircraft-insitu_59_allvalid~6556358
+[1] 156551     28
+[1] 130016      7
+[1] 130010     29
+[1] &quot;2009 11 11 21 26 13&quot; &quot;2010 4 16 1 59 57&quot;   &quot;2011 8 24 20 0 13&quot;  
+[4] &quot;2011 8 29 22 16 21&quot;  &quot;2011 9 1 21 59 33&quot;   &quot;2011 9 9 16 11 23&quot;  
+[1] &quot;GLOBALVIEWplus_v5.0 ORCAS&quot;
+  year mon day hour min sec
+1 2016   1   5   19  19  54
+2 2016   1   5   19  20   4
+3 2016   1   5   19  25  34
+4 2016   1   5   19  25  44
+5 2016   1   5   19  25  54
+6 2016   1   5   19  26   4
+                                                                                        obspack_id
+1 obspack_co2_1_GLOBALVIEWplus_v5.0_2019-08-12~co2_orc_aircraft-insitu_3_allvalid-merge10~11693773
+2 obspack_co2_1_GLOBALVIEWplus_v5.0_2019-08-12~co2_orc_aircraft-insitu_3_allvalid-merge10~11693774
+3 obspack_co2_1_GLOBALVIEWplus_v5.0_2019-08-12~co2_orc_aircraft-insitu_3_allvalid-merge10~11693775
+4 obspack_co2_1_GLOBALVIEWplus_v5.0_2019-08-12~co2_orc_aircraft-insitu_3_allvalid-merge10~11693776
+5 obspack_co2_1_GLOBALVIEWplus_v5.0_2019-08-12~co2_orc_aircraft-insitu_3_allvalid-merge10~11693777
+6 obspack_co2_1_GLOBALVIEWplus_v5.0_2019-08-12~co2_orc_aircraft-insitu_3_allvalid-merge10~11693778
+[1] 46646    22
+[1] 40217     7
+[1] 40217    23
+character(0)
+[1] &quot;GLOBALVIEWplus_v5.0 ATOM&quot;
+  year mon day hour min sec
+1 2016   8   3   19   3  10
+2 2016   8   3   19   3  20
+3 2016   8   3   19   3  30
+4 2016   8   3   19   3  40
+5 2016   8   3   19   3  50
+6 2016   8   3   19   4   0
+                                                                                obspack_id
+1 obspack_co2_1_GLOBALVIEWplus_v5.0_2019-08-12~co2_tom_aircraft-insitu_1_allvalid~11414194
+2 obspack_co2_1_GLOBALVIEWplus_v5.0_2019-08-12~co2_tom_aircraft-insitu_1_allvalid~11414195
+3 obspack_co2_1_GLOBALVIEWplus_v5.0_2019-08-12~co2_tom_aircraft-insitu_1_allvalid~11414196
+4 obspack_co2_1_GLOBALVIEWplus_v5.0_2019-08-12~co2_tom_aircraft-insitu_1_allvalid~11414197
+5 obspack_co2_1_GLOBALVIEWplus_v5.0_2019-08-12~co2_tom_aircraft-insitu_1_allvalid~11414198
+6 obspack_co2_1_GLOBALVIEWplus_v5.0_2019-08-12~co2_tom_aircraft-insitu_1_allvalid~11414199
+[1] 149133     28
+[1] 143040      7
+[1] 135115     29
+[1] &quot;2017 9 14&quot; &quot;2017 9 26&quot; &quot;2018 4 10&quot; &quot;2018 4 11&quot; &quot;2018 4 13&quot; &quot;2018 4 14&quot;
+[1] &quot;GLOBALVIEWplus_v6.0 HIPPO&quot;
+  year mon day hour min sec
+1 2009   1   9   20  28  40
+2 2009   1   9   20  28  50
+3 2009   1   9   20  29   0
+4 2009   1   9   20  29  10
+5 2009   1   9   20  29  20
+6 2009   1   9   20  29  30
+                                                                                obspack_id
+1 obspack_co2_1_GLOBALVIEWplus_v6.0_2020-09-11~co2_hip_aircraft-insitu_59_allvalid~6799852
+2 obspack_co2_1_GLOBALVIEWplus_v6.0_2020-09-11~co2_hip_aircraft-insitu_59_allvalid~6799853
+3 obspack_co2_1_GLOBALVIEWplus_v6.0_2020-09-11~co2_hip_aircraft-insitu_59_allvalid~6799854
+4 obspack_co2_1_GLOBALVIEWplus_v6.0_2020-09-11~co2_hip_aircraft-insitu_59_allvalid~6799855
+5 obspack_co2_1_GLOBALVIEWplus_v6.0_2020-09-11~co2_hip_aircraft-insitu_59_allvalid~6799856
+6 obspack_co2_1_GLOBALVIEWplus_v6.0_2020-09-11~co2_hip_aircraft-insitu_59_allvalid~6799857
+[1] 156551     28
+[1] 130016      7
+[1] 130010     29
+[1] &quot;2009 11 11 21 26 13&quot; &quot;2010 4 16 1 59 57&quot;   &quot;2011 8 24 20 0 13&quot;  
+[4] &quot;2011 8 29 22 16 21&quot;  &quot;2011 9 1 21 59 33&quot;   &quot;2011 9 9 16 11 23&quot;  
+[1] &quot;GLOBALVIEWplus_v6.0 ORCAS&quot;
+  year mon day hour min sec
+1 2016   1   5   19  19  54
+2 2016   1   5   19  20   4
+3 2016   1   5   19  25  34
+4 2016   1   5   19  25  44
+5 2016   1   5   19  25  54
+6 2016   1   5   19  26   4
+                                                                                        obspack_id
+1 obspack_co2_1_GLOBALVIEWplus_v6.0_2020-09-11~co2_orc_aircraft-insitu_3_allvalid-merge10~12376263
+2 obspack_co2_1_GLOBALVIEWplus_v6.0_2020-09-11~co2_orc_aircraft-insitu_3_allvalid-merge10~12376264
+3 obspack_co2_1_GLOBALVIEWplus_v6.0_2020-09-11~co2_orc_aircraft-insitu_3_allvalid-merge10~12376265
+4 obspack_co2_1_GLOBALVIEWplus_v6.0_2020-09-11~co2_orc_aircraft-insitu_3_allvalid-merge10~12376266
+5 obspack_co2_1_GLOBALVIEWplus_v6.0_2020-09-11~co2_orc_aircraft-insitu_3_allvalid-merge10~12376267
+6 obspack_co2_1_GLOBALVIEWplus_v6.0_2020-09-11~co2_orc_aircraft-insitu_3_allvalid-merge10~12376268
+[1] 46646    22
+[1] 40217     7
+[1] 40217    23
+character(0)
+[1] &quot;GLOBALVIEWplus_v6.0 ATOM&quot;
+  year mon day hour min sec
+1 2016   7  29   14  55  10
+2 2016   7  29   14  55  20
+3 2016   7  29   14  55  30
+4 2016   7  29   14  55  40
+5 2016   7  29   14  55  50
+6 2016   7  29   14  56   0
+                                                                                obspack_id
+1 obspack_co2_1_GLOBALVIEWplus_v6.0_2020-09-11~co2_tom_aircraft-insitu_1_allvalid~12061595
+2 obspack_co2_1_GLOBALVIEWplus_v6.0_2020-09-11~co2_tom_aircraft-insitu_1_allvalid~12061596
+3 obspack_co2_1_GLOBALVIEWplus_v6.0_2020-09-11~co2_tom_aircraft-insitu_1_allvalid~12061597
+4 obspack_co2_1_GLOBALVIEWplus_v6.0_2020-09-11~co2_tom_aircraft-insitu_1_allvalid~12061598
+5 obspack_co2_1_GLOBALVIEWplus_v6.0_2020-09-11~co2_tom_aircraft-insitu_1_allvalid~12061599
+6 obspack_co2_1_GLOBALVIEWplus_v6.0_2020-09-11~co2_tom_aircraft-insitu_1_allvalid~12061600
+[1] 149133     28
+[1] 147660      7
+[1] 139735     29
+[1] &quot;2017 9 14&quot; &quot;2017 9 26&quot; &quot;2018 4 10&quot; &quot;2018 4 11&quot; &quot;2018 4 13&quot; &quot;2018 4 14&quot;
+[1] &quot;ATom_v4.0 ATOM&quot;
+  year mon day hour min sec
+1 2016   7  29   14  55  10
+2 2016   7  29   14  55  20
+3 2016   7  29   14  55  30
+4 2016   7  29   14  55  40
+5 2016   7  29   14  55  50
+6 2016   7  29   14  56   0
+                                                               obspack_id
+1 obspack_co2_1_ATom_v4.0_2020-04-06~co2_tom_aircraft-insitu_1_allvalid~1
+2 obspack_co2_1_ATom_v4.0_2020-04-06~co2_tom_aircraft-insitu_1_allvalid~2
+3 obspack_co2_1_ATom_v4.0_2020-04-06~co2_tom_aircraft-insitu_1_allvalid~3
+4 obspack_co2_1_ATom_v4.0_2020-04-06~co2_tom_aircraft-insitu_1_allvalid~4
+5 obspack_co2_1_ATom_v4.0_2020-04-06~co2_tom_aircraft-insitu_1_allvalid~5
+6 obspack_co2_1_ATom_v4.0_2020-04-06~co2_tom_aircraft-insitu_1_allvalid~6
+[1] 149133     28
+[1] 147660      7
+[1] 139735     29
+[1] &quot;2017 9 14&quot; &quot;2017 9 26&quot; &quot;2018 4 10&quot; &quot;2018 4 11&quot; &quot;2018 4 13&quot; &quot;2018 4 14&quot;
+[1] &quot;CARBONTRACKER_CT2017 HIPPO&quot;
+  year mon day hour min sec
+1 2009   1   9   20  28  40
+2 2009   1   9   20  28  50
+3 2009   1   9   20  29   0
+4 2009   1   9   20  29  10
+5 2009   1   9   20  29  20
+6 2009   1   9   20  29  30
+                                                                                            obspack_id
+1 obspack_co2_1_GLOBALVIEWplus_v3.1_2017-10-18~co2_hip_aircraft-insitu_59_allvalid~4052621------------
+2 obspack_co2_1_GLOBALVIEWplus_v3.1_2017-10-18~co2_hip_aircraft-insitu_59_allvalid~4052622------------
+3 obspack_co2_1_GLOBALVIEWplus_v3.1_2017-10-18~co2_hip_aircraft-insitu_59_allvalid~4052623------------
+4 obspack_co2_1_GLOBALVIEWplus_v3.1_2017-10-18~co2_hip_aircraft-insitu_59_allvalid~4052624------------
+5 obspack_co2_1_GLOBALVIEWplus_v3.1_2017-10-18~co2_hip_aircraft-insitu_59_allvalid~4052625------------
+6 obspack_co2_1_GLOBALVIEWplus_v3.1_2017-10-18~co2_hip_aircraft-insitu_59_allvalid~4052626------------
+[1] 156551     28
+[1] 130016      7
+[1] 130010     29
+[1] &quot;2009 11 11 21 26 13&quot; &quot;2010 4 16 1 59 57&quot;   &quot;2011 8 24 20 0 13&quot;  
+[4] &quot;2011 8 29 22 16 21&quot;  &quot;2011 9 1 21 59 33&quot;   &quot;2011 9 9 16 11 23&quot;  
+[1] &quot;CARBONTRACKER_CT2017 ORCAS&quot;
+  year mon day hour min sec
+1 2016   1   5   19  19  54
+2 2016   1   5   19  20   4
+3 2016   1   5   19  25  34
+4 2016   1   5   19  25  44
+5 2016   1   5   19  25  54
+6 2016   1   5   19  26   4
+                                                                                            obspack_id
+1 obspack_co2_1_ORCAS_v2.0_2017-04-05~co2_orc_aircraft-insitu_3_allvalid-merge10~1--------------------
+2 obspack_co2_1_ORCAS_v2.0_2017-04-05~co2_orc_aircraft-insitu_3_allvalid-merge10~2--------------------
+3 obspack_co2_1_ORCAS_v2.0_2017-04-05~co2_orc_aircraft-insitu_3_allvalid-merge10~3--------------------
+4 obspack_co2_1_ORCAS_v2.0_2017-04-05~co2_orc_aircraft-insitu_3_allvalid-merge10~4--------------------
+5 obspack_co2_1_ORCAS_v2.0_2017-04-05~co2_orc_aircraft-insitu_3_allvalid-merge10~5--------------------
+6 obspack_co2_1_ORCAS_v2.0_2017-04-05~co2_orc_aircraft-insitu_3_allvalid-merge10~6--------------------
+[1] 46646    22
+[1] 40217     7
+[1] 40217    23
+character(0)
+[1] &quot;CARBONTRACKER_CT2017 ATOM&quot;
+  year mon day hour min sec
+1 2016   8   3   19   3  10
+2 2016   8   3   19   3  20
+3 2016   8   3   19   3  30
+4 2016   8   3   19   3  40
+5 2016   8   3   19   3  50
+6 2016   8   3   19   4   0
+                                                                                            obspack_id
+1 obspack_co2_1_GLOBALVIEWplus_v3.1_2017-10-18~co2_tom_aircraft-insitu_1_allvalid~11219187------------
+2 obspack_co2_1_GLOBALVIEWplus_v3.1_2017-10-18~co2_tom_aircraft-insitu_1_allvalid~11219188------------
+3 obspack_co2_1_GLOBALVIEWplus_v3.1_2017-10-18~co2_tom_aircraft-insitu_1_allvalid~11219189------------
+4 obspack_co2_1_GLOBALVIEWplus_v3.1_2017-10-18~co2_tom_aircraft-insitu_1_allvalid~11219190------------
+5 obspack_co2_1_GLOBALVIEWplus_v3.1_2017-10-18~co2_tom_aircraft-insitu_1_allvalid~11219191------------
+6 obspack_co2_1_GLOBALVIEWplus_v3.1_2017-10-18~co2_tom_aircraft-insitu_1_allvalid~11219192------------
+[1] 149133     28
+[1] 56047     7
+[1] 56036    29
+ [1] &quot;2017 1 27 3 32 10&quot; &quot;2017 1 30 3 21 50&quot; &quot;2017 2 2 4 20 20&quot; 
+ [4] &quot;2017 2 2 4 20 30&quot;  &quot;2017 2 2 4 20 40&quot;  &quot;2017 2 2 4 20 50&quot; 
+ [7] &quot;2017 2 2 4 21 0&quot;   &quot;2017 2 2 4 21 10&quot;  &quot;2017 2 2 4 21 20&quot; 
+[10] &quot;2017 2 2 4 21 30&quot;  &quot;2017 2 6 5 7 40&quot;  
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-env-miniconda3-so-co2-R-r"
+        },
+        kernelOptions: {
+            kernelName: "conda-env-miniconda3-so-co2-R-r",
+            path: "./_prestage-obs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-env-miniconda3-so-co2-R-r'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="process_aircraft_med.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Process airborne Medusa merge files</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="process_surface_obs.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Process surface observations</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Matthew C. Long and Britton B. Stephens<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

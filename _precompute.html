@@ -1,0 +1,977 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Precompute model data &#8212; Strong Southern Ocean Carbon Uptake Evident in Airborne Observations</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Observed patterns in atmospheric CO2" href="obs-main.html" />
+    <link rel="prev" title="Process surface SF6 observations" href="_prestage-obs/process_surface_sf6.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/new-logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Strong Southern Ocean Carbon Uptake Evident in Airborne Observations</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data assets and preprocessing
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="data-assets-preprocessing.html">
+   Overview
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="_prestage-obs-instructions.html">
+     Obtaining observational data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="table-s1.html">
+     Station measurement records
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_prestage-data.html">
+     Prestage model data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_prestage-obs/process_aircraft_10s.html">
+     Process airborne 10-sec merge files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_prestage-obs/process_aircraft_pfp.html">
+     Process airborne PFP merge files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_prestage-obs/process_aircraft_med.html">
+     Process airborne Medusa merge files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_prestage-obs/aircraft_obspack_merge.html">
+     Merge flight parameters onto obspack IDs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_prestage-obs/process_surface_obs.html">
+     Process surface observations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_prestage-obs/process_surface_models.html">
+     Process surface model output
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_prestage-obs/process_aircraft_models.html">
+     Process airborne model output
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_prestage-obs/process_surface_sf6.html">
+     Process surface SF6 observations
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Precompute model data
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Observations
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="obs-main.html">
+   Observed patterns in atmospheric CO
+   <sub>
+    2
+   </sub>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="obs-aircraft.html">
+     Airborne observations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="obs-surface.html">
+     Surface observations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="obs-surface-error.html">
+     Analytical uncertainty at CO
+     <sub>
+      2
+     </sub>
+     measurement stations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="obs-surface-diurnal-variations.html">
+     Climatological mean diurnal CO
+     <sub>
+      2
+     </sub>
+     cycles since 1999 for four stations with in situ instruments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="obs-simulated-distributions.html">
+     Simulated CO
+     <sub>
+      2
+     </sub>
+     distributions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Gradient metrics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="gradients-main.html">
+   Gradient metrics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="gradients-seasonal-amplitude.html">
+     Seasonal amplitude of vertical gradient
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="gradients-trends.html">
+     Trend in horizontal gradient metric
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="gradients-profiles.html">
+     Aircraft atmospheric CO
+     <sub>
+      2
+     </sub>
+     profiles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="gradients-methane.html">
+     Observed concentrations and gradients of methane
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="gradients-sf6.html">
+     Surface observations of SF
+     <sub>
+      6
+     </sub>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="gradients-aircraft-sampling.html">
+     Aircraft sampling representativeness
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Emergent constraints
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="emergent-constraint.html">
+   Emergent constraints on air-sea fluxes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="emergent-constraint-s2n.html">
+     Sensitivity analysis of emergent constraint
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Flux Estimates
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="fluxes.html">
+   Estimate of Southern Ocean air-sea CO
+   <sub>
+    2
+   </sub>
+   fluxes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fluxes-aircraft-campaign-table.html">
+     Flux estimates for each aircraft campaign
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  API
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="api.html">
+   API Reference
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="api-cli.html">
+     Run calculation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="api-datasets.html">
+     Observational datasets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="api-emergent-constraint.html">
+     Emergent constraints
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  References
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="references.html">
+   References
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/_precompute.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ncar/so-co2-airborne-obs"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ncar/so-co2-airborne-obs/main?urlpath=tree/so-co2-airborne-obs/_precompute.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-the-models">
+   List the models
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spin-up-a-cluster">
+   Spin up a cluster
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instantiate-model-objects">
+   Instantiate model objects
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compute-latitude-dependent-fluxes">
+   Compute latitude dependent fluxes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zonal-mean-fluxes">
+   Zonal mean fluxes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#d-co-sub-2-sub-distribtions">
+   3D CO
+   <sub>
+    2
+   </sub>
+   distribtions
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="precompute-model-data">
+<h1>Precompute model data<a class="headerlink" href="#precompute-model-data" title="Permalink to this headline">¶</a></h1>
+<p>This notebook performs some relatively time-consuming computations, aggregating fluxes and 3D CO<sub>2</sub> distributions from the model simulations.</p>
+<p>The output is saved locally (within ./models/data-cache), so it should only be necessary to run this notebook once—or not at all if these data already exist (they are saved as part of the repository).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">models</span>
+<span class="kn">import</span> <span class="nn">emergent_constraint</span> <span class="k">as</span> <span class="nn">ec</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="list-the-models">
+<h2>List the models<a class="headerlink" href="#list-the-models" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">emergent_contraint</span></code> module has a <code class="docutils literal notranslate"><span class="pre">get_model_tracer_lists</span></code> method that returns a list of tuples (see <a class="reference internal" href="api-emergent-constraint.html"><span class="doc std std-doc">API documentation</span></a>), each with the model name and tracer used.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_input_lists</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;ocean_constraint&#39;</span><span class="p">,</span> <span class="s1">&#39;total_constraint&#39;</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;model_tracer_list&#39;</span><span class="p">,]:</span> 
+        <span class="n">model_input_lists</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">ec</span><span class="o">.</span><span class="n">get_model_tracer_lists</span><span class="p">(</span><span class="n">c</span><span class="p">)[</span><span class="n">key</span><span class="p">]])</span>
+
+<span class="n">model_list</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">model_input_lists</span><span class="p">)))</span>
+<span class="n">model_list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;CAMSv20r1&#39;,
+ &#39;CT2017&#39;,
+ &#39;CT2019B&#39;,
+ &#39;CTE2018&#39;,
+ &#39;CTE2020&#39;,
+ &#39;MIROC&#39;,
+ &#39;TM5-Flux-m0f&#39;,
+ &#39;TM5-Flux-mmf&#39;,
+ &#39;TM5-Flux-mrf&#39;,
+ &#39;TM5-Flux-mwf&#39;,
+ &#39;s99oc_ADJocI40S_v2020&#39;,
+ &#39;s99oc_SOCCOM_v2020&#39;,
+ &#39;s99oc_v2020&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="spin-up-a-cluster">
+<h2>Spin up a cluster<a class="headerlink" href="#spin-up-a-cluster" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ncar_jobqueue</span> <span class="kn">import</span> <span class="n">NCARCluster</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">cluster</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="n">cluster</span> <span class="o">=</span> <span class="n">NCARCluster</span><span class="p">(</span><span class="n">memory</span><span class="o">=</span><span class="s1">&#39;100GB&#39;</span><span class="p">)</span>
+    <span class="n">cluster</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
+<span class="n">cluster</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "e8ffba51cc64421db334d9b3a4321074", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dask.distributed</span> <span class="kn">import</span> <span class="n">Client</span>
+<span class="k">try</span><span class="p">:</span> 
+    <span class="n">client</span>
+<span class="k">except</span><span class="p">:</span> 
+    <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span> <span class="c1"># Connect this local process to remote workers</span>
+<span class="n">client</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+    <div style="width: 24px; height: 24px; background-color: #e1e1e1; border: 3px solid #9D9D9D; border-radius: 5px; position: absolute;"> </div>
+    <div style="margin-left: 48px;">
+        <h3 style="margin-bottom: 0px;">Client</h3>
+        <p style="color: #9D9D9D; margin-bottom: 0px;">Client-d2f12df4-118f-11ec-a9bd-ac1f6bc9f55e</p>
+        <table style="width: 100%; text-align: left;">
+
+        <tr>
+
+            <td style="text-align: left;"><strong>Connection method:</strong> Cluster object</td>
+            <td style="text-align: left;"><strong>Cluster type:</strong> dask_jobqueue.PBSCluster</td>
+
+        </tr>
+
+
+            <tr>
+                <td style="text-align: left;">
+                    <strong>Dashboard: </strong> <a href="/proxy/8787/status" target="_blank">/proxy/8787/status</a>
+                </td>
+                <td style="text-align: left;"></td>
+            </tr>
+
+
+        </table>
+
+
+            <details>
+            <summary style="margin-bottom: 20px;"><h3 style="display: inline;">Cluster Info</h3></summary>
+            <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-mod-trusted jp-OutputArea-output">
+    <div style="width: 24px; height: 24px; background-color: #e1e1e1; border: 3px solid #9D9D9D; border-radius: 5px; position: absolute;">
+    </div>
+    <div style="margin-left: 48px;">
+        <h3 style="margin-bottom: 0px; margin-top: 0px;">PBSCluster</h3>
+        <p style="color: #9D9D9D; margin-bottom: 0px;">c54f081c</p>
+        <table style="width: 100%; text-align: left;">
+            <tr>
+                <td style="text-align: left;">
+                    <strong>Dashboard:</strong> <a href="/proxy/8787/status" target="_blank">/proxy/8787/status</a>
+                </td>
+                <td style="text-align: left;">
+                    <strong>Workers:</strong> 0
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">
+                    <strong>Total threads:</strong> 0
+                </td>
+                <td style="text-align: left;">
+                    <strong>Total memory:</strong> 0 B
+                </td>
+            </tr>
+
+        </table>
+
+        <details>
+            <summary style="margin-bottom: 20px;">
+                <h3 style="display: inline;">Scheduler Info</h3>
+            </summary>
+
+            <div style="">
+    <div>
+        <div style="width: 24px; height: 24px; background-color: #FFF7E5; border: 3px solid #FF6132; border-radius: 5px; position: absolute;"> </div>
+        <div style="margin-left: 48px;">
+            <h3 style="margin-bottom: 0px;">Scheduler</h3>
+            <p style="color: #9D9D9D; margin-bottom: 0px;">Scheduler-8f62438b-fc7e-42df-8ea1-4fefb6498ef7</p>
+            <table style="width: 100%; text-align: left;">
+                <tr>
+                    <td style="text-align: left;">
+                        <strong>Comm:</strong> tcp://10.12.206.42:44474
+                    </td>
+                    <td style="text-align: left;">
+                        <strong>Workers:</strong> 0
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">
+                        <strong>Dashboard:</strong> <a href="/proxy/8787/status" target="_blank">/proxy/8787/status</a>
+                    </td>
+                    <td style="text-align: left;">
+                        <strong>Total threads:</strong> 0
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">
+                        <strong>Started:</strong> Just now
+                    </td>
+                    <td style="text-align: left;">
+                        <strong>Total memory:</strong> 0 B
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <details style="margin-left: 48px;">
+        <summary style="margin-bottom: 20px;">
+            <h3 style="display: inline;">Workers</h3>
+        </summary>
+
+
+
+    </details>
+</div>
+
+        </details>
+    </div>
+</div>
+            </details>
+
+
+    </div>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="instantiate-model-objects">
+<h2>Instantiate model objects<a class="headerlink" href="#instantiate-model-objects" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_objs</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">model_list</span><span class="p">:</span>
+    <span class="n">model_objs</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="n">model_objs</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;CAMSv20r1&#39;: &lt;models.core.Model at 0x2b57a129e110&gt;,
+ &#39;CT2017&#39;: &lt;models.core.Model at 0x2b57a129e350&gt;,
+ &#39;CT2019B&#39;: &lt;models.core.Model at 0x2b57a129e7d0&gt;,
+ &#39;CTE2018&#39;: &lt;models.core.Model at 0x2b57a129eb10&gt;,
+ &#39;CTE2020&#39;: &lt;models.core.Model at 0x2b57a1287550&gt;,
+ &#39;MIROC&#39;: &lt;models.core.Model at 0x2b57a12874d0&gt;,
+ &#39;TM5-Flux-m0f&#39;: &lt;models.core.Model at 0x2b57a12879d0&gt;,
+ &#39;TM5-Flux-mmf&#39;: &lt;models.core.Model at 0x2b57a1287110&gt;,
+ &#39;TM5-Flux-mrf&#39;: &lt;models.core.Model at 0x2b57a1287290&gt;,
+ &#39;TM5-Flux-mwf&#39;: &lt;models.core.Model at 0x2b57a1287710&gt;,
+ &#39;s99oc_ADJocI40S_v2020&#39;: &lt;models.core.Model at 0x2b57a1287510&gt;,
+ &#39;s99oc_SOCCOM_v2020&#39;: &lt;models.core.Model at 0x2b57a1287450&gt;,
+ &#39;s99oc_v2020&#39;: &lt;models.core.Model at 0x2b57a1287fd0&gt;}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="compute-latitude-dependent-fluxes">
+<h2>Compute latitude dependent fluxes<a class="headerlink" href="#compute-latitude-dependent-fluxes" title="Permalink to this headline">¶</a></h2>
+<p>Define a set of <code class="docutils literal notranslate"><span class="pre">lat_ranges</span></code> and average monthly fluxes in these bounds.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lat_ranges</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="o">-</span><span class="mf">90.</span><span class="p">,</span> <span class="o">-</span><span class="mf">30.</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">90.</span><span class="p">,</span> <span class="o">-</span><span class="mf">35.</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">90.</span><span class="p">,</span> <span class="o">-</span><span class="mi">40</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">90.</span><span class="p">,</span> <span class="o">-</span><span class="mf">45.</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">90.</span><span class="p">,</span> <span class="o">-</span><span class="mf">50.</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">90.</span><span class="p">,</span> <span class="o">-</span><span class="mf">55.</span><span class="p">),</span> 
+
+<span class="p">]</span>
+<span class="n">lat_ranges</span> <span class="o">=</span> <span class="p">[(</span><span class="o">-</span><span class="mf">90.</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">75.</span><span class="p">,</span> <span class="o">-</span><span class="mf">14.</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">+</span> <span class="p">[(</span><span class="o">-</span><span class="mf">45.</span><span class="p">,</span> <span class="o">-</span><span class="mf">15.</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">45.</span><span class="p">,</span> <span class="o">-</span><span class="mf">30.</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<span class="n">dsets</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">model_list</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>    
+    <span class="k">for</span> <span class="n">lat_range</span> <span class="ow">in</span> <span class="n">lat_ranges</span><span class="p">:</span>
+        <span class="n">dsets</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">model_objs</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">open_derived_dataset</span><span class="p">(</span>
+                    <span class="s1">&#39;flux_ts_monthly&#39;</span><span class="p">,</span> 
+                    <span class="n">lat_range</span><span class="o">=</span><span class="n">lat_range</span><span class="p">,</span>
+                    <span class="n">persist</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                    <span class="n">clobber</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                    <span class="n">return_none</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CAMSv20r1
+CT2017
+CT2019B
+CTE2018
+CTE2020
+MIROC
+TM5-Flux-m0f
+TM5-Flux-mmf
+TM5-Flux-mrf
+TM5-Flux-mwf
+s99oc_ADJocI40S_v2020
+s99oc_SOCCOM_v2020
+s99oc_v2020
+CPU times: user 15.7 ms, sys: 5.31 ms, total: 21 ms
+Wall time: 20.6 ms
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="zonal-mean-fluxes">
+<h2>Zonal mean fluxes<a class="headerlink" href="#zonal-mean-fluxes" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<span class="n">dsets</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">model_list</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>    
+    <span class="n">dsets</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">model_objs</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">open_derived_dataset</span><span class="p">(</span>
+                <span class="s1">&#39;fluxes_za_ts_monthly&#39;</span><span class="p">,</span> 
+                <span class="n">persist</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">clobber</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                <span class="n">return_none</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CAMSv20r1
+CT2017
+CT2019B
+CTE2018
+CTE2020
+MIROC
+TM5-Flux-m0f
+TM5-Flux-mmf
+TM5-Flux-mrf
+TM5-Flux-mwf
+s99oc_ADJocI40S_v2020
+s99oc_SOCCOM_v2020
+s99oc_v2020
+CPU times: user 1.83 ms, sys: 0 ns, total: 1.83 ms
+Wall time: 1.45 ms
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="d-co-sub-2-sub-distribtions">
+<h2>3D CO<sub>2</sub> distribtions<a class="headerlink" href="#d-co-sub-2-sub-distribtions" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">model_list</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">model</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;CT2019B&#39;</span><span class="p">]:</span>
+        <span class="n">model_objs</span><span class="p">[</span><span class="n">model</span><span class="p">]</span><span class="o">.</span><span class="n">open_derived_dataset</span><span class="p">(</span>
+            <span class="s1">&#39;molefractions_surface_daily&#39;</span><span class="p">,</span>
+            <span class="n">persist</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">clobber</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>            
+            <span class="n">return_none</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>                    
+        <span class="p">)</span>
+        <span class="n">model_objs</span><span class="p">[</span><span class="n">model</span><span class="p">]</span><span class="o">.</span><span class="n">open_derived_dataset</span><span class="p">(</span>
+            <span class="s1">&#39;spo_ts_daily&#39;</span><span class="p">,</span>            
+            <span class="n">persist</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">clobber</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>           
+            <span class="n">return_none</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>                    
+        <span class="p">)</span>
+        <span class="n">model_objs</span><span class="p">[</span><span class="n">model</span><span class="p">]</span><span class="o">.</span><span class="n">open_derived_dataset</span><span class="p">(</span>
+            <span class="s1">&#39;molefractions_theta_bins&#39;</span><span class="p">,</span>
+            <span class="n">kwargs_name</span><span class="o">=</span><span class="s1">&#39;SO-10K-bins-300K_275K&#39;</span><span class="p">,</span>
+            <span class="n">lat_bounds</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">80.</span><span class="p">,</span> <span class="o">-</span><span class="mf">45.</span><span class="p">),</span>
+            <span class="n">theta_bins</span><span class="o">=</span><span class="p">[(</span><span class="mf">295.</span><span class="p">,</span> <span class="mf">305.</span><span class="p">),</span> <span class="p">(</span><span class="mf">270.</span><span class="p">,</span> <span class="mf">280.</span><span class="p">),],</span>
+            <span class="n">persist</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>            
+            <span class="n">clobber</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">return_none</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>        
+        <span class="p">)</span>
+        <span class="n">model_objs</span><span class="p">[</span><span class="n">model</span><span class="p">]</span><span class="o">.</span><span class="n">open_derived_dataset</span><span class="p">(</span>
+            <span class="s1">&#39;molefractions_theta_bins_sectors&#39;</span><span class="p">,</span>
+            <span class="n">kwargs_name</span><span class="o">=</span><span class="s1">&#39;SO-10K-bins-300K_275K&#39;</span><span class="p">,</span>
+            <span class="n">lat_bounds</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">80.</span><span class="p">,</span> <span class="o">-</span><span class="mf">45.</span><span class="p">),</span>
+            <span class="n">theta_bins</span><span class="o">=</span><span class="p">[(</span><span class="mf">295.</span><span class="p">,</span> <span class="mf">305.</span><span class="p">),</span> <span class="p">(</span><span class="mf">270.</span><span class="p">,</span> <span class="mf">280.</span><span class="p">),],</span>
+            <span class="n">persist</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>            
+            <span class="n">clobber</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">return_none</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  
+        <span class="p">)</span>
+        <span class="n">model_objs</span><span class="p">[</span><span class="n">model</span><span class="p">]</span><span class="o">.</span><span class="n">open_derived_dataset</span><span class="p">(</span>
+            <span class="s1">&#39;molefractions_z_za&#39;</span><span class="p">,</span> 
+            <span class="n">persist</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">clobber</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">return_none</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>                    
+        <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cluster</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">client</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"07e7393563b8438d942090b90bd2c890": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "09967be6a07b4335818ced55aa8a4143": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_1dd1cfffb633423b96708d39a5f3c53e", "placeholder": "\u200b", "style": "IPY_MODEL_3073cf18e6a24d7c976a1789751a9997", "value": "\n        <table>\n            <tr><td style=\"text-align: left;\">Scaling mode: Manual</td></tr>\n            <tr><td style=\"text-align: left;\">Workers: 0 / 32</td></tr>\n        </table>\n        "}}, "161cac3704e7436ba4ba9b2de7397322": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "IntTextModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "IntTextModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "IntTextView", "continuous_update": false, "description": "Maximum", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_175b1803f74f431ab6182a084014fbf4", "step": 1, "style": "IPY_MODEL_9e953b9251cb431486a9505abb67378c", "value": 0}}, "175b1803f74f431ab6182a084014fbf4": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "150px"}}, "19e10819de30466fb99a941adfaf091d": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "1dd1cfffb633423b96708d39a5f3c53e": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "24c700e7aafd42b4ad95964508e98319": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": "500px", "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "3008cd75f65043b0903a9e4a81ae35af": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "AccordionModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "AccordionModel", "_titles": {"0": "Manual Scaling", "1": "Adaptive Scaling"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "AccordionView", "box_style": "", "children": ["IPY_MODEL_338d659733db4f2db0dca1735531d555", "IPY_MODEL_6d3cb9eacb9b44b084081648b50f1595"], "layout": "IPY_MODEL_24c700e7aafd42b4ad95964508e98319", "selected_index": null}}, "3073cf18e6a24d7c976a1789751a9997": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "338d659733db4f2db0dca1735531d555": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HBoxModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_ee7114be9658422a82985fa3b5d95aa4", "IPY_MODEL_98330653d6b44094a06a4dce9d4d7129"], "layout": "IPY_MODEL_9c6dbbd858ae4222af93a1e6b1733cc2"}}, "38e9e6569ed4469cabac0d2ebac8bc0f": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "ButtonStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ButtonStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "button_color": null, "font_weight": ""}}, "5e5bb164d9a9431caa3f3f833af97dc0": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "6bda47d27cf142e895e1ea63333fa426": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "ButtonStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ButtonStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "button_color": null, "font_weight": ""}}, "6d3cb9eacb9b44b084081648b50f1595": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HBoxModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_e5eb70d6a93d4fb0abafff588baab252", "IPY_MODEL_161cac3704e7436ba4ba9b2de7397322", "IPY_MODEL_7caeb26ccab1471b9a60ef6cbd096fb7"], "layout": "IPY_MODEL_7352dd59be4a4f939495bd372fc7903a"}}, "7352dd59be4a4f939495bd372fc7903a": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "7caeb26ccab1471b9a60ef6cbd096fb7": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "ButtonModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ButtonModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ButtonView", "button_style": "", "description": "Adapt", "disabled": false, "icon": "", "layout": "IPY_MODEL_175b1803f74f431ab6182a084014fbf4", "style": "IPY_MODEL_6bda47d27cf142e895e1ea63333fa426", "tooltip": ""}}, "98330653d6b44094a06a4dce9d4d7129": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "ButtonModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ButtonModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ButtonView", "button_style": "", "description": "Scale", "disabled": false, "icon": "", "layout": "IPY_MODEL_175b1803f74f431ab6182a084014fbf4", "style": "IPY_MODEL_38e9e6569ed4469cabac0d2ebac8bc0f", "tooltip": ""}}, "9c6dbbd858ae4222af93a1e6b1733cc2": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "9e953b9251cb431486a9505abb67378c": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "c075a286b08c41cca067da3dd26ee898": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "ca3605de59194aa49a87dd2a405fc675": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "d7f727e830de4514ae6566328cbf57a3": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "VBoxModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_09967be6a07b4335818ced55aa8a4143", "IPY_MODEL_3008cd75f65043b0903a9e4a81ae35af"], "layout": "IPY_MODEL_19e10819de30466fb99a941adfaf091d"}}, "dfb2a90644714b428d479d6b156fd999": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "e5eb70d6a93d4fb0abafff588baab252": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "IntTextModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "IntTextModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "IntTextView", "continuous_update": false, "description": "Minimum", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_175b1803f74f431ab6182a084014fbf4", "step": 1, "style": "IPY_MODEL_5e5bb164d9a9431caa3f3f833af97dc0", "value": 0}}, "e8ffba51cc64421db334d9b3a4321074": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "TabModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "TabModel", "_titles": {"0": "Status", "1": "Scaling"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "TabView", "box_style": "", "children": ["IPY_MODEL_f710944a16314c499277ca132d04fb3d", "IPY_MODEL_d7f727e830de4514ae6566328cbf57a3"], "layout": "IPY_MODEL_dfb2a90644714b428d479d6b156fd999", "selected_index": 0}}, "ee7114be9658422a82985fa3b5d95aa4": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "IntTextModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "IntTextModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "IntTextView", "continuous_update": false, "description": "Workers", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_175b1803f74f431ab6182a084014fbf4", "step": 1, "style": "IPY_MODEL_ca3605de59194aa49a87dd2a405fc675", "value": 0}}, "f710944a16314c499277ca132d04fb3d": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_c075a286b08c41cca067da3dd26ee898", "placeholder": "\u200b", "style": "IPY_MODEL_07e7393563b8438d942090b90bd2c890", "value": "<div class=\"jp-RenderedHTMLCommon jp-RenderedHTML jp-mod-trusted jp-OutputArea-output\">\n    <div style=\"width: 24px; height: 24px; background-color: #e1e1e1; border: 3px solid #9D9D9D; border-radius: 5px; position: absolute;\">\n    </div>\n    <div style=\"margin-left: 48px;\">\n        <h3 style=\"margin-bottom: 0px; margin-top: 0px;\">PBSCluster</h3>\n        <p style=\"color: #9D9D9D; margin-bottom: 0px;\">c54f081c</p>\n        <table style=\"width: 100%; text-align: left;\">\n            <tr>\n                <td style=\"text-align: left;\">\n                    <strong>Dashboard:</strong> <a href=\"/proxy/8787/status\" target=\"_blank\">/proxy/8787/status</a>\n                </td>\n                <td style=\"text-align: left;\">\n                    <strong>Workers:</strong> 0\n                </td>\n            </tr>\n            <tr>\n                <td style=\"text-align: left;\">\n                    <strong>Total threads:</strong> 0\n                </td>\n                <td style=\"text-align: left;\">\n                    <strong>Total memory:</strong> 0 B\n                </td>\n            </tr>\n            \n        </table>\n\n        <details>\n            <summary style=\"margin-bottom: 20px;\">\n                <h3 style=\"display: inline;\">Scheduler Info</h3>\n            </summary>\n\n            <div style=\"\">\n    <div>\n        <div style=\"width: 24px; height: 24px; background-color: #FFF7E5; border: 3px solid #FF6132; border-radius: 5px; position: absolute;\"> </div>\n        <div style=\"margin-left: 48px;\">\n            <h3 style=\"margin-bottom: 0px;\">Scheduler</h3>\n            <p style=\"color: #9D9D9D; margin-bottom: 0px;\">Scheduler-8f62438b-fc7e-42df-8ea1-4fefb6498ef7</p>\n            <table style=\"width: 100%; text-align: left;\">\n                <tr>\n                    <td style=\"text-align: left;\">\n                        <strong>Comm:</strong> tcp://10.12.206.42:44474\n                    </td>\n                    <td style=\"text-align: left;\">\n                        <strong>Workers:</strong> 0\n                    </td>\n                </tr>\n                <tr>\n                    <td style=\"text-align: left;\">\n                        <strong>Dashboard:</strong> <a href=\"/proxy/8787/status\" target=\"_blank\">/proxy/8787/status</a>\n                    </td>\n                    <td style=\"text-align: left;\">\n                        <strong>Total threads:</strong> 0\n                    </td>\n                </tr>\n                <tr>\n                    <td style=\"text-align: left;\">\n                        <strong>Started:</strong> Just now\n                    </td>\n                    <td style=\"text-align: left;\">\n                        <strong>Total memory:</strong> 0 B\n                    </td>\n                </tr>\n            </table>\n        </div>\n    </div>\n\n    <details style=\"margin-left: 48px;\">\n        <summary style=\"margin-bottom: 20px;\">\n            <h3 style=\"display: inline;\">Workers</h3>\n        </summary>\n\n        \n\n    </details>\n</div>\n\n        </details>\n    </div>\n</div>"}}}, "version_major": 2, "version_minor": 0}
+</script>
+
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-env-miniconda3-so-co2-py"
+        },
+        kernelOptions: {
+            kernelName: "conda-env-miniconda3-so-co2-py",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-env-miniconda3-so-co2-py'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="_prestage-obs/process_surface_sf6.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Process surface SF6 observations</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="obs-main.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Observed patterns in atmospheric CO<sub>2</sub></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Matthew C. Long and Britton B. Stephens<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
