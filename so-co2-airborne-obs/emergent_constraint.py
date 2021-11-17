@@ -1912,7 +1912,7 @@ def flux_contraint_seasonal_cycle(ax, ac, dsets_sfco2_mon=None,
                 if model in models_pco2 or 's99oc' in model:
                     continue
             if not_soccom:
-                if model in models_soccom:
+                if model in models_soccom or 'SOCCOM' in model:
                     continue
             x = util.doy_midmonth() #dsets_fluxes_mon[model].month - 0.5
             y = dsets_sfco2_mon[model].SFCO2_OCN
