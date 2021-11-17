@@ -1894,13 +1894,26 @@ def add_obs_constraint(ax, df, indexes,
 def flux_contraint_seasonal_cycle(ax, ac, dsets_sfco2_mon=None, 
                                   obs_color='k', 
                                   include_fit=True,
-                                  label_campaigns=True):
+                                  label_campaigns=True, 
+                                  inversions_only=False,
+                                  not_soccom=False,
+                                  not_aircraft=False,
+                                 ):
 
+    
+    models_soccom = ['TM5-Flux-m0f', 'TM5-Flux-mwf', 'TM5-Flux-mmf']
+    models_pco2 = ['SOM-FFN'] + models_soccom
     if dsets_sfco2_mon is not None:
         marker_spec = figure_panels.marker_spec_models()
         sfco2_ocn_model_list = list(dsets_sfco2_mon.keys())
 
         for model in sfco2_ocn_model_list:
+            if inversions_only: 
+                if model in models_pco2 or 's99oc' in model:
+                    continue
+            if not_soccom:
+                if model in models_soccom:
+                    continue
             x = util.doy_midmonth() #dsets_fluxes_mon[model].month - 0.5
             y = dsets_sfco2_mon[model].SFCO2_OCN
             x, y = util.antyear_daily(x, y)
@@ -1920,7 +1933,18 @@ def flux_contraint_seasonal_cycle(ax, ac, dsets_sfco2_mon=None,
                   **marker_spec[model][field])                        
             else:
                 ax.plot(x, y, linestyle='-', lw=1, **marker_spec[model][field], alpha=1)
+    
+    ax.set_xlim((-5, 370))
+    ax.set_xticks(figure_panels.bomday)
+    ax.set_xticklabels([f'        {m}' for m in figure_panels.monlabs_ant]+[''])
 
+    ax.axhline(0, lw=1., c='k', zorder=-100)
+    ax.set_ylabel('Air-sea flux [Pg C yr$^{-1}$]');    
+    
+    
+    if inversions_only or not_aircraft:
+        return
+    
     df = ac.campaign_flux.copy().reset_index().sort_values(by='month')
 
     x, y = util.antyear_daily(df.doy_mid, df.flux)
@@ -1963,12 +1987,7 @@ def flux_contraint_seasonal_cycle(ax, ac, dsets_sfco2_mon=None,
         xfit, yfit = ac.seasonal_flux_fit()
         ax.plot(xfit, yfit, '-', color=obs_color, lw=2, zorder=100)
 
-    ax.set_xlim((-5, 370))
-    ax.set_xticks(figure_panels.bomday)
-    ax.set_xticklabels([f'        {m}' for m in figure_panels.monlabs_ant]+[''])
-
-    ax.axhline(0, lw=1., c='k', zorder=-100)
-    ax.set_ylabel('Air-sea flux [Pg C yr$^{-1}$]');
+ 
 
     return h
 

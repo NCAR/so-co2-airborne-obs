@@ -41,7 +41,7 @@ season_yearfrac = dict(
 )
 
 
-def _gen_plotname(plot_name):
+def _gen_plotname(plot_name, dirout):
     """generate a name for plotting"""
     plot_basename, ext = os.path.splitext(plot_name)
     
@@ -59,9 +59,11 @@ def _gen_plotname(plot_name):
                 break
                 
         if fig_key is not None:
-            plot_basename = f'Fig-{fig_key}-{plot_basename}'
-        
-    return plot_basename
+            return f'{dirout}/Fig-{fig_key}-{plot_basename}'
+        else:
+            dirout = f'{dirout}/misc'
+            os.makedirs(dirout, exist_ok=True)
+            return f'{dirout}/{plot_basename}'    
 
 
 def savefig(plot_name):
@@ -73,10 +75,10 @@ def savefig(plot_name):
         dirout = 'figures'    
     os.makedirs(dirout, exist_ok=True)
     
-    plot_basename = _gen_plotname(plot_name)
+    plot_basename = _gen_plotname(plot_name, dirout)
     
     for ext in ['pdf', 'png']:
-        plt.savefig(f'{dirout}/{plot_basename}.{ext}', 
+        plt.savefig(f'{plot_basename}.{ext}', 
                     dpi=300, 
                     bbox_inches='tight', 
                     metadata={'CreationDate': None})
