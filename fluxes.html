@@ -536,6 +536,12 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The autoreload extension is already loaded. To reload it, use:
+  %reload_ext autoreload
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -888,6 +894,27 @@
 <img alt="_images/fluxes_13_0.png" src="_images/fluxes_13_0.png" />
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">sfco2_ann_estimates</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">key_</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key_</span><span class="si">}</span><span class="s2">:</span><span class="se">\t</span><span class="si">{</span><span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">0.2f</span><span class="si">}</span><span class="s2"> ± </span><span class="si">{</span><span class="n">value</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">0.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Aircraft constraint ~2009-18:	-0.53 ± 0.23
+Mean Inversions 2009-18:	-0.45 ± 0.17
+Mean Inversions 2015-17:	-0.41 ± 0.17
+SOCAT 2009-17:	-0.38 ± 0.15
+SOCAT 2015-17:	-0.34 ± 0.15
+SOCAT+ SOCCOM 2015-17:	-0.15 ± 0.15
+SOCCOM (only) 2015-17:	0.35 ± 0.15
+SOCCOM (only,–4µatm) 2015-17:	0.17 ± 0.15
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="fig-4-flux-estimates">
 <h2>Fig 4: Flux estimates<a class="headerlink" href="#fig-4-flux-estimates" title="Permalink to this headline">¶</a></h2>
@@ -951,7 +978,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fluxes_15_0.png" src="_images/fluxes_15_0.png" />
+<img alt="_images/fluxes_16_0.png" src="_images/fluxes_16_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1017,7 +1044,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fluxes_16_0.png" src="_images/fluxes_16_0.png" />
+<img alt="_images/fluxes_17_0.png" src="_images/fluxes_17_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1079,7 +1106,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fluxes_17_0.png" src="_images/fluxes_17_0.png" />
+<img alt="_images/fluxes_18_0.png" src="_images/fluxes_18_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1141,7 +1168,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fluxes_18_0.png" src="_images/fluxes_18_0.png" />
+<img alt="_images/fluxes_19_0.png" src="_images/fluxes_19_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1212,7 +1239,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fluxes_19_0.png" src="_images/fluxes_19_0.png" />
+<img alt="_images/fluxes_20_0.png" src="_images/fluxes_20_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1338,7 +1365,7 @@
   return array(a, dtype, copy=False, order=order)
 </pre></div>
 </div>
-<img alt="_images/fluxes_23_1.png" src="_images/fluxes_23_1.png" />
+<img alt="_images/fluxes_24_1.png" src="_images/fluxes_24_1.png" />
 </div>
 </div>
 <div class="section" id="surface-flux-estimates">
