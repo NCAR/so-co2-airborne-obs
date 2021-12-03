@@ -55,7 +55,7 @@ html:
   use_issues_button: false
   use_repository_button: true
   home_page_in_navbar: false
-  google_analytics_id: UA-214270592-1
+  google_analytics_id: UA-196809533-2
 
   
 parse:
