@@ -553,6 +553,16 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>config warning: cannot mkdir /glade/work/mclong/so-co2-airborne-obs
+setting project_tmpdir to /Users/mclong/scratch/tmp/so-co2-airborne-obs/project_tmpdir
+config warning: cannot mkdir /glade/work/mclong/so-co2-airborne-obs
+setting project_tmpdir to /Users/mclong/scratch/tmp/so-co2-airborne-obs/project_tmpdir
+config warning: cannot mkdir /glade/work/mclong/so-co2-airborne-obs
+setting project_tmpdir to /Users/mclong/scratch/tmp/so-co2-airborne-obs/project_tmpdir
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="load-obervational-datasets">
 <h2>Load obervational datasets<a class="headerlink" href="#load-obervational-datasets" title="Permalink to this headline">¶</a></h2>
@@ -570,8 +580,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 323 ms, sys: 10.3 ms, total: 333 ms
-Wall time: 455 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 348 ms, sys: 14.9 ms, total: 363 ms
+Wall time: 363 ms
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;ds_obs_aircraft&#39;: &lt;xarray.Dataset&gt;
@@ -618,6 +628,50 @@ Wall time: 455 ms
      CO2          (time, record) float64 0.0 -0.07697 -0.0542 ... 0.03813 nan}
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set up canvas</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span> <span class="c1">#figsize=(10, 6)) #dpi=300)</span>
+
+<span class="c1">#------------------------------------</span>
+<span class="c1">#--- ORCAS Section</span>
+<span class="c1">#------------------------------------</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dsets</span><span class="p">[</span><span class="s1">&#39;ds_obs_aircraft&#39;</span><span class="p">]</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">#axs[&#39;section_DJF&#39;]</span>
+
+<span class="n">ndx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">campaigns</span> <span class="o">==</span> <span class="s1">&#39;ORCAS&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">cf</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span>
+        <span class="n">ds</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">DCO2_binned</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">ndx</span><span class="p">)</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(),</span>
+        <span class="n">norm</span><span class="o">=</span><span class="n">figure_panels</span><span class="o">.</span><span class="n">divnorm</span><span class="p">,</span>
+        <span class="n">cmap</span><span class="o">=</span><span class="n">figure_panels</span><span class="o">.</span><span class="n">cmap</span><span class="p">,</span>
+        <span class="n">shading</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">,</span>    
+    <span class="p">)</span>
+<span class="n">cs</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span>
+    <span class="n">ds</span><span class="o">.</span><span class="n">LAT</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">ALT</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">THETA</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">ndx</span><span class="p">)</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(),</span>
+    <span class="n">levels</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">255.</span><span class="p">,</span> <span class="mf">350.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">),</span>
+    <span class="n">linewidths</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>    
+<span class="n">lb</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">clabel</span><span class="p">(</span><span class="n">cs</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">inline</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>  
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Aircraft obs: CO$_2$ minus 295–305K mean (Jan-Feb 2016)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mf">10.5</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">91.25</span><span class="p">,</span> <span class="o">-</span><span class="mf">28.75</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Altitude [km]&#39;</span><span class="p">);</span>   
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Latitude [°N]&#39;</span><span class="p">)</span>
+
+
+<span class="n">cb</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cf</span><span class="p">)</span>
+<span class="n">cb</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s1">&#39;$\Delta$CO$_2$ [ppm]&#39;</span><span class="p">)</span>
+
+<span class="n">util</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;co2-orcas-cross-section&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/obs-main_5_0.png" src="_images/obs-main_5_0.png" />
 </div>
 </div>
 </div>
@@ -751,11 +805,11 @@ Wall time: 455 ms
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2.21 s, sys: 57.3 ms, total: 2.27 s
-Wall time: 2.72 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 4.48 s, sys: 101 ms, total: 4.58 s
+Wall time: 2.14 s
 </pre></div>
 </div>
-<img alt="_images/obs-main_6_1.png" src="_images/obs-main_6_1.png" />
+<img alt="_images/obs-main_7_1.png" src="_images/obs-main_7_1.png" />
 </div>
 </div>
 <p><strong>Observed patterns in atmospheric CO<sub>2</sub> over the Southern Ocean.</strong> Observed patterns in atmospheric CO<sub>2</sub> over the Southern Ocean. Upper panels: Cross-sections observed by aircraft during (A) ORCAS, Jan–Feb 2016 and (B) ATom-1, Aug 2016. Colors show the observed CO<sub>2</sub> dry air mole fraction relative to the average observed within the 295–305 K potential temperature range south of 45°S on each campaign; contour lines show the observed potential temperature.
@@ -776,16 +830,16 @@ The black line is a spline fit provided simply as a visual guide. Blue shading d
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "conda-env-miniconda3-so-co2-py"
+            mode: "conda-env-so-co2-py"
         },
         kernelOptions: {
-            kernelName: "conda-env-miniconda3-so-co2-py",
+            kernelName: "conda-env-so-co2-py",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'conda-env-miniconda3-so-co2-py'</script>
+    <script>kernelName = 'conda-env-so-co2-py'</script>
 
               </div>
               
