@@ -52,9 +52,8 @@ If you are interested in explicitly citing this book, please use the following c
 
 ## Flux product download
 
-CSV file of flux estimates for each aircraft campaign available for download [here](./flux-results/Long-etal-2021-aircraft-campaign-fluxes.csv).
-
-netCDF file of seasonal cycle of fluxes generated using harmonic fit to aircraft data available for download [here](./flux-results/Long-etal-2021-seasonal-flux-fit.nc).
+- [Flux estimates for each aircraft campaign](https://raw.githubusercontent.com/NCAR/so-co2-airborne-obs/main/so-co2-airborne-obs/flux-results/Long-etal-2021-aircraft-campaign-fluxes.csv) (CSV);
+- [Seasonal cycle (daily) of fluxes generated using harmonic fit to aircraft data](https://github.com/NCAR/so-co2-airborne-obs/raw/main/so-co2-airborne-obs/flux-results/Long-etal-2021-seasonal-flux-fit.nc) (netCDF).
 
 
 ## Main document
