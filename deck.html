@@ -41,11 +41,11 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -440,7 +440,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -471,7 +471,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -486,6 +486,11 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#citation">
    Citation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#flux-product-download">
+   Flux product download
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -637,7 +642,181 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Southern Ocean Air-Sea Carbon Fluxes from Aircraft Observations: Analysis code</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#citation">
+   Citation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#flux-product-download">
+   Flux product download
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#main-document">
+   Main document
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#structure-of-variability-in-atmospheric-carbon-dioxide">
+     Structure of variability in atmospheric carbon dioxide
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gradient-metrics-to-isolate-ocean-influence">
+     Gradient metrics to isolate ocean influence
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#defining-gradient-metrics">
+       Defining gradient metrics
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#vertical-gradient-metric">
+         ‘‘Vertical’’ gradient metric
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#horizontal-gradient-metric">
+         Horizontal gradient metric
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#emergent-constraints-on-air-sea-co-sub-2-sub-flux">
+     Emergent constraints on air-sea CO
+     <sub>
+      2
+     </sub>
+     flux
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#observationally-based-estimates-of-southern-ocean-air-sea-fluxes">
+     Observationally-based estimates of Southern Ocean air-sea fluxes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#supplemental-information">
+   Supplemental information
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aircraft-observations">
+     Aircraft observations
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-decade-of-aircraft-observations">
+       A decade of aircraft observations
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#repeat-observations-of-co-sub-2-sub-cross-section">
+       Repeat observations of CO
+       <sub>
+        2
+       </sub>
+       cross-section
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#surface-observations">
+     Surface observations
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#long-term-monitoring-of-surface-co-sub-2-sub">
+       Long-term monitoring of surface CO
+       <sub>
+        2
+       </sub>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#models">
+     Models
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#atmospheric-inversion-models">
+       Atmospheric inversion models
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#simulated-zonal-cross-section">
+       Simulated zonal cross-section
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#simulated-surface-distributions">
+       Simulated surface distributions
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gradient-definitions">
+     Gradient definitions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#observed-variation-of-co-sub-2-sub-in-the-column">
+       Observed variation of CO
+       <sub>
+        2
+       </sub>
+       in the column
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#methane">
+       Methane
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sulfur-hexafluoride">
+       Sulfur hexafluoride
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="southern-ocean-air-sea-carbon-fluxes-from-aircraft-observations-analysis-code">
@@ -660,29 +839,34 @@ However, the inferences from surface observations are consistent with the aircra
 <div class="section" id="citation">
 <h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">¶</a></h2>
 <p>Please cite <span id="id2">Long <em>et al.</em> [<a class="reference internal" href="references.html#id2">2021</a>]</span> for the results of this research:</p>
-<div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@article</span><span class="p">{</span><span class="nl">Long-Stephens-etal-2021</span><span class="p">,</span>
-  <span class="na">author</span><span class="p">=</span><span class="s">{M. C. Long and B. B. Stephens and K. McKain and C. Sweeney and R. F. Keeling and E. A. Kort and E. J. Morgan and J. D. Bent and N. Chandra and F. Chevallier and R. Commane and B. C. Daube and P. B. Krummel and Z. Loh and I. T. Luijkx and D. Munro and P. Patra and W. Peters and M. Ramonet and C. Rödenbeck and A. Stavert and P. Tans and S. C. Wofsy}</span><span class="p">,</span>
-  <span class="na">year</span><span class="p">=</span><span class="s">{2021}</span><span class="p">,</span> 
-  <span class="na">journal</span><span class="p">=</span><span class="s">{Science}</span><span class="p">,</span>
-  <span class="na">title</span><span class="p">=</span><span class="s">{Strong {Southern Ocean} Carbon Uptake Evident in Airborne Observations}</span><span class="p">,</span>
-  <span class="na">doi</span><span class="p">=</span><span class="s">{10.5065/6vnv-1x08}</span>
-<span class="p">}</span>
+<div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@article</span><span class="p">{</span><span class="nl">Long-Stephens-etal-2021</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="na">author</span><span class="p">=</span><span class="s">{M. C. Long and B. B. Stephens and K. McKain and C. Sweeney and R. F. Keeling and E. A. Kort and E. J. Morgan and J. D. Bent and N. Chandra and F. Chevallier and R. Commane and B. C. Daube and P. B. Krummel and Z. Loh and I. T. Luijkx and D. Munro and P. Patra and W. Peters and M. Ramonet and C. Rödenbeck and A. Stavert and P. Tans and S. C. Wofsy}</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="na">year</span><span class="p">=</span><span class="s">{2021}</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="na">journal</span><span class="p">=</span><span class="s">{Science}</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="na">title</span><span class="p">=</span><span class="s">{Strong {Southern Ocean} Carbon Uptake Evident in Airborne Observations}</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="na">doi</span><span class="p">=</span><span class="s">{10.5065/6vnv-1x08}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>If you are interested in explicitly citing this book, please use the following citation.</p>
 <blockquote>
 <div><p>M.C. Long, B. B. Stephens, Southern Ocean Air-Sea Carbon Fluxes from Aircraft Observations: Analysis code, National Center for Atmospheric Research (2021), https:/doi.org/10.5065/6vnv-1x08.</p>
 </div></blockquote>
-<div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@book</span><span class="p">{</span><span class="nl">Long-Stephens-code-2021</span><span class="p">,</span>
-  <span class="na">title</span><span class="p">=</span><span class="s">{Southern Ocean Air-Sea Carbon Fluxes from Aircraft Observations: Analysis code}</span><span class="p">,</span>
-  <span class="na">author</span><span class="p">=</span><span class="s">{Long, Matthew C. and Stephens, Britton B.}</span><span class="p">,</span>
-  <span class="na">publisher</span><span class="p">=</span><span class="s">{National Center for Atmospheric Research}</span><span class="p">,</span>
-  <span class="na">url</span><span class="p">=</span><span class="s">{https://ncar.github.io/so-co2-airborne-obs}</span><span class="p">,</span>
-  <span class="na">doi</span><span class="p">=</span><span class="s">{10.5065/6vnv-1x08}</span><span class="p">,</span>
-  <span class="na">year</span><span class="p">=</span><span class="s">{2021}</span>
-<span class="p">}</span>
+<div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@book</span><span class="p">{</span><span class="nl">Long-Stephens-code-2021</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="na">title</span><span class="p">=</span><span class="s">{Southern Ocean Air-Sea Carbon Fluxes from Aircraft Observations: Analysis code}</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="na">author</span><span class="p">=</span><span class="s">{Long, Matthew C. and Stephens, Britton B.}</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="na">publisher</span><span class="p">=</span><span class="s">{National Center for Atmospheric Research}</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="na">url</span><span class="p">=</span><span class="s">{https://ncar.github.io/so-co2-airborne-obs}</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="na">doi</span><span class="p">=</span><span class="s">{10.5065/6vnv-1x08}</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="na">year</span><span class="p">=</span><span class="s">{2021}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="flux-product-download">
+<h2>Flux product download<a class="headerlink" href="#flux-product-download" title="Permalink to this headline">¶</a></h2>
+<p>CSV file of flux estimates for each aircraft campaign available for download <span class="xref myst">here</span>.</p>
+<p>netCDF file of seasonal cycle of fluxes generated using harmonic fit to aircraft data available for download <span class="xref myst">here</span>.</p>
 </div>
 <div class="section" id="main-document">
 <h2>Main document<a class="headerlink" href="#main-document" title="Permalink to this headline">¶</a></h2>
@@ -949,8 +1133,8 @@ The code to produce this figure is <a class="reference internal" href="gradients
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'>
     <a class='right-next' id="next-link" href="data-assets-preprocessing.html" title="next page">
     <div class="prev-next-info">
@@ -960,19 +1144,17 @@ The code to produce this figure is <a class="reference internal" href="gradients
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Matthew C. Long and Britton B. Stephens<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Matthew C. Long and Britton B. Stephens<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 

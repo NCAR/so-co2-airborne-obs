@@ -50,6 +50,13 @@ If you are interested in explicitly citing this book, please use the following c
 }
 ```
 
+## Flux product download
+
+CSV file of flux estimates for each aircraft campaign available for download [here](./flux-results/Long-etal-2021-aircraft-campaign-fluxes.csv).
+
+netCDF file of seasonal cycle of fluxes generated using harmonic fit to aircraft data available for download [here](./flux-results/Long-etal-2021-seasonal-flux-fit.nc).
+
+
 ## Main document
 
 ### Structure of variability in atmospheric carbon dioxide
