@@ -1,0 +1,28 @@
+# Southern Ocean flux estimates from aircraft observations described in Long et al. [2021]:
+#   M. C. Long, B. B. Stephens, K. McKain, C. Sweeney, R. F. Keeling, E. A. Kort, E. J. Morgan, 
+#     J. D. Bent, N. Chandra, F. Chevallier, R. Commane, B. C. Daube, P. B. Krummel, Z. Loh, 
+#     I. T. Luijkx, D. Munro, P. Patra, W. Peters, M. Ramonet, C. Rödenbeck, A. Stavert, P. Tans, 
+#     S. C. Wofsy, Strong Southern Ocean carbon uptake evident in airborne observations, 
+#     Science (2021), https://doi.org/10.1126/science.abi4355.
+#
+# Flux estimates are valid for the region south of 45°S and over a period of 90 days
+# prior to the end of each aircraft campaign.
+#
+# Column descriptions:
+# Date: Mid-point of the 90 day period over which flux estimate applies
+# Flux Date Start: start of 90 day period
+# Flux Date End: end of 90 day period
+# Flux Estimate [Pg C/yr]: the flux estimate for each campaign
+# Flux Uncertainty [Pg C/yr]: the uncertainty in the flux estimate
+#
+campaign,Date,Flux Date Start,Flux Date End,Flux Estimate [Pg C/yr],Flux Uncertainty [Pg C/yr]
+HIPPO-1,2008-12-10,2008-10-26,2009-01-24,-1.076389632478874,0.6396028583317515
+HIPPO-2,2009-10-01,2009-08-17,2009-11-15,-0.16744158190541822,0.48720040892240163
+HIPPO-3,2010-02-23,2010-01-09,2010-04-09,-1.2349812139759049,0.9577918455746436
+HIPPO-5,2011-07-19,2011-06-04,2011-09-02,0.09822559935321415,0.5751706874305321
+ORCAS-J,2015-12-16,2015-11-01,2016-01-30,-1.1350269283157892,0.3915699935533974
+ORCAS-F,2016-01-15,2015-12-01,2016-02-29,-1.4314010741798469,0.5611365971191713
+ATom-1,2016-07-01,2016-05-17,2016-08-15,-0.10940797349367007,0.49387400905109813
+ATom-2,2016-12-30,2016-11-15,2017-02-13,-1.5674838550843018,0.6461070522969672
+ATom-3,2017-09-02,2017-07-19,2017-10-17,0.2516504906605459,0.6811165592061209
+ATom-4,2018-03-28,2018-02-11,2018-05-12,-0.6750122919304528,0.6360341612898448
